@@ -1,0 +1,754 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/justinfriedman/Documents/School Work/Empirical Techniques for Industry Analysis/HW4/log1126.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}26 Nov 2017, 16:21:26
+
+{com}. stepwise, pr(.05): regress saleprice yearbuilt yearremodadd totalbsmtsf totrmsabvgrd wooddecksf yrsold ssnporch screenporch id-overallcond masvnrarea bsmtunfsf centralair ndflrsf-halfbath kitchenabvgr fireplaces-garagearea openporchsf enclosedporch poolarea-mosold isNew hood_1 hood_3-saleCondition_2 saleCondition_4 saleCondition_5 saleCondition_6 bsmtfinsf1 bedroomabvgr
+{txt}note: hasGarage dropped because of collinearity
+note: isNew dropped because of collinearity
+{p2colset 0 23 32 2}{...}
+{p2col :}begin with full model{p_end}
+{p2col :p = {res:0.9999} >= 0.0500}removing {res:hood_18}{p_end}
+{p2col :p = {res:0.9933} >= 0.0500}removing {res:halfbath}{p_end}
+{p2col :p = {res:0.9879} >= 0.0500}removing {res:centralair}{p_end}
+{p2col :p = {res:0.8821} >= 0.0500}removing {res:ndflrsf}{p_end}
+{p2col :p = {res:0.8170} >= 0.0500}removing {res:garageyrblt}{p_end}
+{p2col :p = {res:0.8449} >= 0.0500}removing {res:yearremodadd}{p_end}
+{p2col :p = {res:0.8148} >= 0.0500}removing {res:hood_1}{p_end}
+{p2col :p = {res:0.8139} >= 0.0500}removing {res:hood_14}{p_end}
+{p2col :p = {res:0.8345} >= 0.0500}removing {res:hood_12}{p_end}
+{p2col :p = {res:0.7929} >= 0.0500}removing {res:saleCondition_4}{p_end}
+{p2col :p = {res:0.7996} >= 0.0500}removing {res:hasFence}{p_end}
+{p2col :p = {res:0.7742} >= 0.0500}removing {res:lotfrontage}{p_end}
+{p2col :p = {res:0.7686} >= 0.0500}removing {res:openporchsf}{p_end}
+{p2col :p = {res:0.7673} >= 0.0500}removing {res:yrsold}{p_end}
+{p2col :p = {res:0.7403} >= 0.0500}removing {res:id}{p_end}
+{p2col :p = {res:0.6948} >= 0.0500}removing {res:garagearea}{p_end}
+{p2col :p = {res:0.6110} >= 0.0500}removing {res:miscval}{p_end}
+{p2col :p = {res:0.6112} >= 0.0500}removing {res:hood_9}{p_end}
+{p2col :p = {res:0.7072} >= 0.0500}removing {res:hood_13}{p_end}
+{p2col :p = {res:0.6800} >= 0.0500}removing {res:hood_3}{p_end}
+{p2col :p = {res:0.6559} >= 0.0500}removing {res:hood_20}{p_end}
+{p2col :p = {res:0.6080} >= 0.0500}removing {res:hood_21}{p_end}
+{p2col :p = {res:0.5964} >= 0.0500}removing {res:lowqualfinsf}{p_end}
+{p2col :p = {res:0.5570} >= 0.0500}removing {res:hood_5}{p_end}
+{p2col :p = {res:0.5203} >= 0.0500}removing {res:hood_10}{p_end}
+{p2col :p = {res:0.4181} >= 0.0500}removing {res:hood_11}{p_end}
+{p2col :p = {res:0.3963} >= 0.0500}removing {res:saleCondition_1}{p_end}
+{p2col :p = {res:0.4450} >= 0.0500}removing {res:saleCondition_2}{p_end}
+{p2col :p = {res:0.3957} >= 0.0500}removing {res:saleCondition_5}{p_end}
+{p2col :p = {res:0.3883} >= 0.0500}removing {res:enclosedporch}{p_end}
+{p2col :p = {res:0.3504} >= 0.0500}removing {res:bsmtfinsf1}{p_end}
+{p2col :p = {res:0.3556} >= 0.0500}removing {res:hood_19}{p_end}
+{p2col :p = {res:0.2702} >= 0.0500}removing {res:ssnporch}{p_end}
+{p2col :p = {res:0.1014} >= 0.0500}removing {res:wooddecksf}{p_end}
+{p2col :p = {res:0.1060} >= 0.0500}removing {res:hood_4}{p_end}
+{p2col :p = {res:0.0924} >= 0.0500}removing {res:hood_6}{p_end}
+{p2col :p = {res:0.1461} >= 0.0500}removing {res:fireplaces}{p_end}
+{p2col :p = {res:0.0986} >= 0.0500}removing {res:hood_24}{p_end}
+{p2col :p = {res:0.0788} >= 0.0500}removing {res:mosold}{p_end}
+{p2colreset}{...}
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}     1,121
+{txt}{hline 13}{c +}{hline 34}   F(28, 1092)     = {res}   229.88
+{txt}       Model {c |} {res} 6.5964e+12        28  2.3559e+11   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 1.1191e+12     1,092  1.0248e+09   {txt}R-squared       ={res}    0.8550
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.8512
+{txt}       Total {c |} {res} 7.7155e+12     1,120  6.8889e+09   {txt}Root MSE        =   {res}  32013
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      saleprice{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}yearbuilt {c |}{col 17}{res}{space 2} 312.8955{col 29}{space 2} 52.48946{col 40}{space 1}    5.96{col 49}{space 3}0.000{col 57}{space 4} 209.9039{col 70}{space 3} 415.8871
+{txt}{space 8}hood_15 {c |}{col 17}{res}{space 2}-18440.58{col 29}{space 2} 5124.156{col 40}{space 1}   -3.60{col 49}{space 3}0.000{col 57}{space 4}-28494.89{col 70}{space 3} -8386.28
+{txt}{space 4}totalbsmtsf {c |}{col 17}{res}{space 2} 20.34485{col 29}{space 2} 3.900047{col 40}{space 1}    5.22{col 49}{space 3}0.000{col 57}{space 4} 12.69242{col 70}{space 3} 27.99728
+{txt}{space 3}totrmsabvgrd {c |}{col 17}{res}{space 2} 4158.917{col 29}{space 2}  1318.98{col 40}{space 1}    3.15{col 49}{space 3}0.002{col 57}{space 4} 1570.896{col 70}{space 3} 6746.938
+{txt}{space 8}hood_22 {c |}{col 17}{res}{space 2} 15617.74{col 29}{space 2} 4387.846{col 40}{space 1}    3.56{col 49}{space 3}0.000{col 57}{space 4} 7008.175{col 70}{space 3}  24227.3
+{txt}{space 8}hood_17 {c |}{col 17}{res}{space 2} 47473.54{col 29}{space 2} 4763.417{col 40}{space 1}    9.97{col 49}{space 3}0.000{col 57}{space 4} 38127.06{col 70}{space 3} 56820.03
+{txt}{space 8}hood_16 {c |}{col 17}{res}{space 2} 48161.67{col 29}{space 2}  6600.19{col 40}{space 1}    7.30{col 49}{space 3}0.000{col 57}{space 4} 35211.18{col 70}{space 3} 61112.16
+{txt}{space 4}screenporch {c |}{col 17}{res}{space 2} 65.77458{col 29}{space 2} 17.05135{col 40}{space 1}    3.86{col 49}{space 3}0.000{col 57}{space 4} 32.31746{col 70}{space 3} 99.23169
+{txt}{space 3}bedroomabvgr {c |}{col 17}{res}{space 2}-7502.162{col 29}{space 2} 1831.784{col 40}{space 1}   -4.10{col 49}{space 3}0.000{col 57}{space 4}-11096.38{col 70}{space 3}-3907.947
+{txt}{space 5}mssubclass {c |}{col 17}{res}{space 2}-194.8101{col 29}{space 2} 27.62329{col 40}{space 1}   -7.05{col 49}{space 3}0.000{col 57}{space 4}-249.0108{col 70}{space 3}-140.6093
+{txt}{space 9}hood_7 {c |}{col 17}{res}{space 2}  24525.3{col 29}{space 2} 5370.804{col 40}{space 1}    4.57{col 49}{space 3}0.000{col 57}{space 4} 13987.03{col 70}{space 3} 35063.56
+{txt}{space 8}lotarea {c |}{col 17}{res}{space 2} .6456044{col 29}{space 2} .1315179{col 40}{space 1}    4.91{col 49}{space 3}0.000{col 57}{space 4} .3875482{col 70}{space 3} .9036607
+{txt}{space 4}overallqual {c |}{col 17}{res}{space 2} 13688.23{col 29}{space 2} 1310.046{col 40}{space 1}   10.45{col 49}{space 3}0.000{col 57}{space 4} 11117.74{col 70}{space 3} 16258.72
+{txt}{space 4}overallcond {c |}{col 17}{res}{space 2} 6058.385{col 29}{space 2} 1047.966{col 40}{space 1}    5.78{col 49}{space 3}0.000{col 57}{space 4}  4002.13{col 70}{space 3} 8114.639
+{txt}{space 5}masvnrarea {c |}{col 17}{res}{space 2}  13.4736{col 29}{space 2} 6.301671{col 40}{space 1}    2.14{col 49}{space 3}0.033{col 57}{space 4} 1.108847{col 70}{space 3} 25.83835
+{txt}{space 6}bsmtunfsf {c |}{col 17}{res}{space 2}-15.42498{col 29}{space 2} 3.326003{col 40}{space 1}   -4.64{col 49}{space 3}0.000{col 57}{space 4}-21.95106{col 70}{space 3}-8.898899
+{txt}saleCondition_6 {c |}{col 17}{res}{space 2} 16572.06{col 29}{space 2} 3647.653{col 40}{space 1}    4.54{col 49}{space 3}0.000{col 57}{space 4} 9414.859{col 70}{space 3} 23729.26
+{txt}{space 8}hasPool {c |}{col 17}{res}{space 2} -1327159{col 29}{space 2} 142207.1{col 40}{space 1}   -9.33{col 49}{space 3}0.000{col 57}{space 4} -1606189{col 70}{space 3} -1048129
+{txt}{space 9}hood_8 {c |}{col 17}{res}{space 2}-12044.86{col 29}{space 2} 4065.541{col 40}{space 1}   -2.96{col 49}{space 3}0.003{col 57}{space 4}-20022.02{col 70}{space 3}-4067.706
+{txt}{space 6}grlivarea {c |}{col 17}{res}{space 2} 51.12548{col 29}{space 2} 4.575217{col 40}{space 1}   11.17{col 49}{space 3}0.000{col 57}{space 4} 42.14827{col 70}{space 3} 60.10269
+{txt}{space 3}bsmtfullbath {c |}{col 17}{res}{space 2} 7900.699{col 29}{space 2}   2756.8{col 40}{space 1}    2.87{col 49}{space 3}0.004{col 57}{space 4} 2491.474{col 70}{space 3} 13309.92
+{txt}{space 3}bsmthalfbath {c |}{col 17}{res}{space 2} 8713.265{col 29}{space 2} 4386.902{col 40}{space 1}    1.99{col 49}{space 3}0.047{col 57}{space 4} 105.5539{col 70}{space 3} 17320.98
+{txt}{space 7}fullbath {c |}{col 17}{res}{space 2} 7524.053{col 29}{space 2} 2774.088{col 40}{space 1}    2.71{col 49}{space 3}0.007{col 57}{space 4} 2080.908{col 70}{space 3}  12967.2
+{txt}{space 7}poolarea {c |}{col 17}{res}{space 2} 2334.997{col 29}{space 2} 255.6648{col 40}{space 1}    9.13{col 49}{space 3}0.000{col 57}{space 4} 1833.347{col 70}{space 3} 2836.647
+{txt}{space 3}kitchenabvgr {c |}{col 17}{res}{space 2}-23887.82{col 29}{space 2} 5560.529{col 40}{space 1}   -4.30{col 49}{space 3}0.000{col 57}{space 4}-34798.35{col 70}{space 3}-12977.29
+{txt}{space 8}hood_25 {c |}{col 17}{res}{space 2} 31777.48{col 29}{space 2} 12501.79{col 40}{space 1}    2.54{col 49}{space 3}0.011{col 57}{space 4} 7247.229{col 70}{space 3} 56307.73
+{txt}{space 8}hood_23 {c |}{col 17}{res}{space 2} 65472.21{col 29}{space 2} 7736.236{col 40}{space 1}    8.46{col 49}{space 3}0.000{col 57}{space 4} 50292.65{col 70}{space 3} 80651.78
+{txt}{space 5}garagecars {c |}{col 17}{res}{space 2} 12608.19{col 29}{space 2} 2124.316{col 40}{space 1}    5.94{col 49}{space 3}0.000{col 57}{space 4} 8439.985{col 70}{space 3} 16776.39
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2}  -667686{col 29}{space 2} 103428.1{col 40}{space 1}   -6.46{col 49}{space 3}0.000{col 57}{space 4}-870626.3{col 70}{space 3}-464745.7
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. stepwise, pr(.05): regress saleprice yearbuilt yearremodadd totalbsmtsf totrmsabvgrd wooddecksf yrsold ssnporch screenporch id-overallcond masvnrarea bsmtunfsf centralair ndflrsf-halfbath kitchenabvgr fireplaces-garagearea openporchsf enclosedporch poolarea-mosold isNew hood_1 hood_3-saleCondition_2 saleCondition_4 saleCondition_5 saleCondition_6 bsmtfinsf1 bedroomabvgr _clus_k10
+{txt}note: hasGarage dropped because of collinearity
+note: isNew dropped because of collinearity
+{p2colset 0 23 32 2}{...}
+{p2col :}begin with full model{p_end}
+{p2col :p = {res:0.9919} >= 0.0500}removing {res:centralair}{p_end}
+{p2col :p = {res:0.9897} >= 0.0500}removing {res:garageyrblt}{p_end}
+{p2col :p = {res:0.9426} >= 0.0500}removing {res:lotfrontage}{p_end}
+{p2col :p = {res:0.9433} >= 0.0500}removing {res:hasFence}{p_end}
+{p2col :p = {res:0.9147} >= 0.0500}removing {res:yearremodadd}{p_end}
+{p2col :p = {res:0.9141} >= 0.0500}removing {res:id}{p_end}
+{p2col :p = {res:0.8965} >= 0.0500}removing {res:hood_8}{p_end}
+{p2col :p = {res:0.8936} >= 0.0500}removing {res:yrsold}{p_end}
+{p2col :p = {res:0.8477} >= 0.0500}removing {res:ndflrsf}{p_end}
+{p2col :p = {res:0.8714} >= 0.0500}removing {res:halfbath}{p_end}
+{p2col :p = {res:0.8668} >= 0.0500}removing {res:saleCondition_1}{p_end}
+{p2col :p = {res:0.8172} >= 0.0500}removing {res:hood_19}{p_end}
+{p2col :p = {res:0.7516} >= 0.0500}removing {res:saleCondition_5}{p_end}
+{p2col :p = {res:0.6689} >= 0.0500}removing {res:garagearea}{p_end}
+{p2col :p = {res:0.6282} >= 0.0500}removing {res:saleCondition_2}{p_end}
+{p2col :p = {res:0.5761} >= 0.0500}removing {res:hood_14}{p_end}
+{p2col :p = {res:0.5573} >= 0.0500}removing {res:lowqualfinsf}{p_end}
+{p2col :p = {res:0.5016} >= 0.0500}removing {res:miscval}{p_end}
+{p2col :p = {res:0.4709} >= 0.0500}removing {res:enclosedporch}{p_end}
+{p2col :p = {res:0.4535} >= 0.0500}removing {res:openporchsf}{p_end}
+{p2col :p = {res:0.4042} >= 0.0500}removing {res:bsmtfinsf1}{p_end}
+{p2col :p = {res:0.3621} >= 0.0500}removing {res:hood_15}{p_end}
+{p2col :p = {res:0.3139} >= 0.0500}removing {res:ssnporch}{p_end}
+{p2col :p = {res:0.2138} >= 0.0500}removing {res:hood_1}{p_end}
+{p2col :p = {res:0.2061} >= 0.0500}removing {res:hood_12}{p_end}
+{p2col :p = {res:0.2120} >= 0.0500}removing {res:saleCondition_4}{p_end}
+{p2col :p = {res:0.1918} >= 0.0500}removing {res:hood_18}{p_end}
+{p2col :p = {res:0.2221} >= 0.0500}removing {res:hood_20}{p_end}
+{p2col :p = {res:0.2146} >= 0.0500}removing {res:hood_11}{p_end}
+{p2col :p = {res:0.1897} >= 0.0500}removing {res:hood_3}{p_end}
+{p2col :p = {res:0.1856} >= 0.0500}removing {res:hood_10}{p_end}
+{p2col :p = {res:0.1975} >= 0.0500}removing {res:hood_13}{p_end}
+{p2col :p = {res:0.2037} >= 0.0500}removing {res:hood_5}{p_end}
+{p2col :p = {res:0.1624} >= 0.0500}removing {res:mosold}{p_end}
+{p2col :p = {res:0.1390} >= 0.0500}removing {res:hood_9}{p_end}
+{p2col :p = {res:0.2046} >= 0.0500}removing {res:hood_21}{p_end}
+{p2col :p = {res:0.1222} >= 0.0500}removing {res:masvnrarea}{p_end}
+{p2col :p = {res:0.0927} >= 0.0500}removing {res:wooddecksf}{p_end}
+{p2col :p = {res:0.0914} >= 0.0500}removing {res:hood_4}{p_end}
+{p2col :p = {res:0.0800} >= 0.0500}removing {res:bsmthalfbath}{p_end}
+{p2colreset}{...}
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}     1,121
+{txt}{hline 13}{c +}{hline 34}   F(28, 1092)     = {res}   233.04
+{txt}       Model {c |} {res} 6.6094e+12        28  2.3605e+11   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 1.1061e+12     1,092  1.0129e+09   {txt}R-squared       ={res}    0.8566
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.8530
+{txt}       Total {c |} {res} 7.7155e+12     1,120  6.8889e+09   {txt}Root MSE        =   {res}  31827
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      saleprice{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}yearbuilt {c |}{col 17}{res}{space 2} 290.7967{col 29}{space 2}  53.9113{col 40}{space 1}    5.39{col 49}{space 3}0.000{col 57}{space 4} 185.0152{col 70}{space 3} 396.5781
+{txt}{space 8}hasPool {c |}{col 17}{res}{space 2} -1274934{col 29}{space 2} 140956.2{col 40}{space 1}   -9.04{col 49}{space 3}0.000{col 57}{space 4} -1551510{col 70}{space 3}-998358.4
+{txt}{space 4}totalbsmtsf {c |}{col 17}{res}{space 2} 19.37524{col 29}{space 2} 3.813953{col 40}{space 1}    5.08{col 49}{space 3}0.000{col 57}{space 4} 11.89173{col 70}{space 3} 26.85874
+{txt}{space 3}totrmsabvgrd {c |}{col 17}{res}{space 2} 4102.502{col 29}{space 2} 1310.874{col 40}{space 1}    3.13{col 49}{space 3}0.002{col 57}{space 4} 1530.385{col 70}{space 3}  6674.62
+{txt}saleCondition_6 {c |}{col 17}{res}{space 2} 15708.59{col 29}{space 2} 3631.535{col 40}{space 1}    4.33{col 49}{space 3}0.000{col 57}{space 4} 8583.016{col 70}{space 3} 22834.17
+{txt}{space 8}hood_23 {c |}{col 17}{res}{space 2} 72430.97{col 29}{space 2} 7849.272{col 40}{space 1}    9.23{col 49}{space 3}0.000{col 57}{space 4} 57029.61{col 70}{space 3} 87832.33
+{txt}{space 8}hood_16 {c |}{col 17}{res}{space 2} 61840.83{col 29}{space 2} 6495.202{col 40}{space 1}    9.52{col 49}{space 3}0.000{col 57}{space 4} 49096.34{col 70}{space 3} 74585.32
+{txt}{space 4}screenporch {c |}{col 17}{res}{space 2} 58.98122{col 29}{space 2} 17.06028{col 40}{space 1}    3.46{col 49}{space 3}0.001{col 57}{space 4} 25.50659{col 70}{space 3} 92.45585
+{txt}{space 8}hood_22 {c |}{col 17}{res}{space 2} 25051.22{col 29}{space 2} 4666.645{col 40}{space 1}    5.37{col 49}{space 3}0.000{col 57}{space 4} 15894.62{col 70}{space 3} 34207.83
+{txt}{space 5}mssubclass {c |}{col 17}{res}{space 2}-190.2672{col 29}{space 2} 27.75786{col 40}{space 1}   -6.85{col 49}{space 3}0.000{col 57}{space 4} -244.732{col 70}{space 3}-135.8024
+{txt}{space 9}hood_7 {c |}{col 17}{res}{space 2} 26642.94{col 29}{space 2} 5384.705{col 40}{space 1}    4.95{col 49}{space 3}0.000{col 57}{space 4}  16077.4{col 70}{space 3} 37208.48
+{txt}{space 8}lotarea {c |}{col 17}{res}{space 2} .5152436{col 29}{space 2} .1334806{col 40}{space 1}    3.86{col 49}{space 3}0.000{col 57}{space 4} .2533362{col 70}{space 3}  .777151
+{txt}{space 4}overallqual {c |}{col 17}{res}{space 2} 13624.64{col 29}{space 2} 1324.408{col 40}{space 1}   10.29{col 49}{space 3}0.000{col 57}{space 4} 11025.97{col 70}{space 3} 16223.31
+{txt}{space 4}overallcond {c |}{col 17}{res}{space 2} 6306.054{col 29}{space 2} 1036.913{col 40}{space 1}    6.08{col 49}{space 3}0.000{col 57}{space 4} 4271.486{col 70}{space 3} 8340.621
+{txt}{space 7}poolarea {c |}{col 17}{res}{space 2}  2231.16{col 29}{space 2} 253.2084{col 40}{space 1}    8.81{col 49}{space 3}0.000{col 57}{space 4}  1734.33{col 70}{space 3}  2727.99
+{txt}{space 6}bsmtunfsf {c |}{col 17}{res}{space 2}-15.26533{col 29}{space 2} 3.224591{col 40}{space 1}   -4.73{col 49}{space 3}0.000{col 57}{space 4}-21.59242{col 70}{space 3}-8.938232
+{txt}{space 6}_clus_k10 {c |}{col 17}{res}{space 2}-2228.449{col 29}{space 2} 422.3708{col 40}{space 1}   -5.28{col 49}{space 3}0.000{col 57}{space 4}-3057.199{col 70}{space 3}-1399.699
+{txt}{space 8}hood_25 {c |}{col 17}{res}{space 2} 37699.73{col 29}{space 2} 12465.77{col 40}{space 1}    3.02{col 49}{space 3}0.003{col 57}{space 4} 13240.17{col 70}{space 3}  62159.3
+{txt}{space 8}hood_17 {c |}{col 17}{res}{space 2} 57370.99{col 29}{space 2} 4919.187{col 40}{space 1}   11.66{col 49}{space 3}0.000{col 57}{space 4} 47718.86{col 70}{space 3} 67023.12
+{txt}{space 6}grlivarea {c |}{col 17}{res}{space 2} 52.11327{col 29}{space 2} 4.595901{col 40}{space 1}   11.34{col 49}{space 3}0.000{col 57}{space 4} 43.09547{col 70}{space 3} 61.13106
+{txt}{space 3}bsmtfullbath {c |}{col 17}{res}{space 2} 6885.623{col 29}{space 2} 2622.456{col 40}{space 1}    2.63{col 49}{space 3}0.009{col 57}{space 4} 1739.999{col 70}{space 3} 12031.25
+{txt}{space 9}hood_6 {c |}{col 17}{res}{space 2} 9698.879{col 29}{space 2}  3648.99{col 40}{space 1}    2.66{col 49}{space 3}0.008{col 57}{space 4} 2539.055{col 70}{space 3}  16858.7
+{txt}{space 7}fullbath {c |}{col 17}{res}{space 2} 6561.915{col 29}{space 2}   2749.4{col 40}{space 1}    2.39{col 49}{space 3}0.017{col 57}{space 4}  1167.21{col 70}{space 3} 11956.62
+{txt}{space 8}hood_24 {c |}{col 17}{res}{space 2} 18753.95{col 29}{space 2} 6444.263{col 40}{space 1}    2.91{col 49}{space 3}0.004{col 57}{space 4} 6109.409{col 70}{space 3} 31398.49
+{txt}{space 3}kitchenabvgr {c |}{col 17}{res}{space 2}-21662.69{col 29}{space 2} 5527.669{col 40}{space 1}   -3.92{col 49}{space 3}0.000{col 57}{space 4}-32508.75{col 70}{space 3}-10816.64
+{txt}{space 5}fireplaces {c |}{col 17}{res}{space 2} 4350.718{col 29}{space 2} 1892.111{col 40}{space 1}    2.30{col 49}{space 3}0.022{col 57}{space 4} 638.1328{col 70}{space 3} 8063.303
+{txt}{space 3}bedroomabvgr {c |}{col 17}{res}{space 2}-8023.226{col 29}{space 2} 1824.102{col 40}{space 1}   -4.40{col 49}{space 3}0.000{col 57}{space 4}-11602.37{col 70}{space 3}-4444.085
+{txt}{space 5}garagecars {c |}{col 17}{res}{space 2} 13537.55{col 29}{space 2} 2115.496{col 40}{space 1}    6.40{col 49}{space 3}0.000{col 57}{space 4} 9386.657{col 70}{space 3} 17688.45
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2}  -617690{col 29}{space 2} 106111.7{col 40}{space 1}   -5.82{col 49}{space 3}0.000{col 57}{space 4}-825895.8{col 70}{space 3}-409484.2
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. stepwise, pr(.05): regress saleprice yearbuilt yearremodadd totalbsmtsf totrmsabvgrd wooddecksf yrsold ssnporch screenporch id-overallcond masvnrarea bsmtunfsf centralair ndflrsf-halfbath kitchenabvgr fireplaces-garagearea openporchsf enclosedporch poolarea-mosold isNew hood_1 hood_3-saleCondition_2 saleCondition_4 saleCondition_5 saleCondition_6 bsmtfinsf1 bedroomabvgr
+{txt}note: hasGarage dropped because of collinearity
+note: isNew dropped because of collinearity
+{p2colset 0 23 32 2}{...}
+{p2col :}begin with full model{p_end}
+{p2col :p = {res:0.9999} >= 0.0500}removing {res:hood_18}{p_end}
+{p2col :p = {res:0.9933} >= 0.0500}removing {res:halfbath}{p_end}
+{p2col :p = {res:0.9879} >= 0.0500}removing {res:centralair}{p_end}
+{p2col :p = {res:0.8821} >= 0.0500}removing {res:ndflrsf}{p_end}
+{p2col :p = {res:0.8170} >= 0.0500}removing {res:garageyrblt}{p_end}
+{p2col :p = {res:0.8449} >= 0.0500}removing {res:yearremodadd}{p_end}
+{p2col :p = {res:0.8148} >= 0.0500}removing {res:hood_1}{p_end}
+{p2col :p = {res:0.8139} >= 0.0500}removing {res:hood_14}{p_end}
+{p2col :p = {res:0.8345} >= 0.0500}removing {res:hood_12}{p_end}
+{p2col :p = {res:0.7929} >= 0.0500}removing {res:saleCondition_4}{p_end}
+{p2col :p = {res:0.7996} >= 0.0500}removing {res:hasFence}{p_end}
+{p2col :p = {res:0.7742} >= 0.0500}removing {res:lotfrontage}{p_end}
+{p2col :p = {res:0.7686} >= 0.0500}removing {res:openporchsf}{p_end}
+{p2col :p = {res:0.7673} >= 0.0500}removing {res:yrsold}{p_end}
+{p2col :p = {res:0.7403} >= 0.0500}removing {res:id}{p_end}
+{p2col :p = {res:0.6948} >= 0.0500}removing {res:garagearea}{p_end}
+{p2col :p = {res:0.6110} >= 0.0500}removing {res:miscval}{p_end}
+{p2col :p = {res:0.6112} >= 0.0500}removing {res:hood_9}{p_end}
+{p2col :p = {res:0.7072} >= 0.0500}removing {res:hood_13}{p_end}
+{p2col :p = {res:0.6800} >= 0.0500}removing {res:hood_3}{p_end}
+{p2col :p = {res:0.6559} >= 0.0500}removing {res:hood_20}{p_end}
+{p2col :p = {res:0.6080} >= 0.0500}removing {res:hood_21}{p_end}
+{p2col :p = {res:0.5964} >= 0.0500}removing {res:lowqualfinsf}{p_end}
+{p2col :p = {res:0.5570} >= 0.0500}removing {res:hood_5}{p_end}
+{p2col :p = {res:0.5203} >= 0.0500}removing {res:hood_10}{p_end}
+{p2col :p = {res:0.4181} >= 0.0500}removing {res:hood_11}{p_end}
+{p2col :p = {res:0.3963} >= 0.0500}removing {res:saleCondition_1}{p_end}
+{p2col :p = {res:0.4450} >= 0.0500}removing {res:saleCondition_2}{p_end}
+{p2col :p = {res:0.3957} >= 0.0500}removing {res:saleCondition_5}{p_end}
+{p2col :p = {res:0.3883} >= 0.0500}removing {res:enclosedporch}{p_end}
+{p2col :p = {res:0.3504} >= 0.0500}removing {res:bsmtfinsf1}{p_end}
+{p2col :p = {res:0.3556} >= 0.0500}removing {res:hood_19}{p_end}
+{p2col :p = {res:0.2702} >= 0.0500}removing {res:ssnporch}{p_end}
+{p2col :p = {res:0.1014} >= 0.0500}removing {res:wooddecksf}{p_end}
+{p2col :p = {res:0.1060} >= 0.0500}removing {res:hood_4}{p_end}
+{p2col :p = {res:0.0924} >= 0.0500}removing {res:hood_6}{p_end}
+{p2col :p = {res:0.1461} >= 0.0500}removing {res:fireplaces}{p_end}
+{p2col :p = {res:0.0986} >= 0.0500}removing {res:hood_24}{p_end}
+{p2col :p = {res:0.0788} >= 0.0500}removing {res:mosold}{p_end}
+{p2colreset}{...}
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}     1,121
+{txt}{hline 13}{c +}{hline 34}   F(28, 1092)     = {res}   229.88
+{txt}       Model {c |} {res} 6.5964e+12        28  2.3559e+11   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 1.1191e+12     1,092  1.0248e+09   {txt}R-squared       ={res}    0.8550
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.8512
+{txt}       Total {c |} {res} 7.7155e+12     1,120  6.8889e+09   {txt}Root MSE        =   {res}  32013
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      saleprice{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}yearbuilt {c |}{col 17}{res}{space 2} 312.8955{col 29}{space 2} 52.48946{col 40}{space 1}    5.96{col 49}{space 3}0.000{col 57}{space 4} 209.9039{col 70}{space 3} 415.8871
+{txt}{space 8}hood_15 {c |}{col 17}{res}{space 2}-18440.58{col 29}{space 2} 5124.156{col 40}{space 1}   -3.60{col 49}{space 3}0.000{col 57}{space 4}-28494.89{col 70}{space 3} -8386.28
+{txt}{space 4}totalbsmtsf {c |}{col 17}{res}{space 2} 20.34485{col 29}{space 2} 3.900047{col 40}{space 1}    5.22{col 49}{space 3}0.000{col 57}{space 4} 12.69242{col 70}{space 3} 27.99728
+{txt}{space 3}totrmsabvgrd {c |}{col 17}{res}{space 2} 4158.917{col 29}{space 2}  1318.98{col 40}{space 1}    3.15{col 49}{space 3}0.002{col 57}{space 4} 1570.896{col 70}{space 3} 6746.938
+{txt}{space 8}hood_22 {c |}{col 17}{res}{space 2} 15617.74{col 29}{space 2} 4387.846{col 40}{space 1}    3.56{col 49}{space 3}0.000{col 57}{space 4} 7008.175{col 70}{space 3}  24227.3
+{txt}{space 8}hood_17 {c |}{col 17}{res}{space 2} 47473.54{col 29}{space 2} 4763.417{col 40}{space 1}    9.97{col 49}{space 3}0.000{col 57}{space 4} 38127.06{col 70}{space 3} 56820.03
+{txt}{space 8}hood_16 {c |}{col 17}{res}{space 2} 48161.67{col 29}{space 2}  6600.19{col 40}{space 1}    7.30{col 49}{space 3}0.000{col 57}{space 4} 35211.18{col 70}{space 3} 61112.16
+{txt}{space 4}screenporch {c |}{col 17}{res}{space 2} 65.77458{col 29}{space 2} 17.05135{col 40}{space 1}    3.86{col 49}{space 3}0.000{col 57}{space 4} 32.31746{col 70}{space 3} 99.23169
+{txt}{space 3}bedroomabvgr {c |}{col 17}{res}{space 2}-7502.162{col 29}{space 2} 1831.784{col 40}{space 1}   -4.10{col 49}{space 3}0.000{col 57}{space 4}-11096.38{col 70}{space 3}-3907.947
+{txt}{space 5}mssubclass {c |}{col 17}{res}{space 2}-194.8101{col 29}{space 2} 27.62329{col 40}{space 1}   -7.05{col 49}{space 3}0.000{col 57}{space 4}-249.0108{col 70}{space 3}-140.6093
+{txt}{space 9}hood_7 {c |}{col 17}{res}{space 2}  24525.3{col 29}{space 2} 5370.804{col 40}{space 1}    4.57{col 49}{space 3}0.000{col 57}{space 4} 13987.03{col 70}{space 3} 35063.56
+{txt}{space 8}lotarea {c |}{col 17}{res}{space 2} .6456044{col 29}{space 2} .1315179{col 40}{space 1}    4.91{col 49}{space 3}0.000{col 57}{space 4} .3875482{col 70}{space 3} .9036607
+{txt}{space 4}overallqual {c |}{col 17}{res}{space 2} 13688.23{col 29}{space 2} 1310.046{col 40}{space 1}   10.45{col 49}{space 3}0.000{col 57}{space 4} 11117.74{col 70}{space 3} 16258.72
+{txt}{space 4}overallcond {c |}{col 17}{res}{space 2} 6058.385{col 29}{space 2} 1047.966{col 40}{space 1}    5.78{col 49}{space 3}0.000{col 57}{space 4}  4002.13{col 70}{space 3} 8114.639
+{txt}{space 5}masvnrarea {c |}{col 17}{res}{space 2}  13.4736{col 29}{space 2} 6.301671{col 40}{space 1}    2.14{col 49}{space 3}0.033{col 57}{space 4} 1.108847{col 70}{space 3} 25.83835
+{txt}{space 6}bsmtunfsf {c |}{col 17}{res}{space 2}-15.42498{col 29}{space 2} 3.326003{col 40}{space 1}   -4.64{col 49}{space 3}0.000{col 57}{space 4}-21.95106{col 70}{space 3}-8.898899
+{txt}saleCondition_6 {c |}{col 17}{res}{space 2} 16572.06{col 29}{space 2} 3647.653{col 40}{space 1}    4.54{col 49}{space 3}0.000{col 57}{space 4} 9414.859{col 70}{space 3} 23729.26
+{txt}{space 8}hasPool {c |}{col 17}{res}{space 2} -1327159{col 29}{space 2} 142207.1{col 40}{space 1}   -9.33{col 49}{space 3}0.000{col 57}{space 4} -1606189{col 70}{space 3} -1048129
+{txt}{space 9}hood_8 {c |}{col 17}{res}{space 2}-12044.86{col 29}{space 2} 4065.541{col 40}{space 1}   -2.96{col 49}{space 3}0.003{col 57}{space 4}-20022.02{col 70}{space 3}-4067.706
+{txt}{space 6}grlivarea {c |}{col 17}{res}{space 2} 51.12548{col 29}{space 2} 4.575217{col 40}{space 1}   11.17{col 49}{space 3}0.000{col 57}{space 4} 42.14827{col 70}{space 3} 60.10269
+{txt}{space 3}bsmtfullbath {c |}{col 17}{res}{space 2} 7900.699{col 29}{space 2}   2756.8{col 40}{space 1}    2.87{col 49}{space 3}0.004{col 57}{space 4} 2491.474{col 70}{space 3} 13309.92
+{txt}{space 3}bsmthalfbath {c |}{col 17}{res}{space 2} 8713.265{col 29}{space 2} 4386.902{col 40}{space 1}    1.99{col 49}{space 3}0.047{col 57}{space 4} 105.5539{col 70}{space 3} 17320.98
+{txt}{space 7}fullbath {c |}{col 17}{res}{space 2} 7524.053{col 29}{space 2} 2774.088{col 40}{space 1}    2.71{col 49}{space 3}0.007{col 57}{space 4} 2080.908{col 70}{space 3}  12967.2
+{txt}{space 7}poolarea {c |}{col 17}{res}{space 2} 2334.997{col 29}{space 2} 255.6648{col 40}{space 1}    9.13{col 49}{space 3}0.000{col 57}{space 4} 1833.347{col 70}{space 3} 2836.647
+{txt}{space 3}kitchenabvgr {c |}{col 17}{res}{space 2}-23887.82{col 29}{space 2} 5560.529{col 40}{space 1}   -4.30{col 49}{space 3}0.000{col 57}{space 4}-34798.35{col 70}{space 3}-12977.29
+{txt}{space 8}hood_25 {c |}{col 17}{res}{space 2} 31777.48{col 29}{space 2} 12501.79{col 40}{space 1}    2.54{col 49}{space 3}0.011{col 57}{space 4} 7247.229{col 70}{space 3} 56307.73
+{txt}{space 8}hood_23 {c |}{col 17}{res}{space 2} 65472.21{col 29}{space 2} 7736.236{col 40}{space 1}    8.46{col 49}{space 3}0.000{col 57}{space 4} 50292.65{col 70}{space 3} 80651.78
+{txt}{space 5}garagecars {c |}{col 17}{res}{space 2} 12608.19{col 29}{space 2} 2124.316{col 40}{space 1}    5.94{col 49}{space 3}0.000{col 57}{space 4} 8439.985{col 70}{space 3} 16776.39
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2}  -667686{col 29}{space 2} 103428.1{col 40}{space 1}   -6.46{col 49}{space 3}0.000{col 57}{space 4}-870626.3{col 70}{space 3}-464745.7
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. quietly tabulate _clus_k10, generate(k10_)
+
+. stepwise, pr(.05): regress saleprice yearbuilt yearremodadd totalbsmtsf totrmsabvgrd wooddecksf yrsold ssnporch screenporch id-overallcond masvnrarea bsmtunfsf centralair ndflrsf-halfbath kitchenabvgr fireplaces-garagearea openporchsf enclosedporch poolarea-mosold isNew hood_1 hood_3-saleCondition_2 saleCondition_4 saleCondition_5 saleCondition_6 bsmtfinsf1 bedroomabvgr k10_1-k10_10
+{txt}note: hasGarage dropped because of collinearity
+note: isNew dropped because of collinearity
+{err}between-term collinearity, variable k10_4
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice yearbuilt yearremodadd totalbsmtsf totrmsabvgrd wooddecksf yrsold ssnporch screenporch id-overallcond masvnrarea bsmtunfsf centralair ndflrsf-halfbath kitchenabvgr fireplaces-garagearea openporchsf enclosedporch poolarea-mosold isNew hood_1 hood_3-saleCondition_2 saleCondition_4 saleCondition_5 saleCondition_6 bsmtfinsf1 bedroomabvgr k10_2-k10_10
+{txt}note: hasGarage dropped because of collinearity
+note: isNew dropped because of collinearity
+{p2colset 0 23 32 2}{...}
+{p2col :}begin with full model{p_end}
+{p2col :p = {res:0.9853} >= 0.0500}removing {res:saleCondition_2}{p_end}
+{p2col :p = {res:0.9411} >= 0.0500}removing {res:saleCondition_1}{p_end}
+{p2col :p = {res:0.9304} >= 0.0500}removing {res:saleCondition_4}{p_end}
+{p2col :p = {res:0.9200} >= 0.0500}removing {res:wooddecksf}{p_end}
+{p2col :p = {res:0.9240} >= 0.0500}removing {res:screenporch}{p_end}
+{p2col :p = {res:0.9046} >= 0.0500}removing {res:halfbath}{p_end}
+{p2col :p = {res:0.8584} >= 0.0500}removing {res:miscval}{p_end}
+{p2col :p = {res:0.8473} >= 0.0500}removing {res:yearbuilt}{p_end}
+{p2col :p = {res:0.8526} >= 0.0500}removing {res:yearremodadd}{p_end}
+{p2col :p = {res:0.7601} >= 0.0500}removing {res:bedroomabvgr}{p_end}
+{p2col :p = {res:0.7244} >= 0.0500}removing {res:masvnrarea}{p_end}
+{p2col :p = {res:0.7139} >= 0.0500}removing {res:openporchsf}{p_end}
+{p2col :p = {res:0.7053} >= 0.0500}removing {res:ndflrsf}{p_end}
+{p2col :p = {res:0.7070} >= 0.0500}removing {res:kitchenabvgr}{p_end}
+{p2col :p = {res:0.6622} >= 0.0500}removing {res:garagearea}{p_end}
+{p2col :p = {res:0.6321} >= 0.0500}removing {res:hasFence}{p_end}
+{p2col :p = {res:0.4962} >= 0.0500}removing {res:ssnporch}{p_end}
+{p2col :p = {res:0.4878} >= 0.0500}removing {res:saleCondition_5}{p_end}
+{p2col :p = {res:0.4896} >= 0.0500}removing {res:lotfrontage}{p_end}
+{p2col :p = {res:0.4884} >= 0.0500}removing {res:centralair}{p_end}
+{p2col :p = {res:0.4690} >= 0.0500}removing {res:hood_14}{p_end}
+{p2col :p = {res:0.7619} >= 0.0500}removing {res:hood_10}{p_end}
+{p2col :p = {res:0.8070} >= 0.0500}removing {res:hood_19}{p_end}
+{p2col :p = {res:0.3876} >= 0.0500}removing {res:id}{p_end}
+{p2col :p = {res:0.3777} >= 0.0500}removing {res:hood_18}{p_end}
+{p2col :p = {res:0.4933} >= 0.0500}removing {res:hood_15}{p_end}
+{p2col :p = {res:0.5051} >= 0.0500}removing {res:hood_11}{p_end}
+{p2col :p = {res:0.5506} >= 0.0500}removing {res:hood_8}{p_end}
+{p2col :p = {res:0.6080} >= 0.0500}removing {res:hood_4}{p_end}
+{p2col :p = {res:0.5686} >= 0.0500}removing {res:hood_9}{p_end}
+{p2col :p = {res:0.5603} >= 0.0500}removing {res:hood_1}{p_end}
+{p2col :p = {res:0.5380} >= 0.0500}removing {res:hood_3}{p_end}
+{p2col :p = {res:0.4994} >= 0.0500}removing {res:hood_22}{p_end}
+{p2col :p = {res:0.4852} >= 0.0500}removing {res:hood_24}{p_end}
+{p2col :p = {res:0.3899} >= 0.0500}removing {res:hood_23}{p_end}
+{p2col :p = {res:0.3824} >= 0.0500}removing {res:hood_25}{p_end}
+{p2col :p = {res:0.3246} >= 0.0500}removing {res:hood_20}{p_end}
+{p2col :p = {res:0.3314} >= 0.0500}removing {res:hood_21}{p_end}
+{p2col :p = {res:0.2600} >= 0.0500}removing {res:bsmtunfsf}{p_end}
+{p2col :p = {res:0.3838} >= 0.0500}removing {res:totalbsmtsf}{p_end}
+{p2col :p = {res:0.3168} >= 0.0500}removing {res:bsmtfinsf1}{p_end}
+{p2col :p = {res:0.2542} >= 0.0500}removing {res:lowqualfinsf}{p_end}
+{p2col :p = {res:0.2178} >= 0.0500}removing {res:mosold}{p_end}
+{p2col :p = {res:0.0971} >= 0.0500}removing {res:mssubclass}{p_end}
+{p2col :p = {res:0.1412} >= 0.0500}removing {res:fullbath}{p_end}
+{p2col :p = {res:0.0905} >= 0.0500}removing {res:lotarea}{p_end}
+{p2col :p = {res:0.0903} >= 0.0500}removing {res:enclosedporch}{p_end}
+{p2col :p = {res:0.0872} >= 0.0500}removing {res:yrsold}{p_end}
+{p2col :p = {res:0.0628} >= 0.0500}removing {res:hood_5}{p_end}
+{p2col :p = {res:0.0583} >= 0.0500}removing {res:hood_12}{p_end}
+{p2colreset}{...}
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}     1,121
+{txt}{hline 13}{c +}{hline 34}   F(26, 1094)     = {res}  2005.16
+{txt}       Model {c |} {res} 7.5569e+12        26  2.9065e+11   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 1.5858e+11     1,094   144952257   {txt}R-squared       ={res}    0.9794
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.9790
+{txt}       Total {c |} {res} 7.7155e+12     1,120  6.8889e+09   {txt}Root MSE        =   {res}  12040
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      saleprice{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}k10_3 {c |}{col 17}{res}{space 2}-200061.7{col 29}{space 2}  4854.69{col 40}{space 1}  -41.21{col 49}{space 3}0.000{col 57}{space 4}-209587.2{col 70}{space 3}-190536.1
+{txt}{space 10}k10_2 {c |}{col 17}{res}{space 2}-441044.4{col 29}{space 2} 5377.606{col 40}{space 1}  -82.02{col 49}{space 3}0.000{col 57}{space 4}  -451596{col 70}{space 3}-430492.8
+{txt}{space 8}hood_16 {c |}{col 17}{res}{space 2} 10846.27{col 29}{space 2} 2465.857{col 40}{space 1}    4.40{col 49}{space 3}0.000{col 57}{space 4} 6007.926{col 70}{space 3} 15684.62
+{txt}{space 3}totrmsabvgrd {c |}{col 17}{res}{space 2}-1129.726{col 29}{space 2} 420.5426{col 40}{space 1}   -2.69{col 49}{space 3}0.007{col 57}{space 4}-1954.887{col 70}{space 3}-304.5648
+{txt}{space 10}k10_7 {c |}{col 17}{res}{space 2}-399568.1{col 29}{space 2} 5012.678{col 40}{space 1}  -79.71{col 49}{space 3}0.000{col 57}{space 4}-409403.7{col 70}{space 3}-389732.6
+{txt}{space 9}k10_10 {c |}{col 17}{res}{space 2}-276078.7{col 29}{space 2} 4733.557{col 40}{space 1}  -58.32{col 49}{space 3}0.000{col 57}{space 4}-285366.6{col 70}{space 3}-266790.8
+{txt}{space 9}hood_6 {c |}{col 17}{res}{space 2} 4531.524{col 29}{space 2} 1286.052{col 40}{space 1}    3.52{col 49}{space 3}0.000{col 57}{space 4} 2008.117{col 70}{space 3} 7054.931
+{txt}{space 10}k10_6 {c |}{col 17}{res}{space 2}  -364647{col 29}{space 2} 4920.584{col 40}{space 1}  -74.11{col 49}{space 3}0.000{col 57}{space 4}-374301.8{col 70}{space 3}-354992.1
+{txt}{space 8}hood_17 {c |}{col 17}{res}{space 2} 3712.517{col 29}{space 2} 1732.994{col 40}{space 1}    2.14{col 49}{space 3}0.032{col 57}{space 4} 312.1487{col 70}{space 3} 7112.885
+{txt}{space 8}hasPool {c |}{col 17}{res}{space 2}-203342.7{col 29}{space 2} 53119.94{col 40}{space 1}   -3.83{col 49}{space 3}0.000{col 57}{space 4}-307571.2{col 70}{space 3}-99114.21
+{txt}{space 9}hood_7 {c |}{col 17}{res}{space 2} 4636.307{col 29}{space 2} 2083.879{col 40}{space 1}    2.22{col 49}{space 3}0.026{col 57}{space 4} 547.4551{col 70}{space 3} 8725.159
+{txt}saleCondition_6 {c |}{col 17}{res}{space 2} 3885.498{col 29}{space 2} 1360.562{col 40}{space 1}    2.86{col 49}{space 3}0.004{col 57}{space 4} 1215.893{col 70}{space 3} 6555.104
+{txt}{space 4}overallqual {c |}{col 17}{res}{space 2} 2824.262{col 29}{space 2} 494.6222{col 40}{space 1}    5.71{col 49}{space 3}0.000{col 57}{space 4} 1853.746{col 70}{space 3} 3794.777
+{txt}{space 4}overallcond {c |}{col 17}{res}{space 2} 1573.383{col 29}{space 2} 385.9749{col 40}{space 1}    4.08{col 49}{space 3}0.000{col 57}{space 4} 816.0484{col 70}{space 3} 2330.718
+{txt}{space 10}k10_9 {c |}{col 17}{res}{space 2}-327351.1{col 29}{space 2}  4767.08{col 40}{space 1}  -68.67{col 49}{space 3}0.000{col 57}{space 4}-336704.8{col 70}{space 3}-317997.5
+{txt}{space 5}garagecars {c |}{col 17}{res}{space 2} 2205.289{col 29}{space 2} 832.7445{col 40}{space 1}    2.65{col 49}{space 3}0.008{col 57}{space 4} 571.3323{col 70}{space 3} 3839.246
+{txt}{space 4}garageyrblt {c |}{col 17}{res}{space 2} 54.05646{col 29}{space 2} 22.59963{col 40}{space 1}    2.39{col 49}{space 3}0.017{col 57}{space 4} 9.712951{col 70}{space 3} 98.39998
+{txt}{space 8}hood_13 {c |}{col 17}{res}{space 2} 3653.892{col 29}{space 2}  1073.66{col 40}{space 1}    3.40{col 49}{space 3}0.001{col 57}{space 4} 1547.227{col 70}{space 3} 5760.557
+{txt}{space 10}k10_4 {c |}{col 17}{res}{space 2}-485083.6{col 29}{space 2} 5928.088{col 40}{space 1}  -81.83{col 49}{space 3}0.000{col 57}{space 4}-496715.3{col 70}{space 3}-473451.9
+{txt}{space 6}grlivarea {c |}{col 17}{res}{space 2} 12.98763{col 29}{space 2} 1.635086{col 40}{space 1}    7.94{col 49}{space 3}0.000{col 57}{space 4} 9.779369{col 70}{space 3} 16.19589
+{txt}{space 3}bsmtfullbath {c |}{col 17}{res}{space 2} 1821.395{col 29}{space 2} 782.7219{col 40}{space 1}    2.33{col 49}{space 3}0.020{col 57}{space 4} 285.5894{col 70}{space 3} 3357.201
+{txt}{space 3}bsmthalfbath {c |}{col 17}{res}{space 2} 3937.789{col 29}{space 2} 1599.397{col 40}{space 1}    2.46{col 49}{space 3}0.014{col 57}{space 4} 799.5572{col 70}{space 3} 7076.021
+{txt}{space 7}poolarea {c |}{col 17}{res}{space 2} 377.3241{col 29}{space 2} 95.52603{col 40}{space 1}    3.95{col 49}{space 3}0.000{col 57}{space 4} 189.8892{col 70}{space 3}  564.759
+{txt}{space 10}k10_5 {c |}{col 17}{res}{space 2}-422958.8{col 29}{space 2} 5196.567{col 40}{space 1}  -81.39{col 49}{space 3}0.000{col 57}{space 4}-433155.1{col 70}{space 3}-412762.4
+{txt}{space 10}k10_8 {c |}{col 17}{res}{space 2}-460006.7{col 29}{space 2} 5573.348{col 40}{space 1}  -82.54{col 49}{space 3}0.000{col 57}{space 4}-470942.4{col 70}{space 3}-449071.1
+{txt}{space 5}fireplaces {c |}{col 17}{res}{space 2} 2079.173{col 29}{space 2} 710.5274{col 40}{space 1}    2.93{col 49}{space 3}0.004{col 57}{space 4} 685.0227{col 70}{space 3} 3473.324
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} 429007.9{col 29}{space 2} 45923.92{col 40}{space 1}    9.34{col 49}{space 3}0.000{col 57}{space 4}   338899{col 70}{space 3} 519116.8
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. stepwise, pr(.01): regress saleprice yearbuilt yearremodadd totalbsmtsf totrmsabvgrd wooddecksf yrsold ssnporch screenporch id-overallcond masvnrarea bsmtunfsf centralair ndflrsf-halfbath kitchenabvgr fireplaces-garagearea openporchsf enclosedporch poolarea-mosold isNew hood_1 hood_3-saleCondition_2 saleCondition_4 saleCondition_5 saleCondition_6 bsmtfinsf1 bedroomabvgr k10_1-k10_10
+{txt}note: hasGarage dropped because of collinearity
+note: isNew dropped because of collinearity
+{err}between-term collinearity, variable k10_4
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.01): regress saleprice yearbuilt yearremodadd totalbsmtsf totrmsabvgrd wooddecksf yrsold ssnporch screenporch id-overallcond masvnrarea bsmtunfsf centralair ndflrsf-halfbath kitchenabvgr fireplaces-garagearea openporchsf enclosedporch poolarea-mosold isNew hood_1 hood_3-saleCondition_2 saleCondition_4 saleCondition_5 saleCondition_6 bsmtfinsf1 bedroomabvgr k10_2-k10_10
+{txt}note: hasGarage dropped because of collinearity
+note: isNew dropped because of collinearity
+{p2colset 0 23 32 2}{...}
+{p2col :}begin with full model{p_end}
+{p2col :p = {res:0.9853} >= 0.0100}removing {res:saleCondition_2}{p_end}
+{p2col :p = {res:0.9411} >= 0.0100}removing {res:saleCondition_1}{p_end}
+{p2col :p = {res:0.9304} >= 0.0100}removing {res:saleCondition_4}{p_end}
+{p2col :p = {res:0.9200} >= 0.0100}removing {res:wooddecksf}{p_end}
+{p2col :p = {res:0.9240} >= 0.0100}removing {res:screenporch}{p_end}
+{p2col :p = {res:0.9046} >= 0.0100}removing {res:halfbath}{p_end}
+{p2col :p = {res:0.8584} >= 0.0100}removing {res:miscval}{p_end}
+{p2col :p = {res:0.8473} >= 0.0100}removing {res:yearbuilt}{p_end}
+{p2col :p = {res:0.8526} >= 0.0100}removing {res:yearremodadd}{p_end}
+{p2col :p = {res:0.7601} >= 0.0100}removing {res:bedroomabvgr}{p_end}
+{p2col :p = {res:0.7244} >= 0.0100}removing {res:masvnrarea}{p_end}
+{p2col :p = {res:0.7139} >= 0.0100}removing {res:openporchsf}{p_end}
+{p2col :p = {res:0.7053} >= 0.0100}removing {res:ndflrsf}{p_end}
+{p2col :p = {res:0.7070} >= 0.0100}removing {res:kitchenabvgr}{p_end}
+{p2col :p = {res:0.6622} >= 0.0100}removing {res:garagearea}{p_end}
+{p2col :p = {res:0.6321} >= 0.0100}removing {res:hasFence}{p_end}
+{p2col :p = {res:0.4962} >= 0.0100}removing {res:ssnporch}{p_end}
+{p2col :p = {res:0.4878} >= 0.0100}removing {res:saleCondition_5}{p_end}
+{p2col :p = {res:0.4896} >= 0.0100}removing {res:lotfrontage}{p_end}
+{p2col :p = {res:0.4884} >= 0.0100}removing {res:centralair}{p_end}
+{p2col :p = {res:0.4690} >= 0.0100}removing {res:hood_14}{p_end}
+{p2col :p = {res:0.7619} >= 0.0100}removing {res:hood_10}{p_end}
+{p2col :p = {res:0.8070} >= 0.0100}removing {res:hood_19}{p_end}
+{p2col :p = {res:0.3876} >= 0.0100}removing {res:id}{p_end}
+{p2col :p = {res:0.3777} >= 0.0100}removing {res:hood_18}{p_end}
+{p2col :p = {res:0.4933} >= 0.0100}removing {res:hood_15}{p_end}
+{p2col :p = {res:0.5051} >= 0.0100}removing {res:hood_11}{p_end}
+{p2col :p = {res:0.5506} >= 0.0100}removing {res:hood_8}{p_end}
+{p2col :p = {res:0.6080} >= 0.0100}removing {res:hood_4}{p_end}
+{p2col :p = {res:0.5686} >= 0.0100}removing {res:hood_9}{p_end}
+{p2col :p = {res:0.5603} >= 0.0100}removing {res:hood_1}{p_end}
+{p2col :p = {res:0.5380} >= 0.0100}removing {res:hood_3}{p_end}
+{p2col :p = {res:0.4994} >= 0.0100}removing {res:hood_22}{p_end}
+{p2col :p = {res:0.4852} >= 0.0100}removing {res:hood_24}{p_end}
+{p2col :p = {res:0.3899} >= 0.0100}removing {res:hood_23}{p_end}
+{p2col :p = {res:0.3824} >= 0.0100}removing {res:hood_25}{p_end}
+{p2col :p = {res:0.3246} >= 0.0100}removing {res:hood_20}{p_end}
+{p2col :p = {res:0.3314} >= 0.0100}removing {res:hood_21}{p_end}
+{p2col :p = {res:0.2600} >= 0.0100}removing {res:bsmtunfsf}{p_end}
+{p2col :p = {res:0.3838} >= 0.0100}removing {res:totalbsmtsf}{p_end}
+{p2col :p = {res:0.3168} >= 0.0100}removing {res:bsmtfinsf1}{p_end}
+{p2col :p = {res:0.2542} >= 0.0100}removing {res:lowqualfinsf}{p_end}
+{p2col :p = {res:0.2178} >= 0.0100}removing {res:mosold}{p_end}
+{p2col :p = {res:0.0971} >= 0.0100}removing {res:mssubclass}{p_end}
+{p2col :p = {res:0.1412} >= 0.0100}removing {res:fullbath}{p_end}
+{p2col :p = {res:0.0905} >= 0.0100}removing {res:lotarea}{p_end}
+{p2col :p = {res:0.0903} >= 0.0100}removing {res:enclosedporch}{p_end}
+{p2col :p = {res:0.0872} >= 0.0100}removing {res:yrsold}{p_end}
+{p2col :p = {res:0.0628} >= 0.0100}removing {res:hood_5}{p_end}
+{p2col :p = {res:0.0583} >= 0.0100}removing {res:hood_12}{p_end}
+{p2col :p = {res:0.0324} >= 0.0100}removing {res:hood_17}{p_end}
+{p2col :p = {res:0.0345} >= 0.0100}removing {res:hood_7}{p_end}
+{p2col :p = {res:0.0386} >= 0.0100}removing {res:garageyrblt}{p_end}
+{p2col :p = {res:0.0304} >= 0.0100}removing {res:bsmtfullbath}{p_end}
+{p2col :p = {res:0.0375} >= 0.0100}removing {res:bsmthalfbath}{p_end}
+{p2colreset}{...}
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}     1,121
+{txt}{hline 13}{c +}{hline 34}   F(21, 1099)     = {res}  2442.51
+{txt}       Model {c |} {res} 7.5537e+12        21  3.5970e+11   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 1.6185e+11     1,099   147266132   {txt}R-squared       ={res}    0.9790
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.9786
+{txt}       Total {c |} {res} 7.7155e+12     1,120  6.8889e+09   {txt}Root MSE        =   {res}  12135
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      saleprice{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}k10_3 {c |}{col 17}{res}{space 2}-200923.6{col 29}{space 2} 4884.503{col 40}{space 1}  -41.13{col 49}{space 3}0.000{col 57}{space 4}-210507.6{col 70}{space 3}-191339.6
+{txt}{space 10}k10_2 {c |}{col 17}{res}{space 2}-446277.9{col 29}{space 2} 5274.704{col 40}{space 1}  -84.61{col 49}{space 3}0.000{col 57}{space 4}-456627.5{col 70}{space 3}-435928.3
+{txt}{space 8}hood_16 {c |}{col 17}{res}{space 2} 9875.689{col 29}{space 2} 2431.639{col 40}{space 1}    4.06{col 49}{space 3}0.000{col 57}{space 4}  5104.51{col 70}{space 3} 14646.87
+{txt}{space 3}totrmsabvgrd {c |}{col 17}{res}{space 2}-1226.067{col 29}{space 2}  420.767{col 40}{space 1}   -2.91{col 49}{space 3}0.004{col 57}{space 4}-2051.665{col 70}{space 3}-400.4696
+{txt}{space 10}k10_7 {c |}{col 17}{res}{space 2}-403539.4{col 29}{space 2} 4944.677{col 40}{space 1}  -81.61{col 49}{space 3}0.000{col 57}{space 4}-413241.4{col 70}{space 3}-393837.3
+{txt}{space 9}k10_10 {c |}{col 17}{res}{space 2}-277578.6{col 29}{space 2} 4757.117{col 40}{space 1}  -58.35{col 49}{space 3}0.000{col 57}{space 4}-286912.7{col 70}{space 3}-268244.5
+{txt}{space 9}hood_6 {c |}{col 17}{res}{space 2} 4467.799{col 29}{space 2} 1266.905{col 40}{space 1}    3.53{col 49}{space 3}0.000{col 57}{space 4} 1981.972{col 70}{space 3} 6953.625
+{txt}{space 10}k10_6 {c |}{col 17}{res}{space 2}-368208.2{col 29}{space 2} 4875.491{col 40}{space 1}  -75.52{col 49}{space 3}0.000{col 57}{space 4}-377774.5{col 70}{space 3}-358641.9
+{txt}{space 5}fireplaces {c |}{col 17}{res}{space 2} 2077.468{col 29}{space 2} 697.8275{col 40}{space 1}    2.98{col 49}{space 3}0.003{col 57}{space 4} 708.2434{col 70}{space 3} 3446.693
+{txt}{space 8}hasPool {c |}{col 17}{res}{space 2}-179464.8{col 29}{space 2} 53145.42{col 40}{space 1}   -3.38{col 49}{space 3}0.001{col 57}{space 4}-283742.8{col 70}{space 3} -75186.9
+{txt}{space 10}k10_8 {c |}{col 17}{res}{space 2}-466198.4{col 29}{space 2} 5426.367{col 40}{space 1}  -85.91{col 49}{space 3}0.000{col 57}{space 4}-476845.6{col 70}{space 3}-455551.2
+{txt}saleCondition_6 {c |}{col 17}{res}{space 2} 3981.558{col 29}{space 2} 1345.795{col 40}{space 1}    2.96{col 49}{space 3}0.003{col 57}{space 4}  1340.94{col 70}{space 3} 6622.176
+{txt}{space 4}overallqual {c |}{col 17}{res}{space 2} 2942.654{col 29}{space 2} 483.1654{col 40}{space 1}    6.09{col 49}{space 3}0.000{col 57}{space 4} 1994.623{col 70}{space 3} 3890.685
+{txt}{space 4}overallcond {c |}{col 17}{res}{space 2} 1407.121{col 29}{space 2} 370.7606{col 40}{space 1}    3.80{col 49}{space 3}0.000{col 57}{space 4}  679.642{col 70}{space 3} 2134.599
+{txt}{space 10}k10_9 {c |}{col 17}{res}{space 2}-329977.3{col 29}{space 2}  4757.66{col 40}{space 1}  -69.36{col 49}{space 3}0.000{col 57}{space 4}-339312.4{col 70}{space 3}-320642.1
+{txt}{space 5}garagecars {c |}{col 17}{res}{space 2} 2725.632{col 29}{space 2} 793.5521{col 40}{space 1}    3.43{col 49}{space 3}0.001{col 57}{space 4} 1168.584{col 70}{space 3} 4282.681
+{txt}{space 10}k10_5 {c |}{col 17}{res}{space 2}-427616.2{col 29}{space 2} 5110.341{col 40}{space 1}  -83.68{col 49}{space 3}0.000{col 57}{space 4}-437643.3{col 70}{space 3}-417589.1
+{txt}{space 8}hood_13 {c |}{col 17}{res}{space 2} 3452.547{col 29}{space 2}  1064.51{col 40}{space 1}    3.24{col 49}{space 3}0.001{col 57}{space 4} 1363.847{col 70}{space 3} 5541.248
+{txt}{space 10}k10_4 {c |}{col 17}{res}{space 2}-492071.2{col 29}{space 2} 5734.627{col 40}{space 1}  -85.81{col 49}{space 3}0.000{col 57}{space 4}-503323.2{col 70}{space 3}-480819.1
+{txt}{space 6}grlivarea {c |}{col 17}{res}{space 2} 11.84953{col 29}{space 2} 1.619023{col 40}{space 1}    7.32{col 49}{space 3}0.000{col 57}{space 4} 8.672806{col 70}{space 3} 15.02626
+{txt}{space 7}poolarea {c |}{col 17}{res}{space 2} 337.2249{col 29}{space 2} 95.71126{col 40}{space 1}    3.52{col 49}{space 3}0.000{col 57}{space 4} 149.4275{col 70}{space 3} 525.0223
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} 543337.2{col 29}{space 2} 7707.319{col 40}{space 1}   70.50{col 49}{space 3}0.000{col 57}{space 4} 528214.5{col 70}{space 3} 558459.9
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. stepwise, pr(.05): regress saleprice yearbuilt yearremodadd totalbsmtsf totrmsabvgrd wooddecksf yrsold ssnporch screenporch id-overallcond masvnrarea bsmtunfsf centralair ndflrsf-halfbath kitchenabvgr fireplaces-garagearea openporchsf enclosedporch poolarea-mosold isNew hood_1 hood_3-saleCondition_2 saleCondition_4 saleCondition_5 saleCondition_6 bsmtfinsf1 bedroomabvgr k10_2-k10_10
+{txt}note: hasGarage dropped because of collinearity
+note: isNew dropped because of collinearity
+{p2colset 0 23 32 2}{...}
+{p2col :}begin with full model{p_end}
+{p2col :p = {res:0.9853} >= 0.0500}removing {res:saleCondition_2}{p_end}
+{p2col :p = {res:0.9411} >= 0.0500}removing {res:saleCondition_1}{p_end}
+{p2col :p = {res:0.9304} >= 0.0500}removing {res:saleCondition_4}{p_end}
+{p2col :p = {res:0.9200} >= 0.0500}removing {res:wooddecksf}{p_end}
+{p2col :p = {res:0.9240} >= 0.0500}removing {res:screenporch}{p_end}
+{p2col :p = {res:0.9046} >= 0.0500}removing {res:halfbath}{p_end}
+{p2col :p = {res:0.8584} >= 0.0500}removing {res:miscval}{p_end}
+{p2col :p = {res:0.8473} >= 0.0500}removing {res:yearbuilt}{p_end}
+{p2col :p = {res:0.8526} >= 0.0500}removing {res:yearremodadd}{p_end}
+{p2col :p = {res:0.7601} >= 0.0500}removing {res:bedroomabvgr}{p_end}
+{p2col :p = {res:0.7244} >= 0.0500}removing {res:masvnrarea}{p_end}
+{p2col :p = {res:0.7139} >= 0.0500}removing {res:openporchsf}{p_end}
+{p2col :p = {res:0.7053} >= 0.0500}removing {res:ndflrsf}{p_end}
+{p2col :p = {res:0.7070} >= 0.0500}removing {res:kitchenabvgr}{p_end}
+{p2col :p = {res:0.6622} >= 0.0500}removing {res:garagearea}{p_end}
+{p2col :p = {res:0.6321} >= 0.0500}removing {res:hasFence}{p_end}
+{p2col :p = {res:0.4962} >= 0.0500}removing {res:ssnporch}{p_end}
+{p2col :p = {res:0.4878} >= 0.0500}removing {res:saleCondition_5}{p_end}
+{p2col :p = {res:0.4896} >= 0.0500}removing {res:lotfrontage}{p_end}
+{p2col :p = {res:0.4884} >= 0.0500}removing {res:centralair}{p_end}
+{p2col :p = {res:0.4690} >= 0.0500}removing {res:hood_14}{p_end}
+{p2col :p = {res:0.7619} >= 0.0500}removing {res:hood_10}{p_end}
+{p2col :p = {res:0.8070} >= 0.0500}removing {res:hood_19}{p_end}
+{p2col :p = {res:0.3876} >= 0.0500}removing {res:id}{p_end}
+{p2col :p = {res:0.3777} >= 0.0500}removing {res:hood_18}{p_end}
+{p2col :p = {res:0.4933} >= 0.0500}removing {res:hood_15}{p_end}
+{p2col :p = {res:0.5051} >= 0.0500}removing {res:hood_11}{p_end}
+{p2col :p = {res:0.5506} >= 0.0500}removing {res:hood_8}{p_end}
+{p2col :p = {res:0.6080} >= 0.0500}removing {res:hood_4}{p_end}
+{p2col :p = {res:0.5686} >= 0.0500}removing {res:hood_9}{p_end}
+{p2col :p = {res:0.5603} >= 0.0500}removing {res:hood_1}{p_end}
+{p2col :p = {res:0.5380} >= 0.0500}removing {res:hood_3}{p_end}
+{p2col :p = {res:0.4994} >= 0.0500}removing {res:hood_22}{p_end}
+{p2col :p = {res:0.4852} >= 0.0500}removing {res:hood_24}{p_end}
+{p2col :p = {res:0.3899} >= 0.0500}removing {res:hood_23}{p_end}
+{p2col :p = {res:0.3824} >= 0.0500}removing {res:hood_25}{p_end}
+{p2col :p = {res:0.3246} >= 0.0500}removing {res:hood_20}{p_end}
+{p2col :p = {res:0.3314} >= 0.0500}removing {res:hood_21}{p_end}
+{p2col :p = {res:0.2600} >= 0.0500}removing {res:bsmtunfsf}{p_end}
+{p2col :p = {res:0.3838} >= 0.0500}removing {res:totalbsmtsf}{p_end}
+{p2col :p = {res:0.3168} >= 0.0500}removing {res:bsmtfinsf1}{p_end}
+{p2col :p = {res:0.2542} >= 0.0500}removing {res:lowqualfinsf}{p_end}
+{p2col :p = {res:0.2178} >= 0.0500}removing {res:mosold}{p_end}
+{p2col :p = {res:0.0971} >= 0.0500}removing {res:mssubclass}{p_end}
+{p2col :p = {res:0.1412} >= 0.0500}removing {res:fullbath}{p_end}
+{p2col :p = {res:0.0905} >= 0.0500}removing {res:lotarea}{p_end}
+{p2col :p = {res:0.0903} >= 0.0500}removing {res:enclosedporch}{p_end}
+{p2col :p = {res:0.0872} >= 0.0500}removing {res:yrsold}{p_end}
+{p2col :p = {res:0.0628} >= 0.0500}removing {res:hood_5}{p_end}
+{p2col :p = {res:0.0583} >= 0.0500}removing {res:hood_12}{p_end}
+{p2colreset}{...}
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}     1,121
+{txt}{hline 13}{c +}{hline 34}   F(26, 1094)     = {res}  2005.16
+{txt}       Model {c |} {res} 7.5569e+12        26  2.9065e+11   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 1.5858e+11     1,094   144952257   {txt}R-squared       ={res}    0.9794
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.9790
+{txt}       Total {c |} {res} 7.7155e+12     1,120  6.8889e+09   {txt}Root MSE        =   {res}  12040
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}      saleprice{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}k10_3 {c |}{col 17}{res}{space 2}-200061.7{col 29}{space 2}  4854.69{col 40}{space 1}  -41.21{col 49}{space 3}0.000{col 57}{space 4}-209587.2{col 70}{space 3}-190536.1
+{txt}{space 10}k10_2 {c |}{col 17}{res}{space 2}-441044.4{col 29}{space 2} 5377.606{col 40}{space 1}  -82.02{col 49}{space 3}0.000{col 57}{space 4}  -451596{col 70}{space 3}-430492.8
+{txt}{space 8}hood_16 {c |}{col 17}{res}{space 2} 10846.27{col 29}{space 2} 2465.857{col 40}{space 1}    4.40{col 49}{space 3}0.000{col 57}{space 4} 6007.926{col 70}{space 3} 15684.62
+{txt}{space 3}totrmsabvgrd {c |}{col 17}{res}{space 2}-1129.726{col 29}{space 2} 420.5426{col 40}{space 1}   -2.69{col 49}{space 3}0.007{col 57}{space 4}-1954.887{col 70}{space 3}-304.5648
+{txt}{space 10}k10_7 {c |}{col 17}{res}{space 2}-399568.1{col 29}{space 2} 5012.678{col 40}{space 1}  -79.71{col 49}{space 3}0.000{col 57}{space 4}-409403.7{col 70}{space 3}-389732.6
+{txt}{space 9}k10_10 {c |}{col 17}{res}{space 2}-276078.7{col 29}{space 2} 4733.557{col 40}{space 1}  -58.32{col 49}{space 3}0.000{col 57}{space 4}-285366.6{col 70}{space 3}-266790.8
+{txt}{space 9}hood_6 {c |}{col 17}{res}{space 2} 4531.524{col 29}{space 2} 1286.052{col 40}{space 1}    3.52{col 49}{space 3}0.000{col 57}{space 4} 2008.117{col 70}{space 3} 7054.931
+{txt}{space 10}k10_6 {c |}{col 17}{res}{space 2}  -364647{col 29}{space 2} 4920.584{col 40}{space 1}  -74.11{col 49}{space 3}0.000{col 57}{space 4}-374301.8{col 70}{space 3}-354992.1
+{txt}{space 8}hood_17 {c |}{col 17}{res}{space 2} 3712.517{col 29}{space 2} 1732.994{col 40}{space 1}    2.14{col 49}{space 3}0.032{col 57}{space 4} 312.1487{col 70}{space 3} 7112.885
+{txt}{space 8}hasPool {c |}{col 17}{res}{space 2}-203342.7{col 29}{space 2} 53119.94{col 40}{space 1}   -3.83{col 49}{space 3}0.000{col 57}{space 4}-307571.2{col 70}{space 3}-99114.21
+{txt}{space 9}hood_7 {c |}{col 17}{res}{space 2} 4636.307{col 29}{space 2} 2083.879{col 40}{space 1}    2.22{col 49}{space 3}0.026{col 57}{space 4} 547.4551{col 70}{space 3} 8725.159
+{txt}saleCondition_6 {c |}{col 17}{res}{space 2} 3885.498{col 29}{space 2} 1360.562{col 40}{space 1}    2.86{col 49}{space 3}0.004{col 57}{space 4} 1215.893{col 70}{space 3} 6555.104
+{txt}{space 4}overallqual {c |}{col 17}{res}{space 2} 2824.262{col 29}{space 2} 494.6222{col 40}{space 1}    5.71{col 49}{space 3}0.000{col 57}{space 4} 1853.746{col 70}{space 3} 3794.777
+{txt}{space 4}overallcond {c |}{col 17}{res}{space 2} 1573.383{col 29}{space 2} 385.9749{col 40}{space 1}    4.08{col 49}{space 3}0.000{col 57}{space 4} 816.0484{col 70}{space 3} 2330.718
+{txt}{space 10}k10_9 {c |}{col 17}{res}{space 2}-327351.1{col 29}{space 2}  4767.08{col 40}{space 1}  -68.67{col 49}{space 3}0.000{col 57}{space 4}-336704.8{col 70}{space 3}-317997.5
+{txt}{space 5}garagecars {c |}{col 17}{res}{space 2} 2205.289{col 29}{space 2} 832.7445{col 40}{space 1}    2.65{col 49}{space 3}0.008{col 57}{space 4} 571.3323{col 70}{space 3} 3839.246
+{txt}{space 4}garageyrblt {c |}{col 17}{res}{space 2} 54.05646{col 29}{space 2} 22.59963{col 40}{space 1}    2.39{col 49}{space 3}0.017{col 57}{space 4} 9.712951{col 70}{space 3} 98.39998
+{txt}{space 8}hood_13 {c |}{col 17}{res}{space 2} 3653.892{col 29}{space 2}  1073.66{col 40}{space 1}    3.40{col 49}{space 3}0.001{col 57}{space 4} 1547.227{col 70}{space 3} 5760.557
+{txt}{space 10}k10_4 {c |}{col 17}{res}{space 2}-485083.6{col 29}{space 2} 5928.088{col 40}{space 1}  -81.83{col 49}{space 3}0.000{col 57}{space 4}-496715.3{col 70}{space 3}-473451.9
+{txt}{space 6}grlivarea {c |}{col 17}{res}{space 2} 12.98763{col 29}{space 2} 1.635086{col 40}{space 1}    7.94{col 49}{space 3}0.000{col 57}{space 4} 9.779369{col 70}{space 3} 16.19589
+{txt}{space 3}bsmtfullbath {c |}{col 17}{res}{space 2} 1821.395{col 29}{space 2} 782.7219{col 40}{space 1}    2.33{col 49}{space 3}0.020{col 57}{space 4} 285.5894{col 70}{space 3} 3357.201
+{txt}{space 3}bsmthalfbath {c |}{col 17}{res}{space 2} 3937.789{col 29}{space 2} 1599.397{col 40}{space 1}    2.46{col 49}{space 3}0.014{col 57}{space 4} 799.5572{col 70}{space 3} 7076.021
+{txt}{space 7}poolarea {c |}{col 17}{res}{space 2} 377.3241{col 29}{space 2} 95.52603{col 40}{space 1}    3.95{col 49}{space 3}0.000{col 57}{space 4} 189.8892{col 70}{space 3}  564.759
+{txt}{space 10}k10_5 {c |}{col 17}{res}{space 2}-422958.8{col 29}{space 2} 5196.567{col 40}{space 1}  -81.39{col 49}{space 3}0.000{col 57}{space 4}-433155.1{col 70}{space 3}-412762.4
+{txt}{space 10}k10_8 {c |}{col 17}{res}{space 2}-460006.7{col 29}{space 2} 5573.348{col 40}{space 1}  -82.54{col 49}{space 3}0.000{col 57}{space 4}-470942.4{col 70}{space 3}-449071.1
+{txt}{space 5}fireplaces {c |}{col 17}{res}{space 2} 2079.173{col 29}{space 2} 710.5274{col 40}{space 1}    2.93{col 49}{space 3}0.004{col 57}{space 4} 685.0227{col 70}{space 3} 3473.324
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} 429007.9{col 29}{space 2} 45923.92{col 40}{space 1}    9.34{col 49}{space 3}0.000{col 57}{space 4}   338899{col 70}{space 3} 519116.8
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. cluster kmeans, k(50) measure(L2squared) start(krandom) iterate(1000000)
+{txt}cluster name: {res}_clus_3
+
+{com}. rename _clus_3 _clus_k100
+{res}
+{com}. quietly tabulate _clus_k100, generate(k100_)
+
+. stepwise, pr(.05): regress saleprice yearbuilt yearremodadd totalbsmtsf totrmsabvgrd wooddecksf yrsold ssnporch screenporch id-overallcond masvnrarea bsmtunfsf centralair ndflrsf-halfbath kitchenabvgr fireplaces-garagearea openporchsf enclosedporch poolarea-mosold isNew hood_1 hood_3-saleCondition_2 saleCondition_4 saleCondition_5 saleCondition_6 bsmtfinsf1 bedroomabvgr k100_2-k100_50
+{txt}note: hasGarage dropped because of collinearity
+note: isNew dropped because of collinearity
+{p2colset 0 23 32 2}{...}
+{p2col :}begin with full model{p_end}
+{p2col :p = {res:0.9795} >= 0.0500}removing {res:openporchsf}{p_end}
+{p2col :p = {res:0.9772} >= 0.0500}removing {res:garageyrblt}{p_end}
+{p2col :p = {res:0.9749} >= 0.0500}removing {res:bsmtfullbath}{p_end}
+{p2col :p = {res:0.9756} >= 0.0500}removing {res:totalbsmtsf}{p_end}
+{p2col :p = {res:0.9256} >= 0.0500}removing {res:kitchenabvgr}{p_end}
+{p2col :p = {res:0.9175} >= 0.0500}removing {res:halfbath}{p_end}
+{p2col :p = {res:0.8329} >= 0.0500}removing {res:hood_23}{p_end}
+{p2col :p = {res:0.8264} >= 0.0500}removing {res:hood_19}{p_end}
+{p2col :p = {res:0.8482} >= 0.0500}removing {res:hood_14}{p_end}
+{p2col :p = {res:0.8126} >= 0.0500}removing {res:garagecars}{p_end}
+{p2col :p = {res:0.7698} >= 0.0500}removing {res:bsmtunfsf}{p_end}
+{p2col :p = {res:0.7954} >= 0.0500}removing {res:ndflrsf}{p_end}
+{p2col :p = {res:0.7380} >= 0.0500}removing {res:mosold}{p_end}
+{p2col :p = {res:0.7285} >= 0.0500}removing {res:hood_15}{p_end}
+{p2col :p = {res:0.7108} >= 0.0500}removing {res:hood_3}{p_end}
+{p2col :p = {res:0.7016} >= 0.0500}removing {res:yearbuilt}{p_end}
+{p2col :p = {res:0.7109} >= 0.0500}removing {res:hood_11}{p_end}
+{p2col :p = {res:0.6804} >= 0.0500}removing {res:miscval}{p_end}
+{p2col :p = {res:0.6276} >= 0.0500}removing {res:yrsold}{p_end}
+{p2col :p = {res:0.5624} >= 0.0500}removing {res:ssnporch}{p_end}
+{p2col :p = {res:0.5331} >= 0.0500}removing {res:hood_17}{p_end}
+{p2col :p = {res:0.5774} >= 0.0500}removing {res:hood_10}{p_end}
+{p2col :p = {res:0.6494} >= 0.0500}removing {res:hood_4}{p_end}
+{p2col :p = {res:0.7061} >= 0.0500}removing {res:hood_18}{p_end}
+{p2col :p = {res:0.5895} >= 0.0500}removing {res:hood_1}{p_end}
+{p2col :p = {res:0.6009} >= 0.0500}removing {res:hood_12}{p_end}
+{p2col :p = {res:0.5779} >= 0.0500}removing {res:hasFence}{p_end}
+{p2col :p = {res:0.5588} >= 0.0500}removing {res:masvnrarea}{p_end}
+{p2col :p = {res:0.5802} >= 0.0500}removing {res:id}{p_end}
+{p2col :p = {res:0.4856} >= 0.0500}removing {res:wooddecksf}{p_end}
+{p2col :p = {res:0.4574} >= 0.0500}removing {res:centralair}{p_end}
+{p2col :p = {res:0.5170} >= 0.0500}removing {res:saleCondition_2}{p_end}
+{p2col :p = {res:0.4202} >= 0.0500}removing {res:fireplaces}{p_end}
+{p2col :p = {res:0.3778} >= 0.0500}removing {res:hood_13}{p_end}
+{p2col :p = {res:0.4975} >= 0.0500}removing {res:hood_8}{p_end}
+{p2col :p = {res:0.4876} >= 0.0500}removing {res:hood_20}{p_end}
+{p2col :p = {res:0.4220} >= 0.0500}removing {res:hood_6}{p_end}
+{p2col :p = {res:0.4473} >= 0.0500}removing {res:hood_21}{p_end}
+{p2col :p = {res:0.5019} >= 0.0500}removing {res:saleCondition_4}{p_end}
+{p2col :p = {res:0.7237} >= 0.0500}removing {res:saleCondition_5}{p_end}
+{p2col :p = {res:0.3191} >= 0.0500}removing {res:saleCondition_1}{p_end}
+{p2col :p = {res:0.3144} >= 0.0500}removing {res:hood_7}{p_end}
+{p2col :p = {res:0.2784} >= 0.0500}removing {res:hood_9}{p_end}
+{p2col :p = {res:0.3231} >= 0.0500}removing {res:hood_22}{p_end}
+{p2col :p = {res:0.3378} >= 0.0500}removing {res:yearremodadd}{p_end}
+{p2col :p = {res:0.2716} >= 0.0500}removing {res:bedroomabvgr}{p_end}
+{p2col :p = {res:0.3000} >= 0.0500}removing {res:fullbath}{p_end}
+{p2col :p = {res:0.2574} >= 0.0500}removing {res:lotfrontage}{p_end}
+{p2col :p = {res:0.2627} >= 0.0500}removing {res:lowqualfinsf}{p_end}
+{p2col :p = {res:0.2440} >= 0.0500}removing {res:hood_24}{p_end}
+{p2col :p = {res:0.2232} >= 0.0500}removing {res:bsmtfinsf1}{p_end}
+{p2col :p = {res:0.1628} >= 0.0500}removing {res:hasPool}{p_end}
+{p2col :p = {res:0.1661} >= 0.0500}removing {res:bsmthalfbath}{p_end}
+{p2col :p = {res:0.1046} >= 0.0500}removing {res:saleCondition_6}{p_end}
+{p2col :p = {res:0.0908} >= 0.0500}removing {res:hood_5}{p_end}
+{p2col :p = {res:0.0760} >= 0.0500}removing {res:hood_25}{p_end}
+{p2col :p = {res:0.0545} >= 0.0500}removing {res:garagearea}{p_end}
+{p2colreset}{...}
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}     1,121
+{txt}{hline 13}{c +}{hline 34}   F(59, 1061)     = {res}  1861.85
+{txt}       Model {c |} {res} 7.6417e+12        59  1.2952e+11   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 7.3809e+10     1,061  69565472.6   {txt}R-squared       ={res}    0.9904
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.9899
+{txt}       Total {c |} {res} 7.7155e+12     1,120  6.8889e+09   {txt}Root MSE        =   {res} 8340.6
+
+{txt}{hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    saleprice{col 15}{c |}      Coef.{col 27}   Std. Err.{col 39}      t{col 47}   P>|t|{col 55}     [95% Con{col 68}f. Interval]
+{hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}k100_35 {c |}{col 15}{res}{space 2} -83299.6{col 27}{space 2} 2168.098{col 38}{space 1}  -38.42{col 47}{space 3}0.000{col 55}{space 4}-87553.84{col 68}{space 3}-79045.35
+{txt}{space 7}k100_6 {c |}{col 15}{res}{space 2}-47843.95{col 27}{space 2} 2217.482{col 38}{space 1}  -21.58{col 47}{space 3}0.000{col 55}{space 4} -52195.1{col 68}{space 3} -43492.8
+{txt}{space 6}k100_47 {c |}{col 15}{res}{space 2}-80299.65{col 27}{space 2}  3790.39{col 38}{space 1}  -21.19{col 47}{space 3}0.000{col 55}{space 4}-87737.16{col 68}{space 3}-72862.13
+{txt}{space 1}totrmsabvgrd {c |}{col 15}{res}{space 2}-1285.328{col 27}{space 2} 300.9136{col 38}{space 1}   -4.27{col 47}{space 3}0.000{col 55}{space 4}-1875.781{col 68}{space 3}-694.8746
+{txt}{space 6}k100_21 {c |}{col 15}{res}{space 2}-129252.7{col 27}{space 2}   2963.6{col 38}{space 1}  -43.61{col 47}{space 3}0.000{col 55}{space 4}-135067.9{col 68}{space 3}-123437.5
+{txt}{space 6}k100_32 {c |}{col 15}{res}{space 2} 52318.46{col 27}{space 2} 1863.423{col 38}{space 1}   28.08{col 47}{space 3}0.000{col 55}{space 4} 48662.04{col 68}{space 3} 55974.87
+{txt}{space 6}k100_31 {c |}{col 15}{res}{space 2} 9123.491{col 27}{space 2} 3774.136{col 38}{space 1}    2.42{col 47}{space 3}0.016{col 55}{space 4} 1717.873{col 68}{space 3} 16529.11
+{txt}{space 2}screenporch {c |}{col 15}{res}{space 2} -9.59774{col 27}{space 2} 4.507168{col 38}{space 1}   -2.13{col 47}{space 3}0.033{col 55}{space 4}-18.44172{col 68}{space 3} -.753763
+{txt}{space 6}k100_22 {c |}{col 15}{res}{space 2}-63754.88{col 27}{space 2} 3109.109{col 38}{space 1}  -20.51{col 47}{space 3}0.000{col 55}{space 4}-69855.58{col 68}{space 3}-57654.18
+{txt}{space 3}mssubclass {c |}{col 15}{res}{space 2}-15.57209{col 27}{space 2} 7.039686{col 38}{space 1}   -2.21{col 47}{space 3}0.027{col 55}{space 4}-29.38538{col 68}{space 3}-1.758798
+{txt}{space 7}k100_3 {c |}{col 15}{res}{space 2}-41316.02{col 27}{space 2} 1857.988{col 38}{space 1}  -22.24{col 47}{space 3}0.000{col 55}{space 4}-44961.76{col 68}{space 3}-37670.27
+{txt}{space 6}lotarea {c |}{col 15}{res}{space 2}-.3108716{col 27}{space 2} .0377537{col 38}{space 1}   -8.23{col 47}{space 3}0.000{col 55}{space 4}-.3849521{col 68}{space 3}-.2367911
+{txt}{space 2}overallqual {c |}{col 15}{res}{space 2} 965.6717{col 27}{space 2} 350.8982{col 38}{space 1}    2.75{col 47}{space 3}0.006{col 55}{space 4} 277.1384{col 68}{space 3} 1654.205
+{txt}{space 2}overallcond {c |}{col 15}{res}{space 2} 511.2654{col 27}{space 2} 257.9887{col 38}{space 1}    1.98{col 47}{space 3}0.048{col 55}{space 4} 5.039473{col 68}{space 3} 1017.491
+{txt}{space 6}k100_23 {c |}{col 15}{res}{space 2}-50454.94{col 27}{space 2} 2090.767{col 38}{space 1}  -24.13{col 47}{space 3}0.000{col 55}{space 4}-54557.45{col 68}{space 3}-46352.43
+{txt}{space 6}k100_40 {c |}{col 15}{res}{space 2}  -108123{col 27}{space 2} 6097.078{col 38}{space 1}  -17.73{col 47}{space 3}0.000{col 55}{space 4}-120086.7{col 68}{space 3}-96159.25
+{txt}{space 6}k100_20 {c |}{col 15}{res}{space 2}-95819.51{col 27}{space 2} 2090.694{col 38}{space 1}  -45.83{col 47}{space 3}0.000{col 55}{space 4}-99921.87{col 68}{space 3}-91717.14
+{txt}{space 6}k100_39 {c |}{col 15}{res}{space 2}-55316.88{col 27}{space 2} 2831.665{col 38}{space 1}  -19.54{col 47}{space 3}0.000{col 55}{space 4}-60873.18{col 68}{space 3}-49760.58
+{txt}{space 7}k100_2 {c |}{col 15}{res}{space 2}-144206.6{col 27}{space 2} 2706.384{col 38}{space 1}  -53.28{col 47}{space 3}0.000{col 55}{space 4}-149517.1{col 68}{space 3}-138896.2
+{txt}{space 4}grlivarea {c |}{col 15}{res}{space 2} 7.228437{col 27}{space 2} 1.200907{col 38}{space 1}    6.02{col 47}{space 3}0.000{col 55}{space 4} 4.872015{col 68}{space 3} 9.584859
+{txt}{space 6}k100_48 {c |}{col 15}{res}{space 2} -53881.5{col 27}{space 2} 2033.055{col 38}{space 1}  -26.50{col 47}{space 3}0.000{col 55}{space 4}-57870.77{col 68}{space 3}-49892.23
+{txt}{space 6}k100_11 {c |}{col 15}{res}{space 2}-106424.3{col 27}{space 2} 2181.063{col 38}{space 1}  -48.79{col 47}{space 3}0.000{col 55}{space 4}  -110704{col 68}{space 3}-102144.6
+{txt}{space 7}k100_4 {c |}{col 15}{res}{space 2}-67698.37{col 27}{space 2} 2123.744{col 38}{space 1}  -31.88{col 47}{space 3}0.000{col 55}{space 4}-71865.58{col 68}{space 3}-63531.15
+{txt}{space 6}k100_45 {c |}{col 15}{res}{space 2}-79674.17{col 27}{space 2} 2247.066{col 38}{space 1}  -35.46{col 47}{space 3}0.000{col 55}{space 4}-84083.37{col 68}{space 3}-75264.98
+{txt}{space 6}k100_46 {c |}{col 15}{res}{space 2}-111568.6{col 27}{space 2}  2462.18{col 38}{space 1}  -45.31{col 47}{space 3}0.000{col 55}{space 4}-116399.9{col 68}{space 3}-106737.3
+{txt}{space 6}k100_18 {c |}{col 15}{res}{space 2}  -136410{col 27}{space 2} 2403.182{col 38}{space 1}  -56.76{col 47}{space 3}0.000{col 55}{space 4}-141125.6{col 68}{space 3}-131694.5
+{txt}{space 6}k100_49 {c |}{col 15}{res}{space 2}-12608.25{col 27}{space 2} 1936.946{col 38}{space 1}   -6.51{col 47}{space 3}0.000{col 55}{space 4}-16408.93{col 68}{space 3}-8807.565
+{txt}{space 6}k100_41 {c |}{col 15}{res}{space 2}-23493.68{col 27}{space 2} 2454.211{col 38}{space 1}   -9.57{col 47}{space 3}0.000{col 55}{space 4}-28309.34{col 68}{space 3}-18678.03
+{txt}{space 6}k100_10 {c |}{col 15}{res}{space 2}  -116365{col 27}{space 2} 2267.931{col 38}{space 1}  -51.31{col 47}{space 3}0.000{col 55}{space 4}-120815.1{col 68}{space 3}-111914.8
+{txt}{space 6}k100_50 {c |}{col 15}{res}{space 2} 206122.9{col 27}{space 2}  2700.15{col 38}{space 1}   76.34{col 47}{space 3}0.000{col 55}{space 4} 200824.7{col 68}{space 3} 211421.2
+{txt}enclosedporch {c |}{col 15}{res}{space 2}-8.849286{col 27}{space 2} 4.326307{col 38}{space 1}   -2.05{col 47}{space 3}0.041{col 55}{space 4}-17.33838{col 68}{space 3}-.3601959
+{txt}{space 5}poolarea {c |}{col 15}{res}{space 2} 30.12404{col 27}{space 2} 6.673982{col 38}{space 1}    4.51{col 47}{space 3}0.000{col 55}{space 4} 17.02834{col 68}{space 3} 43.21975
+{txt}{space 6}k100_12 {c |}{col 15}{res}{space 2} 30382.38{col 27}{space 2} 1854.607{col 38}{space 1}   16.38{col 47}{space 3}0.000{col 55}{space 4} 26743.26{col 68}{space 3} 34021.49
+{txt}{space 6}k100_24 {c |}{col 15}{res}{space 2} -59221.5{col 27}{space 2} 5627.759{col 38}{space 1}  -10.52{col 47}{space 3}0.000{col 55}{space 4} -70264.3{col 68}{space 3} -48178.7
+{txt}{space 6}k100_33 {c |}{col 15}{res}{space 2}-118169.5{col 27}{space 2} 2456.595{col 38}{space 1}  -48.10{col 47}{space 3}0.000{col 55}{space 4}-122989.8{col 68}{space 3}-113349.2
+{txt}{space 6}k100_38 {c |}{col 15}{res}{space 2}-78250.17{col 27}{space 2} 2517.817{col 38}{space 1}  -31.08{col 47}{space 3}0.000{col 55}{space 4}-83190.64{col 68}{space 3} -73309.7
+{txt}{space 6}k100_26 {c |}{col 15}{res}{space 2}-46607.02{col 27}{space 2} 3974.851{col 38}{space 1}  -11.73{col 47}{space 3}0.000{col 55}{space 4}-54406.48{col 68}{space 3}-38807.56
+{txt}{space 6}k100_36 {c |}{col 15}{res}{space 2}-85247.19{col 27}{space 2} 2335.559{col 38}{space 1}  -36.50{col 47}{space 3}0.000{col 55}{space 4}-89830.03{col 68}{space 3}-80664.35
+{txt}{space 6}k100_28 {c |}{col 15}{res}{space 2} 91420.97{col 27}{space 2} 1793.153{col 38}{space 1}   50.98{col 47}{space 3}0.000{col 55}{space 4} 87902.44{col 68}{space 3}  94939.5
+{txt}{space 6}k100_19 {c |}{col 15}{res}{space 2}-88005.93{col 27}{space 2} 1935.545{col 38}{space 1}  -45.47{col 47}{space 3}0.000{col 55}{space 4}-91803.86{col 68}{space 3}   -84208
+{txt}{space 6}k100_14 {c |}{col 15}{res}{space 2} 381879.2{col 27}{space 2} 3583.761{col 38}{space 1}  106.56{col 47}{space 3}0.000{col 55}{space 4} 374847.1{col 68}{space 3} 388911.3
+{txt}{space 7}k100_9 {c |}{col 15}{res}{space 2}-164416.1{col 27}{space 2} 3032.974{col 38}{space 1}  -54.21{col 47}{space 3}0.000{col 55}{space 4}-170367.4{col 68}{space 3}-158464.7
+{txt}{space 6}k100_16 {c |}{col 15}{res}{space 2}-19894.34{col 27}{space 2} 2388.025{col 38}{space 1}   -8.33{col 47}{space 3}0.000{col 55}{space 4}-24580.13{col 68}{space 3}-15208.56
+{txt}{space 7}k100_8 {c |}{col 15}{res}{space 2}-124640.8{col 27}{space 2} 2505.278{col 38}{space 1}  -49.75{col 47}{space 3}0.000{col 55}{space 4}-129556.6{col 68}{space 3}-119724.9
+{txt}{space 6}k100_29 {c |}{col 15}{res}{space 2} 14121.36{col 27}{space 2} 1825.323{col 38}{space 1}    7.74{col 47}{space 3}0.000{col 55}{space 4}  10539.7{col 68}{space 3} 17703.01
+{txt}{space 6}k100_34 {c |}{col 15}{res}{space 2}-74042.24{col 27}{space 2} 2322.149{col 38}{space 1}  -31.89{col 47}{space 3}0.000{col 55}{space 4}-78598.77{col 68}{space 3}-69485.72
+{txt}{space 6}k100_25 {c |}{col 15}{res}{space 2}-35353.34{col 27}{space 2} 2167.862{col 38}{space 1}  -16.31{col 47}{space 3}0.000{col 55}{space 4}-39607.12{col 68}{space 3}-31099.55
+{txt}{space 6}k100_17 {c |}{col 15}{res}{space 2} 148502.8{col 27}{space 2} 2146.975{col 38}{space 1}   69.17{col 47}{space 3}0.000{col 55}{space 4}   144290{col 68}{space 3} 152715.6
+{txt}{space 6}k100_42 {c |}{col 15}{res}{space 2}-60341.81{col 27}{space 2} 1903.574{col 38}{space 1}  -31.70{col 47}{space 3}0.000{col 55}{space 4}   -64077{col 68}{space 3}-56606.61
+{txt}{space 6}k100_37 {c |}{col 15}{res}{space 2}-70030.21{col 27}{space 2}  3446.97{col 38}{space 1}  -20.32{col 47}{space 3}0.000{col 55}{space 4}-76793.86{col 68}{space 3}-63266.55
+{txt}{space 6}hood_16 {c |}{col 15}{res}{space 2} 10353.72{col 27}{space 2} 1665.066{col 38}{space 1}    6.22{col 47}{space 3}0.000{col 55}{space 4} 7086.523{col 68}{space 3} 13620.92
+{txt}{space 6}k100_30 {c |}{col 15}{res}{space 2}-100628.7{col 27}{space 2} 2114.098{col 38}{space 1}  -47.60{col 47}{space 3}0.000{col 55}{space 4}  -104777{col 68}{space 3}-96480.42
+{txt}{space 6}k100_27 {c |}{col 15}{res}{space 2} -62315.9{col 27}{space 2} 8466.307{col 38}{space 1}   -7.36{col 47}{space 3}0.000{col 55}{space 4}-78928.51{col 68}{space 3} -45703.3
+{txt}{space 6}k100_43 {c |}{col 15}{res}{space 2}-38092.02{col 27}{space 2} 3406.343{col 38}{space 1}  -11.18{col 47}{space 3}0.000{col 55}{space 4}-44775.95{col 68}{space 3}-31408.08
+{txt}{space 6}k100_15 {c |}{col 15}{res}{space 2}-71885.21{col 27}{space 2} 2253.637{col 38}{space 1}  -31.90{col 47}{space 3}0.000{col 55}{space 4} -76307.3{col 68}{space 3}-67463.11
+{txt}{space 6}k100_13 {c |}{col 15}{res}{space 2}-92258.31{col 27}{space 2} 1959.543{col 38}{space 1}  -47.08{col 47}{space 3}0.000{col 55}{space 4}-96103.33{col 68}{space 3}-88413.29
+{txt}{space 7}k100_7 {c |}{col 15}{res}{space 2}-109297.2{col 27}{space 2} 2680.003{col 38}{space 1}  -40.78{col 47}{space 3}0.000{col 55}{space 4}-114555.9{col 68}{space 3}-104038.5
+{txt}{space 6}k100_44 {c |}{col 15}{res}{space 2}-29421.76{col 27}{space 2} 2090.527{col 38}{space 1}  -14.07{col 47}{space 3}0.000{col 55}{space 4} -33523.8{col 68}{space 3}-25319.72
+{txt}{space 7}k100_5 {c |}{col 15}{res}{space 2}-99446.58{col 27}{space 2} 2333.419{col 38}{space 1}  -42.62{col 47}{space 3}0.000{col 55}{space 4}-104025.2{col 68}{space 3}-94867.94
+{txt}{space 8}_cons {c |}{col 15}{res}{space 2} 220449.8{col 27}{space 2} 3559.224{col 38}{space 1}   61.94{col 47}{space 3}0.000{col 55}{space 4} 213465.9{col 68}{space 3} 227433.7
+{txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. predict residuals_k100_sw_reg
+{txt}(option {bf:xb} assumed; fitted values)
+
+{com}. reaplce residuals_k100_sw_reg = residuals_k100_sw_reg - saleprice 
+{err}command {bf}reaplce{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+{com}. replace residuals_k100_sw_reg = residuals_k100_sw_reg - saleprice 
+{txt}(1,121 real changes made)
+
+{com}. twoway scatter residuals_k100_sw_reg sale p
+{bf}{err}sale{sf} ambiguous abbreviation
+{txt}{search r(111), local:r(111);}
+
+{com}. twoway scatter residuals_k100_sw_reg salep
+{res}
+{com}. twoway scatter _clus_k100 salep
+{res}
+{com}. twoway scatter residuals_k100_sw_reg salep
+{res}
+{com}. gen residuals_k100_sw_reg_% = residuals_k100_sw_reg / salep
+{err}=exp required
+{txt}{search r(100), local:r(100);}
+
+{com}. gen residuals_k100_sw_reg_perc = residuals_k100_sw_reg / salep
+
+. twoway scatter residuals_k100_sw_reg_perc salep
+{res}
+{com}. twoway scatter residuals_k100_sw_reg_perc salep if residuals_k100_sw_reg_perc < .4
+{res}
+{com}. sum residuals_k100_sw_reg_perc
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+residuals_~c {c |}{res}      1,121    .0008726     .034428  -.1574533   .5496002
+
+{com}. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ames_train_no_string.dta", replace
+{txt}file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ames_train_no_string.dta saved
+
+{com}. exit

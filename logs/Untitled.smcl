@@ -1,0 +1,426 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/justinfriedman/Documents/School Work/Empirical Techniques for Industry Analysis/HW4/Untitled.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}26 Nov 2017, 19:55:13
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning1-new_mszoning5 new_street1-_clus_k50_no_sale_price
+{err}between-term collinearity, variable new_mszoning1
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning0-new_mszoning5 new_street1-_clus_k50_no_sale_price
+{err}variable {bf}new_mszoning0{sf} not found
+{txt}{search r(111), local:r(111);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street1-_clus_k50_no_sale_price
+{err}between-term collinearity, variable new_street2
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2-_clus_k50_no_sale_price
+{err}between-term collinearity, variable new_alley3
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2- new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior2nd16 new_exterqual2-new_foundation6 new_bsmtqual2-new_bsmtcond5 new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype27 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}nothing found where name expected
+{txt}{search r(198), local:r(198);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2- new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior2nd16 new_exterqual2-new_foundation6 new_bsmtqual2-new_bsmtcond5 new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype27 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}nothing found where name expected
+{txt}{search r(198), local:r(198);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior2nd16 new_exterqual2-new_foundation6 new_bsmtqual2-new_bsmtcond5 new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype27 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_condition24
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior2nd16 new_exterqual2-new_foundation6 new_bsmtqual2-new_bsmtcond5 new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype27 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_exterior1st5
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd16 new_exterqual2-new_foundation6 new_bsmtqual2-new_bsmtcond5 new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype27 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_exterior2nd5
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16 new_exterqual2-new_foundation6 new_bsmtqual2-new_bsmtcond5 new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype27 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_extercond4
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16  new_bsmtqual2-new_bsmtcond5 new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype27 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_bsmtcond3
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16  new_bsmtqual4-new_bsmtcond5 new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype27 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_bsmtcond3
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16  new_bsmtqual4-new_bsmtcond5 new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype27 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_bsmtcond3
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype27 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_bsmtfintype25
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype24 new_heating2-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_heatingqc2
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype24 new_heating3-new_heating6 new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_heatingqc2
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype24  new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_heatingqc2
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype24  new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_heatingqc2
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype24  new_heatingqc1-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_heatingqc2
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype24  new_heatingqc3-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype7 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_garagetype7
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype24  new_heatingqc3-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype6 new_garageyrblt2-new_garageyrblt98 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_garageyrblt98
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype24  new_heatingqc3-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype6 new_garageyrblt2-new_garageyrblt97 new_garagefinish2-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_garagefinish2
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype24  new_heatingqc3-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype6 new_garageyrblt2-new_garageyrblt97 new_garagefinish3-new_garagefinish4 new_garagequal2-new_garagecond6 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{err}between-term collinearity, variable new_garagequal4
+{txt}{search r(459), local:r(459);}
+
+{com}. stepwise, pr(.05): regress saleprice mssubclass-bsmtunfsf stflrsf ndflrsf grlivarea-yrsold new_mszoning2-new_mszoning5 new_street2 new_alley2 new_alley3 new_lotshape2 new_lotshape3 new_lotshape4 new_landcontour2 new_landcontour3 new_landcontour4 new_utilities2 new_lotconfig2 new_lotconfig3 new_lotconfig4 new_lotconfig5 new_landslope2 new_landslope3 new_neighborhood2 new_neighborhood3 new_neighborhood4-new_neighborhood25 new_condition12-new_condition23 new_condition25-new_condition28 new_bldgtype2-new_bldgtype5 new_housestyle2-new_housestyle8 new_roofstyle2-new_roofstyle6 new_roofmatl2-new_roofmatl8 new_exterior1st2-new_exterior1st4 new_exterior1st6-new_exterior2nd4 new_exterior2nd6-new_exterior2nd16   new_bsmtexposure2-new_bsmtexposure5 new_bsmtfintype12-new_bsmtfintype24  new_heatingqc3-new_heatingqc5 new_centralair2 new_electrical2-new_electrical6 new_kitchenqual2-new_kitchenqual4 new_functional2-new_functional7 new_fireplacequ2-new_fireplacequ6 new_garagetype2-new_garagetype6 new_garageyrblt2-new_garageyrblt97 new_garagefinish3-new_garagefinish4 new_paveddrive2 new_paveddrive3 new_fence2-new_fence5 new_miscfeature2-new_miscfeature5 new_saletype2-new_saletype9 new_salecondition2-new_salecondition6 _clus_k50_no_sale_price
+{txt}{p2colset 0 23 32 2}{...}
+{p2col :}begin with full model{p_end}
+{p2col :p = {res:0.9946} >= 0.0500}removing {res:new_saletype9}{p_end}
+{p2col :p = {res:0.9850} >= 0.0500}removing {res:new_electrical2}{p_end}
+{p2col :p = {res:0.9858} >= 0.0500}removing {res:new_exterior1st3}{p_end}
+{p2col :p = {res:0.9758} >= 0.0500}removing {res:bsmthalfbath}{p_end}
+{p2col :p = {res:0.9563} >= 0.0500}removing {res:new_garageyrblt96}{p_end}
+{p2col :p = {res:0.9290} >= 0.0500}removing {res:new_exterior1st9}{p_end}
+{p2col :p = {res:0.9117} >= 0.0500}removing {res:new_neighborhood4}{p_end}
+{p2col :p = {res:0.9094} >= 0.0500}removing {res:new_exterior2nd4}{p_end}
+{p2col :p = {res:0.9089} >= 0.0500}removing {res:new_bsmtfintype22}{p_end}
+{p2col :p = {res:0.9001} >= 0.0500}removing {res:new_electrical3}{p_end}
+{p2col :p = {res:0.8871} >= 0.0500}removing {res:new_heatingqc4}{p_end}
+{p2col :p = {res:0.8777} >= 0.0500}removing {res:new_saletype8}{p_end}
+{p2col :p = {res:0.8653} >= 0.0500}removing {res:new_bldgtype2}{p_end}
+{p2col :p = {res:0.8625} >= 0.0500}removing {res:new_fireplacequ5}{p_end}
+{p2col :p = {res:0.8736} >= 0.0500}removing {res:new_saletype6}{p_end}
+{p2col :p = {res:0.8577} >= 0.0500}removing {res:new_exterior2nd3}{p_end}
+{p2col :p = {res:0.8408} >= 0.0500}removing {res:new_exterior1st6}{p_end}
+{p2col :p = {res:0.8231} >= 0.0500}removing {res:miscval}{p_end}
+{p2col :p = {res:0.8183} >= 0.0500}removing {res:new_exterior1st14}{p_end}
+{p2col :p = {res:0.8160} >= 0.0500}removing {res:new_neighborhood25}{p_end}
+{p2col :p = {res:0.8111} >= 0.0500}removing {res:new_exterior1st12}{p_end}
+{p2col :p = {res:0.8110} >= 0.0500}removing {res:new_neighborhood22}{p_end}
+{p2col :p = {res:0.7797} >= 0.0500}removing {res:new_roofstyle2}{p_end}
+{p2col :p = {res:0.7784} >= 0.0500}removing {res:new_condition18}{p_end}
+{p2col :p = {res:0.7725} >= 0.0500}removing {res:new_garageyrblt16}{p_end}
+{p2col :p = {res:0.7721} >= 0.0500}removing {res:new_exterior2nd16}{p_end}
+{p2col :p = {res:0.7651} >= 0.0500}removing {res:new_bsmtfintype24}{p_end}
+{p2col :p = {res:0.7603} >= 0.0500}removing {res:new_miscfeature2}{p_end}
+{p2col :p = {res:0.7550} >= 0.0500}removing {res:new_neighborhood21}{p_end}
+{p2col :p = {res:0.7336} >= 0.0500}removing {res:new_garageyrblt23}{p_end}
+{p2col :p = {res:0.7400} >= 0.0500}removing {res:new_centralair2}{p_end}
+{p2col :p = {res:0.6810} >= 0.0500}removing {res:new_roofstyle5}{p_end}
+{p2col :p = {res:0.6780} >= 0.0500}removing {res:new_fireplacequ4}{p_end}
+{p2col :p = {res:0.6734} >= 0.0500}removing {res:new_neighborhood2}{p_end}
+{p2col :p = {res:0.6904} >= 0.0500}removing {res:new_neighborhood11}{p_end}
+{p2col :p = {res:0.6712} >= 0.0500}removing {res:new_paveddrive3}{p_end}
+{p2col :p = {res:0.6640} >= 0.0500}removing {res:new_alley2}{p_end}
+{p2col :p = {res:0.7511} >= 0.0500}removing {res:new_alley3}{p_end}
+{p2col :p = {res:0.6410} >= 0.0500}removing {res:new_exterior1st7}{p_end}
+{p2col :p = {res:0.7250} >= 0.0500}removing {res:new_exterior2nd7}{p_end}
+{p2col :p = {res:0.6809} >= 0.0500}removing {res:new_exterior2nd11}{p_end}
+{p2col :p = {res:0.6501} >= 0.0500}removing {res:new_fence4}{p_end}
+{p2col :p = {res:0.6318} >= 0.0500}removing {res:new_bsmtfintype16}{p_end}
+{p2col :p = {res:0.6275} >= 0.0500}removing {res:new_electrical4}{p_end}
+{p2col :p = {res:0.6289} >= 0.0500}removing {res:new_functional2}{p_end}
+{p2col :p = {res:0.5952} >= 0.0500}removing {res:new_bsmtexposure4}{p_end}
+{p2col :p = {res:0.5651} >= 0.0500}removing {res:new_exterior1st11}{p_end}
+{p2col :p = {res:0.5574} >= 0.0500}removing {res:stflrsf}{p_end}
+{p2col :p = {res:0.5577} >= 0.0500}removing {res:new_garageyrblt3}{p_end}
+{p2col :p = {res:0.5522} >= 0.0500}removing {res:new_miscfeature3}{p_end}
+{p2col :p = {res:0.5494} >= 0.0500}removing {res:new_functional5}{p_end}
+{p2col :p = {res:0.5497} >= 0.0500}removing {res:new_exterior1st2}{p_end}
+{p2col :p = {res:0.5818} >= 0.0500}removing {res:new_exterior2nd2}{p_end}
+{p2col :p = {res:0.5286} >= 0.0500}removing {res:new_salecondition6}{p_end}
+{p2col :p = {res:0.5332} >= 0.0500}removing {res:new_exterior2nd15}{p_end}
+{p2col :p = {res:0.5426} >= 0.0500}removing {res:new_salecondition3}{p_end}
+{p2col :p = {res:0.5485} >= 0.0500}removing {res:new_housestyle7}{p_end}
+{p2col :p = {res:0.5305} >= 0.0500}removing {res:bsmtfullbath}{p_end}
+{p2col :p = {res:0.5176} >= 0.0500}removing {res:new_garageyrblt21}{p_end}
+{p2col :p = {res:0.5021} >= 0.0500}removing {res:new_exterior2nd1}{p_end}
+{p2col :p = {res:0.5076} >= 0.0500}removing {res:new_garageyrblt95}{p_end}
+{p2col :p = {res:0.5346} >= 0.0500}removing {res:new_garageyrblt12}{p_end}
+{p2col :p = {res:0.5511} >= 0.0500}removing {res:new_garageyrblt10}{p_end}
+{p2col :p = {res:0.5740} >= 0.0500}removing {res:new_garageyrblt31}{p_end}
+{p2col :p = {res:0.4673} >= 0.0500}removing {res:new_garageyrblt19}{p_end}
+{p2col :p = {res:0.4953} >= 0.0500}removing {res:new_garageyrblt11}{p_end}
+{p2col :p = {res:0.4928} >= 0.0500}removing {res:new_garageyrblt28}{p_end}
+{p2col :p = {res:0.4672} >= 0.0500}removing {res:new_condition14}{p_end}
+{p2col :p = {res:0.4709} >= 0.0500}removing {res:new_garageyrblt18}{p_end}
+{p2col :p = {res:0.4979} >= 0.0500}removing {res:new_garageyrblt29}{p_end}
+{p2col :p = {res:0.4713} >= 0.0500}removing {res:new_roofstyle3}{p_end}
+{p2col :p = {res:0.4519} >= 0.0500}removing {res:new_condition15}{p_end}
+{p2col :p = {res:0.4452} >= 0.0500}removing {res:new_garageyrblt17}{p_end}
+{p2col :p = {res:0.4674} >= 0.0500}removing {res:new_garagetype4}{p_end}
+{p2col :p = {res:0.5775} >= 0.0500}removing {res:new_garagetype5}{p_end}
+{p2col :p = {res:0.4916} >= 0.0500}removing {res:new_garageyrblt25}{p_end}
+{p2col :p = {res:0.4897} >= 0.0500}removing {res:new_garageyrblt34}{p_end}
+{p2col :p = {res:0.4392} >= 0.0500}removing {res:new_bsmtfintype14}{p_end}
+{p2col :p = {res:0.4485} >= 0.0500}removing {res:new_neighborhood10}{p_end}
+{p2col :p = {res:0.4753} >= 0.0500}removing {res:new_garageyrblt22}{p_end}
+{p2col :p = {res:0.4480} >= 0.0500}removing {res:new_garagefinish4}{p_end}
+{p2col :p = {res:0.4732} >= 0.0500}removing {res:new_garagetype3}{p_end}
+{p2col :p = {res:0.5407} >= 0.0500}removing {res:new_garagetype2}{p_end}
+{p2col :p = {res:0.4766} >= 0.0500}removing {res:new_lotshape3}{p_end}
+{p2col :p = {res:0.4656} >= 0.0500}removing {res:new_garageyrblt24}{p_end}
+{p2col :p = {res:0.4747} >= 0.0500}removing {res:new_lotshape4}{p_end}
+{p2col :p = {res:0.4295} >= 0.0500}removing {res:new_garageyrblt49}{p_end}
+{p2col :p = {res:0.4467} >= 0.0500}removing {res:new_garageyrblt32}{p_end}
+{p2col :p = {res:0.4257} >= 0.0500}removing {res:new_exterior1st15}{p_end}
+{p2col :p = {res:0.4074} >= 0.0500}removing {res:new_exterior1st13}{p_end}
+{p2col :p = {res:0.5860} >= 0.0500}removing {res:new_exterior2nd14}{p_end}
+{p2col :p = {res:0.4100} >= 0.0500}removing {res:new_garageyrblt97}{p_end}
+{p2col :p = {res:0.4001} >= 0.0500}removing {res:new_garageyrblt30}{p_end}
+{p2col :p = {res:0.4086} >= 0.0500}removing {res:new_garageyrblt27}{p_end}
+{p2col :p = {res:0.4160} >= 0.0500}removing {res:new_garageyrblt41}{p_end}
+{p2col :p = {res:0.4519} >= 0.0500}removing {res:new_garageyrblt54}{p_end}
+{p2col :p = {res:0.4962} >= 0.0500}removing {res:new_garageyrblt53}{p_end}
+{p2col :p = {res:0.4662} >= 0.0500}removing {res:new_garageyrblt82}{p_end}
+{p2col :p = {res:0.4814} >= 0.0500}removing {res:new_garageyrblt35}{p_end}
+{p2col :p = {res:0.4838} >= 0.0500}removing {res:new_garageyrblt74}{p_end}
+{p2col :p = {res:0.4907} >= 0.0500}removing {res:new_garageyrblt67}{p_end}
+{p2col :p = {res:0.5135} >= 0.0500}removing {res:new_garageyrblt76}{p_end}
+{p2col :p = {res:0.5152} >= 0.0500}removing {res:new_garageyrblt43}{p_end}
+{p2col :p = {res:0.5265} >= 0.0500}removing {res:new_garageyrblt37}{p_end}
+{p2col :p = {res:0.5134} >= 0.0500}removing {res:new_garageyrblt70}{p_end}
+{p2col :p = {res:0.5352} >= 0.0500}removing {res:new_garageyrblt61}{p_end}
+{p2col :p = {res:0.5150} >= 0.0500}removing {res:new_garageyrblt66}{p_end}
+{p2col :p = {res:0.5409} >= 0.0500}removing {res:new_garageyrblt59}{p_end}
+{p2col :p = {res:0.5458} >= 0.0500}removing {res:new_garageyrblt88}{p_end}
+{p2col :p = {res:0.5168} >= 0.0500}removing {res:new_garageyrblt14}{p_end}
+{p2col :p = {res:0.5123} >= 0.0500}removing {res:new_garageyrblt81}{p_end}
+{p2col :p = {res:0.4072} >= 0.0500}removing {res:new_garageyrblt2}{p_end}
+{p2col :p = {res:0.4000} >= 0.0500}removing {res:new_garageyrblt36}{p_end}
+{p2col :p = {res:0.4035} >= 0.0500}removing {res:halfbath}{p_end}
+{p2col :p = {res:0.3967} >= 0.0500}removing {res:new_garageyrblt46}{p_end}
+{p2col :p = {res:0.3990} >= 0.0500}removing {res:new_garageyrblt13}{p_end}
+{p2col :p = {res:0.3902} >= 0.0500}removing {res:new_garageyrblt86}{p_end}
+{p2col :p = {res:0.4059} >= 0.0500}removing {res:new_exterior2nd9}{p_end}
+{p2col :p = {res:0.4057} >= 0.0500}removing {res:new_salecondition4}{p_end}
+{p2col :p = {res:0.4001} >= 0.0500}removing {res:new_garageyrblt26}{p_end}
+{p2col :p = {res:0.4162} >= 0.0500}removing {res:yrsold}{p_end}
+{p2col :p = {res:0.3826} >= 0.0500}removing {res:new_garageyrblt69}{p_end}
+{p2col :p = {res:0.3675} >= 0.0500}removing {res:new_garageyrblt33}{p_end}
+{p2col :p = {res:0.3524} >= 0.0500}removing {res:new_garageyrblt73}{p_end}
+{p2col :p = {res:0.3417} >= 0.0500}removing {res:new_utilities2}{p_end}
+{p2col :p = {res:0.3415} >= 0.0500}removing {res:new_garageyrblt84}{p_end}
+{p2col :p = {res:0.3425} >= 0.0500}removing {res:new_garageyrblt58}{p_end}
+{p2col :p = {res:0.3529} >= 0.0500}removing {res:new_garageyrblt83}{p_end}
+{p2col :p = {res:0.3964} >= 0.0500}removing {res:new_garageyrblt91}{p_end}
+{p2col :p = {res:0.4676} >= 0.0500}removing {res:new_garageyrblt89}{p_end}
+{p2col :p = {res:0.4687} >= 0.0500}removing {res:new_garageyrblt87}{p_end}
+{p2col :p = {res:0.3904} >= 0.0500}removing {res:new_garageyrblt78}{p_end}
+{p2col :p = {res:0.3659} >= 0.0500}removing {res:new_garageyrblt85}{p_end}
+{p2col :p = {res:0.3557} >= 0.0500}removing {res:new_garageyrblt15}{p_end}
+{p2col :p = {res:0.3435} >= 0.0500}removing {res:enclosedporch}{p_end}
+{p2col :p = {res:0.3653} >= 0.0500}removing {res:new_exterior1st8}{p_end}
+{p2col :p = {res:0.3443} >= 0.0500}removing {res:new_saletype5}{p_end}
+{p2col :p = {res:0.3076} >= 0.0500}removing {res:new_garageyrblt6}{p_end}
+{p2col :p = {res:0.2937} >= 0.0500}removing {res:new_garageyrblt7}{p_end}
+{p2col :p = {res:0.3347} >= 0.0500}removing {res:new_saletype2}{p_end}
+{p2col :p = {res:0.3066} >= 0.0500}removing {res:new_garageyrblt5}{p_end}
+{p2col :p = {res:0.3146} >= 0.0500}removing {res:new_condition12}{p_end}
+{p2col :p = {res:0.3144} >= 0.0500}removing {res:new_garageyrblt4}{p_end}
+{p2col :p = {res:0.3064} >= 0.0500}removing {res:new_lotshape2}{p_end}
+{p2col :p = {res:0.2988} >= 0.0500}removing {res:new_garageyrblt47}{p_end}
+{p2col :p = {res:0.3008} >= 0.0500}removing {res:new_garageyrblt20}{p_end}
+{p2col :p = {res:0.3027} >= 0.0500}removing {res:new_garageyrblt55}{p_end}
+{p2col :p = {res:0.3211} >= 0.0500}removing {res:new_garageyrblt45}{p_end}
+{p2col :p = {res:0.2883} >= 0.0500}removing {res:new_electrical6}{p_end}
+{p2col :p = {res:0.2825} >= 0.0500}removing {res:new_lotconfig5}{p_end}
+{p2col :p = {res:0.3060} >= 0.0500}removing {res:new_condition17}{p_end}
+{p2col :p = {res:0.2593} >= 0.0500}removing {res:new_neighborhood3}{p_end}
+{p2col :p = {res:0.2587} >= 0.0500}removing {res:new_condition19}{p_end}
+{p2col :p = {res:0.2414} >= 0.0500}removing {res:new_landcontour4}{p_end}
+{p2col :p = {res:0.2402} >= 0.0500}removing {res:new_garageyrblt38}{p_end}
+{p2col :p = {res:0.2323} >= 0.0500}removing {res:new_garageyrblt65}{p_end}
+{p2col :p = {res:0.2900} >= 0.0500}removing {res:new_garageyrblt63}{p_end}
+{p2col :p = {res:0.2369} >= 0.0500}removing {res:new_garageyrblt9}{p_end}
+{p2col :p = {res:0.2346} >= 0.0500}removing {res:new_miscfeature4}{p_end}
+{p2col :p = {res:0.2699} >= 0.0500}removing {res:new_garageyrblt48}{p_end}
+{p2col :p = {res:0.1996} >= 0.0500}removing {res:new_landslope2}{p_end}
+{p2col :p = {res:0.2389} >= 0.0500}removing {res:new_garageyrblt51}{p_end}
+{p2col :p = {res:0.2421} >= 0.0500}removing {res:ssnporch}{p_end}
+{p2col :p = {res:0.2126} >= 0.0500}removing {res:openporchsf}{p_end}
+{p2col :p = {res:0.2264} >= 0.0500}removing {res:new_saletype3}{p_end}
+{p2col :p = {res:0.2139} >= 0.0500}removing {res:new_functional6}{p_end}
+{p2col :p = {res:0.2006} >= 0.0500}removing {res:new_garageyrblt56}{p_end}
+{p2col :p = {res:0.1989} >= 0.0500}removing {res:new_saletype4}{p_end}
+{p2col :p = {res:0.1886} >= 0.0500}removing {res:mssubclass}{p_end}
+{p2col :p = {res:0.1953} >= 0.0500}removing {res:new_electrical5}{p_end}
+{p2col :p = {res:0.1968} >= 0.0500}removing {res:new_paveddrive2}{p_end}
+{p2col :p = {res:0.1905} >= 0.0500}removing {res:new_garageyrblt39}{p_end}
+{p2col :p = {res:0.1894} >= 0.0500}removing {res:new_garagetype6}{p_end}
+{p2col :p = {res:0.1760} >= 0.0500}removing {res:new_exterior2nd12}{p_end}
+{p2col :p = {res:0.1698} >= 0.0500}removing {res:new_bsmtfintype23}{p_end}
+{p2col :p = {res:0.2187} >= 0.0500}removing {res:new_bsmtfintype21}{p_end}
+{p2col :p = {res:0.1660} >= 0.0500}removing {res:new_garageyrblt80}{p_end}
+{p2col :p = {res:0.1648} >= 0.0500}removing {res:new_salecondition2}{p_end}
+{p2col :p = {res:0.1678} >= 0.0500}removing {res:new_bldgtype3}{p_end}
+{p2col :p = {res:0.1538} >= 0.0500}removing {res:_clus_k50_no_sale_price}{p_end}
+{p2col :p = {res:0.1632} >= 0.0500}removing {res:new_garageyrblt72}{p_end}
+{p2col :p = {res:0.1487} >= 0.0500}removing {res:new_garageyrblt40}{p_end}
+{p2col :p = {res:0.1511} >= 0.0500}removing {res:new_garageyrblt93}{p_end}
+{p2col :p = {res:0.1402} >= 0.0500}removing {res:new_neighborhood19}{p_end}
+{p2col :p = {res:0.1377} >= 0.0500}removing {res:new_garageyrblt50}{p_end}
+{p2col :p = {res:0.1401} >= 0.0500}removing {res:new_mszoning3}{p_end}
+{p2col :p = {res:0.1392} >= 0.0500}removing {res:new_garageyrblt44}{p_end}
+{p2col :p = {res:0.1565} >= 0.0500}removing {res:new_garageyrblt42}{p_end}
+{p2col :p = {res:0.1188} >= 0.0500}removing {res:new_garageyrblt62}{p_end}
+{p2col :p = {res:0.1206} >= 0.0500}removing {res:new_garageyrblt75}{p_end}
+{p2col :p = {res:0.1254} >= 0.0500}removing {res:new_garageyrblt60}{p_end}
+{p2col :p = {res:0.1298} >= 0.0500}removing {res:new_mszoning5}{p_end}
+{p2col :p = {res:0.1866} >= 0.0500}removing {res:new_mszoning4}{p_end}
+{p2col :p = {res:0.1620} >= 0.0500}removing {res:new_neighborhood20}{p_end}
+{p2col :p = {res:0.1325} >= 0.0500}removing {res:new_lotconfig3}{p_end}
+{p2col :p = {res:0.1350} >= 0.0500}removing {res:new_garageyrblt57}{p_end}
+{p2col :p = {res:0.1221} >= 0.0500}removing {res:new_garageyrblt68}{p_end}
+{p2col :p = {res:0.1168} >= 0.0500}removing {res:new_landcontour2}{p_end}
+{p2col :p = {res:0.1160} >= 0.0500}removing {res:new_housestyle8}{p_end}
+{p2col :p = {res:0.1268} >= 0.0500}removing {res:new_exterior2nd6}{p_end}
+{p2col :p = {res:0.1269} >= 0.0500}removing {res:garagecars}{p_end}
+{p2col :p = {res:0.1126} >= 0.0500}removing {res:new_neighborhood24}{p_end}
+{p2col :p = {res:0.1150} >= 0.0500}removing {res:new_garageyrblt79}{p_end}
+{p2col :p = {res:0.1062} >= 0.0500}removing {res:new_bsmtfintype12}{p_end}
+{p2col :p = {res:0.1172} >= 0.0500}removing {res:new_bsmtfintype17}{p_end}
+{p2col :p = {res:0.1200} >= 0.0500}removing {res:new_bsmtfintype13}{p_end}
+{p2col :p = {res:0.1079} >= 0.0500}removing {res:new_exterior2nd13}{p_end}
+{p2col :p = {res:0.1028} >= 0.0500}removing {res:new_exterior2nd10}{p_end}
+{p2col :p = {res:0.0920} >= 0.0500}removing {res:new_functional3}{p_end}
+{p2col :p = {res:0.1775} >= 0.0500}removing {res:new_functional4}{p_end}
+{p2col :p = {res:0.0893} >= 0.0500}removing {res:new_condition21}{p_end}
+{p2col :p = {res:0.2698} >= 0.0500}removing {res:new_condition28}{p_end}
+{p2col :p = {res:0.4885} >= 0.0500}removing {res:new_condition22}{p_end}
+{p2col :p = {res:0.3617} >= 0.0500}removing {res:new_condition27}{p_end}
+{p2col :p = {res:0.2510} >= 0.0500}removing {res:new_condition23}{p_end}
+{p2col :p = {res:0.1364} >= 0.0500}removing {res:new_housestyle5}{p_end}
+{p2col :p = {res:0.1050} >= 0.0500}removing {res:new_roofstyle4}{p_end}
+{p2col :p = {res:0.1020} >= 0.0500}removing {res:new_housestyle6}{p_end}
+{p2col :p = {res:0.0824} >= 0.0500}removing {res:new_garageyrblt90}{p_end}
+{p2col :p = {res:0.0937} >= 0.0500}removing {res:new_lotconfig4}{p_end}
+{p2col :p = {res:0.0915} >= 0.0500}removing {res:new_garageyrblt92}{p_end}
+{p2col :p = {res:0.0890} >= 0.0500}removing {res:new_heatingqc3}{p_end}
+{p2col :p = {res:0.0692} >= 0.0500}removing {res:new_garageyrblt71}{p_end}
+{p2col :p = {res:0.0660} >= 0.0500}removing {res:new_garageyrblt77}{p_end}
+{p2col :p = {res:0.0814} >= 0.0500}removing {res:new_fireplacequ3}{p_end}
+{p2col :p = {res:0.2956} >= 0.0500}removing {res:new_fireplacequ6}{p_end}
+{p2col :p = {res:0.2393} >= 0.0500}removing {res:new_fireplacequ2}{p_end}
+{p2col :p = {res:0.1000} >= 0.0500}removing {res:new_neighborhood6}{p_end}
+{p2col :p = {res:0.0866} >= 0.0500}removing {res:fullbath}{p_end}
+{p2col :p = {res:0.1200} >= 0.0500}removing {res:new_neighborhood9}{p_end}
+{p2col :p = {res:0.0839} >= 0.0500}removing {res:new_neighborhood5}{p_end}
+{p2col :p = {res:0.0904} >= 0.0500}removing {res:fireplaces}{p_end}
+{p2col :p = {res:0.0705} >= 0.0500}removing {res:new_bsmtexposure3}{p_end}
+{p2col :p = {res:0.0706} >= 0.0500}removing {res:new_roofstyle6}{p_end}
+{p2col :p = {res:0.4029} >= 0.0500}removing {res:new_condition26}{p_end}
+{p2col :p = {res:0.0615} >= 0.0500}removing {res:new_heatingqc5}{p_end}
+{p2col :p = {res:0.0647} >= 0.0500}removing {res:new_exterior2nd8}{p_end}
+{p2colreset}{...}
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}     1,460
+{txt}{hline 13}{c +}{hline 34}   F(68, 1391)     = {res}   225.97
+{txt}       Model {c |} {res} 8.4436e+12        68  1.2417e+11   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 7.6434e+11     1,391   549488074   {txt}R-squared       ={res}    0.9170
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.9129
+{txt}       Total {c |} {res} 9.2079e+12     1,459  6.3111e+09   {txt}Root MSE        =   {res}  23441
+
+{txt}{hline 19}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         saleprice{col 20}{c |}      Coef.{col 32}   Std. Err.{col 44}      t{col 52}   P>|t|{col 60}     [95% Con{col 73}f. Interval]
+{hline 19}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}new_functional7 {c |}{col 20}{res}{space 2} 13321.26{col 32}{space 2} 2732.961{col 43}{space 1}    4.87{col 52}{space 3}0.000{col 60}{space 4} 7960.086{col 73}{space 3} 18682.42
+{txt}{space 11}lotarea {c |}{col 20}{res}{space 2} .5963072{col 32}{space 2} .0907138{col 43}{space 1}    6.57{col 52}{space 3}0.000{col 60}{space 4} .4183567{col 73}{space 3} .7742578
+{txt}{space 7}overallqual {c |}{col 20}{res}{space 2} 8677.017{col 32}{space 2} 871.5081{col 43}{space 1}    9.96{col 52}{space 3}0.000{col 60}{space 4} 6967.405{col 73}{space 3} 10386.63
+{txt}{space 7}overallcond {c |}{col 20}{res}{space 2} 5656.531{col 32}{space 2}  729.457{col 43}{space 1}    7.75{col 52}{space 3}0.000{col 60}{space 4} 4225.577{col 73}{space 3} 7087.486
+{txt}{space 9}yearbuilt {c |}{col 20}{res}{space 2} 360.8348{col 32}{space 2} 43.04197{col 43}{space 1}    8.38{col 52}{space 3}0.000{col 60}{space 4} 276.4006{col 73}{space 3}  445.269
+{txt}{space 6}yearremodadd {c |}{col 20}{res}{space 2} 110.8774{col 32}{space 2} 49.02573{col 43}{space 1}    2.26{col 52}{space 3}0.024{col 60}{space 4} 14.70511{col 73}{space 3} 207.0498
+{txt}{space 8}bsmtfinsf1 {c |}{col 20}{res}{space 2} 43.34884{col 32}{space 2} 4.105028{col 43}{space 1}   10.56{col 52}{space 3}0.000{col 60}{space 4} 35.29613{col 73}{space 3} 51.40155
+{txt}{space 8}bsmtfinsf2 {c |}{col 20}{res}{space 2} 28.07758{col 32}{space 2}  5.41602{col 43}{space 1}    5.18{col 52}{space 3}0.000{col 60}{space 4} 17.45313{col 73}{space 3} 38.70203
+{txt}{space 9}bsmtunfsf {c |}{col 20}{res}{space 2} 24.21903{col 32}{space 2} 4.002636{col 43}{space 1}    6.05{col 52}{space 3}0.000{col 60}{space 4} 16.36717{col 73}{space 3} 32.07088
+{txt}{space 3}new_housestyle3 {c |}{col 20}{res}{space 2} 10063.26{col 32}{space 2} 2424.785{col 43}{space 1}    4.15{col 52}{space 3}0.000{col 60}{space 4} 5306.627{col 73}{space 3} 14819.89
+{txt}{space 11}ndflrsf {c |}{col 20}{res}{space 2} 16.54348{col 32}{space 2} 4.560809{col 43}{space 1}    3.63{col 52}{space 3}0.000{col 60}{space 4} 7.596671{col 73}{space 3} 25.49028
+{txt}{space 9}grlivarea {c |}{col 20}{res}{space 2} 49.37885{col 32}{space 2} 4.501597{col 43}{space 1}   10.97{col 52}{space 3}0.000{col 60}{space 4}  40.5482{col 73}{space 3}  58.2095
+{txt}{space 1}new_garageyrblt52 {c |}{col 20}{res}{space 2}-11452.06{col 32}{space 2} 5397.041{col 43}{space 1}   -2.12{col 52}{space 3}0.034{col 60}{space 4}-22039.28{col 73}{space 3}-864.8445
+{txt}{space 2}new_kitchenqual2 {c |}{col 20}{res}{space 2}-27281.21{col 32}{space 2}  5481.62{col 43}{space 1}   -4.98{col 52}{space 3}0.000{col 60}{space 4}-38034.35{col 73}{space 3}-16528.08
+{txt}{space 3}new_condition13 {c |}{col 20}{res}{space 2} 5469.478{col 32}{space 2} 1971.336{col 43}{space 1}    2.77{col 52}{space 3}0.006{col 60}{space 4} 1602.365{col 73}{space 3}  9336.59
+{txt}{space 8}new_fence3 {c |}{col 20}{res}{space 2}  8744.05{col 32}{space 2} 3496.435{col 43}{space 1}    2.50{col 52}{space 3}0.013{col 60}{space 4} 1885.196{col 73}{space 3}  15602.9
+{txt}{space 6}bedroomabvgr {c |}{col 20}{res}{space 2} -6800.32{col 32}{space 2} 1202.875{col 43}{space 1}   -5.65{col 52}{space 3}0.000{col 60}{space 4}-9159.964{col 73}{space 3}-4440.676
+{txt}{space 6}kitchenabvgr {c |}{col 20}{res}{space 2}-23599.65{col 32}{space 2} 3428.531{col 43}{space 1}   -6.88{col 52}{space 3}0.000{col 60}{space 4} -30325.3{col 73}{space 3}   -16874
+{txt}{space 6}totrmsabvgrd {c |}{col 20}{res}{space 2} 2999.844{col 32}{space 2} 881.9977{col 43}{space 1}    3.40{col 52}{space 3}0.001{col 60}{space 4} 1269.655{col 73}{space 3} 4730.033
+{txt}{space 1}new_garageyrblt64 {c |}{col 20}{res}{space 2}-10114.65{col 32}{space 2} 4314.405{col 43}{space 1}   -2.34{col 52}{space 3}0.019{col 60}{space 4}-18578.09{col 73}{space 3}-1651.211
+{txt}{space 5}new_bldgtype4 {c |}{col 20}{res}{space 2}-24425.03{col 32}{space 2} 4071.575{col 43}{space 1}   -6.00{col 52}{space 3}0.000{col 60}{space 4}-32412.12{col 73}{space 3}-16437.94
+{txt}{space 8}garagearea {c |}{col 20}{res}{space 2} 28.90117{col 32}{space 2} 4.096798{col 43}{space 1}    7.05{col 52}{space 3}0.000{col 60}{space 4}  20.8646{col 73}{space 3} 36.93774
+{txt}{space 8}wooddecksf {c |}{col 20}{res}{space 2} 13.41283{col 32}{space 2} 5.552776{col 43}{space 1}    2.42{col 52}{space 3}0.016{col 60}{space 4} 2.520109{col 73}{space 3} 24.30555
+{txt}{space 1}new_bsmtexposure2 {c |}{col 20}{res}{space 2}    22149{col 32}{space 2} 2662.598{col 43}{space 1}    8.32{col 52}{space 3}0.000{col 60}{space 4} 16925.86{col 73}{space 3} 27372.14
+{txt}{space 2}new_garageyrblt8 {c |}{col 20}{res}{space 2}-68958.88{col 32}{space 2} 17820.89{col 43}{space 1}   -3.87{col 52}{space 3}0.000{col 60}{space 4}-103917.6{col 73}{space 3}-34000.15
+{txt}new_neighborhood23 {c |}{col 20}{res}{space 2} 41395.76{col 32}{space 2} 5211.997{col 43}{space 1}    7.94{col 52}{space 3}0.000{col 60}{space 4} 31171.54{col 73}{space 3} 51619.99
+{txt}{space 7}screenporch {c |}{col 20}{res}{space 2} 43.29276{col 32}{space 2}  11.7425{col 43}{space 1}    3.69{col 52}{space 3}0.000{col 60}{space 4} 20.25784{col 73}{space 3} 66.32767
+{txt}{space 10}poolarea {c |}{col 20}{res}{space 2} 138.8932{col 32}{space 2}  19.0082{col 43}{space 1}    7.31{col 52}{space 3}0.000{col 60}{space 4} 101.6054{col 73}{space 3}  176.181
+{txt}{space 5}new_roofmatl4 {c |}{col 20}{res}{space 2} 748137.9{col 32}{space 2} 39264.92{col 43}{space 1}   19.05{col 52}{space 3}0.000{col 60}{space 4}   671113{col 73}{space 3} 825162.7
+{txt}{space 12}mosold {c |}{col 20}{res}{space 2}-462.7143{col 32}{space 2} 233.6878{col 43}{space 1}   -1.98{col 52}{space 3}0.048{col 60}{space 4}-921.1328{col 73}{space 3}-4.295798
+{txt}{space 2}new_exterior1st4 {c |}{col 20}{res}{space 2} 13113.01{col 32}{space 2}  3615.02{col 43}{space 1}    3.63{col 52}{space 3}0.000{col 60}{space 4} 6021.529{col 73}{space 3} 20204.49
+{txt}{space 5}new_mszoning2 {c |}{col 20}{res}{space 2} 15432.41{col 32}{space 2} 3390.209{col 43}{space 1}    4.55{col 52}{space 3}0.000{col 60}{space 4} 8781.941{col 73}{space 3} 22082.89
+{txt}{space 5}new_saletype7 {c |}{col 20}{res}{space 2} 29005.68{col 32}{space 2} 3438.416{col 43}{space 1}    8.44{col 52}{space 3}0.000{col 60}{space 4} 22260.64{col 73}{space 3} 35750.72
+{txt}{space 5}new_roofmatl8 {c |}{col 20}{res}{space 2} 777861.9{col 32}{space 2} 30505.72{col 43}{space 1}   25.50{col 52}{space 3}0.000{col 60}{space 4} 718019.7{col 73}{space 3}   837704
+{txt}{space 8}new_fence5 {c |}{col 20}{res}{space 2} 8271.632{col 32}{space 2} 3074.084{col 43}{space 1}    2.69{col 52}{space 3}0.007{col 60}{space 4} 2241.292{col 73}{space 3} 14301.97
+{txt}{space 7}new_street2 {c |}{col 20}{res}{space 2} 33585.96{col 32}{space 2} 10032.52{col 43}{space 1}    3.35{col 52}{space 3}0.001{col 60}{space 4} 13905.46{col 73}{space 3} 53266.46
+{txt}{space 5}new_roofmatl5 {c |}{col 20}{res}{space 2} 713481.4{col 32}{space 2} 37619.09{col 43}{space 1}   18.97{col 52}{space 3}0.000{col 60}{space 4} 639685.1{col 73}{space 3} 787277.6
+{txt}{space 2}new_kitchenqual4 {c |}{col 20}{res}{space 2} -34904.2{col 32}{space 2} 3518.715{col 43}{space 1}   -9.92{col 52}{space 3}0.000{col 60}{space 4}-41806.77{col 73}{space 3}-28001.64
+{txt}{space 1}new_garageyrblt94 {c |}{col 20}{res}{space 2}-10820.33{col 32}{space 2} 3789.968{col 43}{space 1}   -2.85{col 52}{space 3}0.004{col 60}{space 4}   -18255{col 73}{space 3}-3385.661
+{txt}{space 2}new_miscfeature5 {c |}{col 20}{res}{space 2}-98442.95{col 32}{space 2} 26517.71{col 43}{space 1}   -3.71{col 52}{space 3}0.000{col 60}{space 4}  -150462{col 73}{space 3}-46423.93
+{txt}{space 5}new_roofmatl2 {c |}{col 20}{res}{space 2} 711840.5{col 32}{space 2} 29241.31{col 43}{space 1}   24.34{col 52}{space 3}0.000{col 60}{space 4} 654478.7{col 73}{space 3} 769202.3
+{txt}{space 5}new_roofmatl3 {c |}{col 20}{res}{space 2} 766833.9{col 32}{space 2} 39466.94{col 43}{space 1}   19.43{col 52}{space 3}0.000{col 60}{space 4} 689412.8{col 73}{space 3}   844255
+{txt}{space 2}new_landcontour3 {c |}{col 20}{res}{space 2}-13325.98{col 32}{space 2} 4736.961{col 43}{space 1}   -2.81{col 52}{space 3}0.005{col 60}{space 4}-22618.34{col 73}{space 3}-4033.621
+{txt}{space 1}new_bsmtfintype15 {c |}{col 20}{res}{space 2} 20948.64{col 32}{space 2} 6049.596{col 43}{space 1}    3.46{col 52}{space 3}0.001{col 60}{space 4}  9081.32{col 73}{space 3} 32815.95
+{txt}{space 1}new_exterior1st10 {c |}{col 20}{res}{space 2}-6217.247{col 32}{space 2}  2804.88{col 43}{space 1}   -2.22{col 52}{space 3}0.027{col 60}{space 4} -11719.5{col 73}{space 3}-714.9955
+{txt}{space 4}new_lotconfig2 {c |}{col 20}{res}{space 2}  9180.11{col 32}{space 2} 2678.851{col 43}{space 1}    3.43{col 52}{space 3}0.001{col 60}{space 4} 3925.086{col 73}{space 3} 14435.13
+{txt}{space 5}new_roofmatl6 {c |}{col 20}{res}{space 2} 694502.4{col 32}{space 2} 30058.06{col 43}{space 1}   23.11{col 52}{space 3}0.000{col 60}{space 4} 635538.3{col 73}{space 3} 753466.4
+{txt}{space 1}new_garagefinish3 {c |}{col 20}{res}{space 2}-4252.003{col 32}{space 2} 1503.082{col 43}{space 1}   -2.83{col 52}{space 3}0.005{col 60}{space 4}-7200.556{col 73}{space 3} -1303.45
+{txt}{space 3}new_housestyle2 {c |}{col 20}{res}{space 2} 17769.85{col 32}{space 2} 6776.833{col 43}{space 1}    2.62{col 52}{space 3}0.009{col 60}{space 4} 4475.935{col 73}{space 3} 31063.77
+{txt}{space 1}new_bsmtexposure5 {c |}{col 20}{res}{space 2}-4581.724{col 32}{space 2} 1635.252{col 43}{space 1}   -2.80{col 52}{space 3}0.005{col 60}{space 4} -7789.55{col 73}{space 3}-1373.897
+{txt}{space 4}new_landslope3 {c |}{col 20}{res}{space 2}-24196.05{col 32}{space 2} 9398.823{col 43}{space 1}   -2.57{col 52}{space 3}0.010{col 60}{space 4}-42633.45{col 73}{space 3}-5758.653
+{txt}{space 3}new_condition25 {c |}{col 20}{res}{space 2}-211857.3{col 32}{space 2} 17700.96{col 43}{space 1}  -11.97{col 52}{space 3}0.000{col 60}{space 4}-246580.8{col 73}{space 3}-177133.8
+{txt}{space 8}new_fence2 {c |}{col 20}{res}{space 2} 10257.92{col 32}{space 2}  4408.66{col 43}{space 1}    2.33{col 52}{space 3}0.020{col 60}{space 4} 1609.575{col 73}{space 3} 18906.26
+{txt}new_salecondition5 {c |}{col 20}{res}{space 2} 6740.331{col 32}{space 2} 2199.989{col 43}{space 1}    3.06{col 52}{space 3}0.002{col 60}{space 4} 2424.677{col 73}{space 3} 11055.98
+{txt}{space 3}new_condition16 {c |}{col 20}{res}{space 2}-22770.45{col 32}{space 2} 7493.581{col 43}{space 1}   -3.04{col 52}{space 3}0.002{col 60}{space 4}-37470.39{col 73}{space 3}-8070.512
+{txt}{space 5}new_bldgtype5 {c |}{col 20}{res}{space 2}-19165.52{col 32}{space 2} 2802.527{col 43}{space 1}   -6.84{col 52}{space 3}0.000{col 60}{space 4}-24663.16{col 73}{space 3}-13667.89
+{txt}{space 1}new_neighborhood7 {c |}{col 20}{res}{space 2} 22220.84{col 32}{space 2} 3769.138{col 43}{space 1}    5.90{col 52}{space 3}0.000{col 60}{space 4} 14827.03{col 73}{space 3} 29614.65
+{txt}{space 1}new_neighborhood8 {c |}{col 20}{res}{space 2}-6817.961{col 32}{space 2} 2722.384{col 43}{space 1}   -2.50{col 52}{space 3}0.012{col 60}{space 4}-12158.38{col 73}{space 3}-1477.539
+{txt}{space 3}new_housestyle4 {c |}{col 20}{res}{space 2}-20204.07{col 32}{space 2} 9026.222{col 43}{space 1}   -2.24{col 52}{space 3}0.025{col 60}{space 4}-37910.55{col 73}{space 3}-2497.597
+{txt}{space 5}new_roofmatl7 {c |}{col 20}{res}{space 2} 714095.8{col 32}{space 2} 31403.96{col 43}{space 1}   22.74{col 52}{space 3}0.000{col 60}{space 4} 652491.5{col 73}{space 3}   775700
+{txt}{space 2}new_kitchenqual3 {c |}{col 20}{res}{space 2}-35553.17{col 32}{space 2} 3055.577{col 43}{space 1}  -11.64{col 52}{space 3}0.000{col 60}{space 4}-41547.21{col 73}{space 3}-29559.14
+{txt}new_neighborhood12 {c |}{col 20}{res}{space 2}-9950.723{col 32}{space 2} 3658.135{col 43}{space 1}   -2.72{col 52}{space 3}0.007{col 60}{space 4}-17126.78{col 73}{space 3}-2774.666
+{txt}new_neighborhood13 {c |}{col 20}{res}{space 2}-6109.035{col 32}{space 2} 2126.379{col 43}{space 1}   -2.87{col 52}{space 3}0.004{col 60}{space 4}-10280.29{col 73}{space 3} -1937.78
+{txt}new_neighborhood14 {c |}{col 20}{res}{space 2} 19021.18{col 32}{space 2} 8638.398{col 43}{space 1}    2.20{col 52}{space 3}0.028{col 60}{space 4} 2075.488{col 73}{space 3} 35966.88
+{txt}new_neighborhood15 {c |}{col 20}{res}{space 2}-8756.722{col 32}{space 2} 3168.171{col 43}{space 1}   -2.76{col 52}{space 3}0.006{col 60}{space 4}-14971.63{col 73}{space 3}-2541.814
+{txt}new_neighborhood16 {c |}{col 20}{res}{space 2} 36771.69{col 32}{space 2} 4293.299{col 43}{space 1}    8.56{col 52}{space 3}0.000{col 60}{space 4} 28349.65{col 73}{space 3} 45193.73
+{txt}new_neighborhood17 {c |}{col 20}{res}{space 2} 33886.18{col 32}{space 2} 3452.867{col 43}{space 1}    9.81{col 52}{space 3}0.000{col 60}{space 4} 27112.79{col 73}{space 3} 40659.57
+{txt}new_neighborhood18 {c |}{col 20}{res}{space 2}-7162.379{col 32}{space 2}  2999.57{col 43}{space 1}   -2.39{col 52}{space 3}0.017{col 60}{space 4}-13046.55{col 73}{space 3} -1278.21
+{txt}{space 13}_cons {c |}{col 20}{res}{space 2} -1692177{col 32}{space 2} 105683.4{col 43}{space 1}  -16.01{col 52}{space 3}0.000{col 60}{space 4} -1899493{col 73}{space 3} -1484861
+{txt}{hline 19}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/zillow_indicatorVar.dta", replace
+{txt}file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/zillow_indicatorVar.dta saved
+
+{com}. exit
