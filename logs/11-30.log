@@ -1,0 +1,127 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/logs/11-30.log
+  log type:  text
+ opened on:  30 Nov 2017, 00:59:41
+
+. cluster kmeans werw, k(8) measure(L2) start(krandom(2017)) iterate(1000000)
+variable werw not found
+r(111);
+
+. cluster kmeans lotfrontage lotarea yearbuilt stflrsf ndflrsf grlivarea fullbath halfbath bedroomabvgr totrmsabvgrd fireplaces g
+> aragecars garagearea salecondition saleprice mssubclass1 mssubclass2 mssubclass3 mssubclass4 mssubclass5 mssubclass6 mssubclass
+> 7 mssubclass8 mssubclass9 mssubclass10 mssubclass11 mssubclass12 mssubclass13 mssubclass14 mssubclass15 mszoning1 mszoning2 msz
+> oning3 mszoning4 mszoning5 street1 street2 alley1 alley2 alley3 neighborhood1 neighborhood2 neighborhood3 neighborhood4 neighbo
+> rhood5 neighborhood6 neighborhood7 neighborhood7-normalSaleBool , k(8) measure(L2) start(krandom(2017)) iterate(1000000)
+string variables not allowed in varlist;
+lotfrontage is a string variable
+r(109);
+
+. destring lotfrontage, replace
+lotfrontage: contains nonnumeric characters; no replace
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train.dta saved
+
+. cluster kmeans lotfrontage lotarea yearbuilt stflrsf ndflrsf grlivarea fullbath halfbath bedroomabvgr totrmsabvgrd fireplaces g
+> aragecars garagearea salecondition saleprice mssubclass1 mssubclass2 mssubclass3 mssubclass4 mssubclass5 mssubclass6 mssubclass
+> 7 mssubclass8 mssubclass9 mssubclass10 mssubclass11 mssubclass12 mssubclass13 mssubclass14 mssubclass15 mszoning1 mszoning2 msz
+> oning3 mszoning4 mszoning5 street1 street2 alley1 alley2 alley3 neighborhood1 neighborhood2 neighborhood3 neighborhood4 neighbo
+> rhood5 neighborhood6 neighborhood7 neighborhood7-normalSaleBool , k(8) measure(L2) start(krandom(2017)) iterate(1000000)
+string variables not allowed in varlist;
+lotfrontage is a string variable
+r(109);
+
+. drop if lotfrontage-normalSaleBool == .
+type mismatch
+r(109);
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train.dta saved
+
+. mvencode j, mv(3.14)
+variable j not found
+r(111);
+
+. mvencode lotfrontage-normalSaleBool, mv(3.14)
+ lotfrontage: string variable ignored
+salecondit~n: string variable ignored
+  pavedDrive: 30 missing values recoded
+
+. use "/Users/justinfriedman/Documents/School Work/Empirical Techniques for Industry Analysis/FINAL/ames_train_orig.dta", clear
+
+. use "/Users/justinfriedman/Documents/School Work/Empirical Techniques for Industry Analysis/FINAL/ames_train_orig.dta"
+
+. destring lotfrontage, replace
+lotfrontage: contains nonnumeric characters; no replace
+
+. use "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train.dta"
+
+. use "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train.dta"
+
+. drop if lotfrontage == .
+type mismatch
+r(109);
+
+. drop if lotarea == .
+(0 observations deleted)
+
+. drop if lotfrontage == "NA"
+(259 observations deleted)
+
+. destring lotfrontage, replace
+lotfrontage: all characters numeric; replaced as int
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-tr
+> ain.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train
+> .dta saved
+
+. drop if yearbuilt == .
+(0 observations deleted)
+
+. drop if stflrsf == .
+(0 observations deleted)
+
+. drop if ndflrsf == .
+(0 observations deleted)
+
+. drop if grlivarea == .
+(0 observations deleted)
+
+. drop if fullbath == .
+(0 observations deleted)
+
+. drop salecondition
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-tr
+> ain.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train
+> .dta saved
+
+. cluster kmeans lotfrontage lotarea yearbuilt stflrsf ndflrsf grlivarea fullbath halfbath bedrooma
+> bvgr totrmsabvgrd fireplaces garagecars garagearea salecondition saleprice mssubclass1 mssubclass
+> 2 mssubclass3 mssubclass4 mssubclass5 mssubclass6 mssubclass7 mssubclass8 mssubclass9 mssubclass1
+> 0 mssubclass11 mssubclass12 mssubclass13 mssubclass14 mssubclass15 mszoning1 mszoning2 mszoning3 
+> mszoning4 mszoning5 street1 street2 alley1 alley2 alley3 neighborhood1 neighborhood2 neighborhood
+> 3 neighborhood4 neighborhood5 neighborhood6 neighborhood7 neighborhood7-normalSaleBool , k(8) mea
+> sure(L2) start(krandom(2017)) iterate(1000000)
+variable salecondition not found
+r(111);
+
+. cluster kmeans lotfrontage lotarea yearbuilt stflrsf ndflrsf grlivarea fullbath halfbath bedrooma
+> bvgr totrmsabvgrd fireplaces garagecars garagearea saleprice mssubclass1 mssubclass2 mssubclass3 
+> mssubclass4 mssubclass5 mssubclass6 mssubclass7 mssubclass8 mssubclass9 mssubclass10 mssubclass11
+>  mssubclass12 mssubclass13 mssubclass14 mssubclass15 mszoning1 mszoning2 mszoning3 mszoning4 mszo
+> ning5 street1 street2 alley1 alley2 alley3 neighborhood1 neighborhood2 neighborhood3 neighborhood
+> 4 neighborhood5 neighborhood6 neighborhood7 neighborhood7-normalSaleBool , k(8) measure(L2) start
+> (krandom(2017)) iterate(1000000)
+cluster name: _clus_1
+
+. rename _clus_1 _clus_k8
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-tr
+> ain.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train
+> .dta saved
+
