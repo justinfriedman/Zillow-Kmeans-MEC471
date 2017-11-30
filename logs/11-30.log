@@ -125,3 +125,23 @@ cluster name: _clus_1
 file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train
 > .dta saved
 
+. drop _clus_k8
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-tr
+> ain.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/edited_data_Zillow-train
+> .dta saved
+
+. sum saleye
+variable saleye not found
+r(111);
+
+. summ year
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+   yearbuilt |      1,201     1970.58    31.75033       1872       2010
+
+. use "/Users/justinfriedman/Documents/School Work/Empirical Techniques for Industry Analysis/FINAL
+> /ames_train_orig.dta"
+
