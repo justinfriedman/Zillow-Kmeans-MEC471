@@ -145,3 +145,841 @@ r(111);
 . use "/Users/justinfriedman/Documents/School Work/Empirical Techniques for Industry Analysis/FINAL
 > /ames_train_orig.dta"
 
+. use "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-t
+> rain.dta"
+
+. drop if lotfrontage == "NA"
+(259 observations deleted)
+
+. destring lotfrontage, replace
+lotfrontage: all characters numeric; replaced as int
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-
+> train.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-tra
+> in.dta saved
+
+. drop salecondition
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-
+> train.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-tra
+> in.dta saved
+
+. cluster yearbuilt stflrsf totrmsabvgrd street1 street2 saletype1-saletype9 roofStan remodbool lot
+> frontage lotarea ndflrsf-bedroomabvgr fireplaces-garagearea mssubclass1-mszoning5 alley1-overallc
+> ond9 extercond1-mosold12 normalSaleBool deflator, k(8) measure(L2) start(krandom(2017)) iterate(1
+> 000000)
+command cluster_yearbuilt is unrecognized
+r(199);
+
+. cluster kmeans werw, k(8) measure(L2) start(krandom(2017)) iterate(1000000)
+variable werw not found
+r(111);
+
+. cluster kmeans lotfrontage lotarea ndflrsf-bedroomabvgr fireplaces-garagearea mssubclass1-mszonin
+> g5 alley1-overallcond9 extercond1-mosold12 normalSaleBool deflator remodbool roofStan yearbuilt s
+> tflrsf totrmsabvgrd street1 street2 saletype1-saletype9, k(8) measure(L2) start(krandom(2017)) it
+> erate(1000000)
+cluster name: _clus_1
+
+. rename _clus_1 _clus_k8
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-
+> train.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-tra
+> in.dta saved
+
+. summ if _clus_k8 == 1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+ lotfrontage |         23    104.7826    59.32343         42        313
+     lotarea |         23       22157    2393.892      18386      27650
+   yearbuilt |         23     1961.13    38.24479       1880       2006
+     stflrsf |         23     1350.87    468.4015        720       2444
+     ndflrsf |         23    714.3913    637.1133          0       1872
+-------------+---------------------------------------------------------
+   grlivarea |         23    2107.174    896.3396        864       4316
+    fullbath |         23     1.73913    .6191924          1          3
+    halfbath |         23    .5217391    .5107539          0          1
+bedroomabvgr |         23    3.217391    .9513876          1          4
+totrmsabvgrd |         23     7.73913    2.136637          4         12
+-------------+---------------------------------------------------------
+  fireplaces |         23    1.086957    .5964321          0          2
+  garagecars |         23    2.173913    .5762081          1          3
+  garagearea |         23    607.3043    220.8421        312       1134
+   saleprice |         23    259859.5    149477.3     113000     755000
+ mssubclass1 |         23    .3043478     .470472          0          1
+-------------+---------------------------------------------------------
+ mssubclass2 |         23           0           0          0          0
+ mssubclass3 |         23           0           0          0          0
+ mssubclass4 |         23           0           0          0          0
+ mssubclass5 |         23    .0869565    .2881041          0          1
+ mssubclass6 |         23    .3478261    .4869848          0          1
+-------------+---------------------------------------------------------
+ mssubclass7 |         23    .0869565    .2881041          0          1
+ mssubclass8 |         23    .1304348    .3443502          0          1
+ mssubclass9 |         23    .0434783    .2085144          0          1
+mssubclass10 |         23           0           0          0          0
+mssubclass11 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+mssubclass12 |         23           0           0          0          0
+mssubclass13 |         23           0           0          0          0
+mssubclass14 |         23           0           0          0          0
+mssubclass15 |         23           0           0          0          0
+   mszoning1 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+   mszoning2 |         23           0           0          0          0
+   mszoning3 |         23           0           0          0          0
+   mszoning4 |         23    .9130435    .2881041          0          1
+   mszoning5 |         23    .0869565    .2881041          0          1
+     street1 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+     street2 |         23           1           0          1          1
+      alley1 |         23           0           0          0          0
+      alley2 |         23           1           0          1          1
+      alley3 |         23           0           0          0          0
+neighborh~d1 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+neighborh~d2 |         23           0           0          0          0
+neighborh~d3 |         23           0           0          0          0
+neighborh~d4 |         23    .0434783    .2085144          0          1
+neighborh~d5 |         23    .0434783    .2085144          0          1
+neighborh~d6 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+neighborh~d7 |         23    .0434783    .2085144          0          1
+neighborh~d8 |         23    .0434783    .2085144          0          1
+neighborh~d9 |         23    .2173913    .4217412          0          1
+neighborh~10 |         23           0           0          0          0
+neighborh~11 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+neighborh~12 |         23    .1304348    .3443502          0          1
+neighborh~13 |         23    .1304348    .3443502          0          1
+neighborh~14 |         23           0           0          0          0
+neighborh~15 |         23    .0434783    .2085144          0          1
+neighborh~16 |         23    .0434783    .2085144          0          1
+-------------+---------------------------------------------------------
+neighborh~17 |         23    .0434783    .2085144          0          1
+neighborh~18 |         23    .0869565    .2881041          0          1
+neighborh~19 |         23           0           0          0          0
+neighborh~20 |         23    .0434783    .2085144          0          1
+neighborh~21 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+neighborh~22 |         23    .0434783    .2085144          0          1
+neighborh~23 |         23           0           0          0          0
+neighborh~24 |         23    .0434783    .2085144          0          1
+neighborh~25 |         23           0           0          0          0
+ condition11 |         23     .173913    .3875534          0          1
+-------------+---------------------------------------------------------
+ condition12 |         23    .0434783    .2085144          0          1
+ condition13 |         23    .6521739    .4869848          0          1
+ condition14 |         23    .0434783    .2085144          0          1
+ condition15 |         23           0           0          0          0
+ condition16 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+ condition17 |         23    .0869565    .2881041          0          1
+ condition18 |         23           0           0          0          0
+ condition19 |         23           0           0          0          0
+   bldgtype1 |         23           1           0          1          1
+   bldgtype2 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+   bldgtype3 |         23           0           0          0          0
+   bldgtype4 |         23           0           0          0          0
+   bldgtype5 |         23           0           0          0          0
+ housestyle1 |         23    .0869565    .2881041          0          1
+ housestyle2 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+ housestyle3 |         23    .3043478     .470472          0          1
+ housestyle4 |         23    .0869565    .2881041          0          1
+ housestyle5 |         23           0           0          0          0
+ housestyle6 |         23    .4782609    .5107539          0          1
+ housestyle7 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+ housestyle8 |         23    .0434783    .2085144          0          1
+overallcond1 |         23           0           0          0          0
+overallcond2 |         23           0           0          0          0
+overallcond3 |         23           0           0          0          0
+overallcond4 |         23    .0869565    .2881041          0          1
+-------------+---------------------------------------------------------
+overallcond5 |         23    .5217391    .5107539          0          1
+overallcond6 |         23     .173913    .3875534          0          1
+overallcond7 |         23    .0869565    .2881041          0          1
+overallcond8 |         23    .0434783    .2085144          0          1
+overallcond9 |         23    .0869565    .2881041          0          1
+-------------+---------------------------------------------------------
+   remodbool |         23    .7391304    .4489778          0          1
+    roofStan |         23     .826087    .3875534          0          1
+  extercond1 |         23           0           0          0          0
+  extercond2 |         23    .0434783    .2085144          0          1
+  extercond3 |         23    .1304348    .3443502          0          1
+-------------+---------------------------------------------------------
+  extercond4 |         23           0           0          0          0
+  extercond5 |         23     .826087    .3875534          0          1
+ foundation1 |         23     .173913    .3875534          0          1
+ foundation2 |         23    .3478261    .4869848          0          1
+ foundation3 |         23    .4347826    .5068698          0          1
+-------------+---------------------------------------------------------
+ foundation4 |         23    .0434783    .2085144          0          1
+ foundation5 |         23           0           0          0          0
+ foundation6 |         23           0           0          0          0
+   bsmtcond1 |         23           0           0          0          0
+   bsmtcond2 |         23    .0869565    .2881041          0          1
+-------------+---------------------------------------------------------
+   bsmtcond3 |         23    .0434783    .2085144          0          1
+   bsmtcond4 |         23           0           0          0          0
+   bsmtcond5 |         23    .8695652    .3443502          0          1
+  centralAir |         23    .9565217    .2085144          0          1
+kitchenqual1 |         23    .2173913    .4217412          0          1
+-------------+---------------------------------------------------------
+kitchenqual2 |         23           0           0          0          0
+kitchenqual3 |         23    .3043478     .470472          0          1
+kitchenqual4 |         23    .4782609    .5107539          0          1
+  pavedDrive |         23    .8695652    .3443502          0          1
+     poolqc1 |         23    .0434783    .2085144          0          1
+-------------+---------------------------------------------------------
+     poolqc2 |         23           0           0          0          0
+     poolqc3 |         23           0           0          0          0
+     poolqc4 |         23    .9565217    .2085144          0          1
+     mosold1 |         23    .1304348    .3443502          0          1
+     mosold2 |         23    .0434783    .2085144          0          1
+-------------+---------------------------------------------------------
+     mosold3 |         23    .0869565    .2881041          0          1
+     mosold4 |         23    .0869565    .2881041          0          1
+     mosold5 |         23    .1304348    .3443502          0          1
+     mosold6 |         23    .1304348    .3443502          0          1
+     mosold7 |         23    .0869565    .2881041          0          1
+-------------+---------------------------------------------------------
+     mosold8 |         23    .0869565    .2881041          0          1
+     mosold9 |         23    .0434783    .2085144          0          1
+    mosold10 |         23           0           0          0          0
+    mosold11 |         23     .173913    .3875534          0          1
+    mosold12 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+   saletype1 |         23           0           0          0          0
+   saletype2 |         23           0           0          0          0
+   saletype3 |         23           0           0          0          0
+   saletype4 |         23           0           0          0          0
+   saletype5 |         23           0           0          0          0
+-------------+---------------------------------------------------------
+   saletype6 |         23           0           0          0          0
+   saletype7 |         23     .173913    .3875534          0          1
+   saletype8 |         23           0           0          0          0
+   saletype9 |         23     .826087    .3875534          0          1
+normalSale~l |         23    .7391304    .4489778          0          1
+-------------+---------------------------------------------------------
+    deflator |         23    98.25304    2.161165      95.58     101.95
+      yrsold |         23    2007.435     1.27301       2006       2010
+real_salep~e |         23    266238.6    155794.9   113215.1   770722.8
+    _clus_k8 |         23           1           0          1          1
+
+. summ _clus_k8 if _clus_k8 == 1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k8 |         23           1           0          1          1
+
+. summ _clus_k8 if _clus_k8 == 2
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k8 |        206           2           0          2          2
+
+. summ _clus_k8 if _clus_k8 == 3
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k8 |        308           3           0          3          3
+
+. summ _clus_k8 if _clus_k8 == 4
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k8 |        114           4           0          4          4
+
+. summ _clus_k8 if _clus_k8 == 5
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k8 |        133           5           0          5          5
+
+. summ _clus_k8 if _clus_k8 == 6
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k8 |          1           6           .          6          6
+
+. summ _clus_k8 if _clus_k8 == 7
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k8 |         11           7           0          7          7
+
+. summ _clus_k8 if _clus_k8 == 8
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k8 |        380           8           0          8          8
+
+. cluster kmeans werw, k(5) measure(L2) start(krandom(2017)) iterate(1000000)
+variable werw not found
+r(111);
+
+. cluster kmeans lotfrontage lotarea ndflrsf-bedroomabvgr fireplaces-garagearea mssubclass1-mszonin
+> g5 alley1-overallcond9 extercond1-mosold12 normalSaleBool deflator remodbool roofStan yearbuilt s
+> tflrsf totrmsabvgrd street1 street2 saletype1-saletype9, k(5) measure(L2) start(krandom(2017)) it
+> erate(1000000)
+cluster name: _clus_1
+
+. rename _clus_1 _clus_k5
+
+. summ _clus_k5 if _clus_k5 == 1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k5 |          1           1           .          1          1
+
+. summ _clus_k5 if _clus_k5 == 2
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k5 |        699           2           0          2          2
+
+. summ _clus_k5 if _clus_k5 == 3
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k5 |        160           3           0          3          3
+
+. summ _clus_k5 if _clus_k5 == 4
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k5 |        305           4           0          4          4
+
+. summ _clus_k5 if _clus_k5 == 5
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k5 |         11           5           0          5          5
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-
+> train.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-tra
+> in.dta saved
+
+. cluster kmeans lotfrontage lotarea ndflrsf-bedroomabvgr fireplaces-garagearea mssubclass1-mszonin
+> g5 alley1-overallcond9 extercond1-mosold12 normalSaleBool deflator remodbool roofStan yearbuilt s
+> tflrsf totrmsabvgrd street1 street2 saletype1-saletype9, k(4) measure(L2) start(krandom(2017)) it
+> erate(1000000)
+cluster name: _clus_2
+
+. rename _clus_2 _clus_k4
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-
+> train.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-tra
+> in.dta saved
+
+. summ _clus_k4 if _clus_k4  == 1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k4 |          1           1           .          1          1
+
+. summ if  _clus_k4==1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+ lotfrontage |          1         150           .        150        150
+     lotarea |          1      215245           .     215245     215245
+   yearbuilt |          1        1965           .       1965       1965
+     stflrsf |          1        2036           .       2036       2036
+     ndflrsf |          1           0           .          0          0
+-------------+---------------------------------------------------------
+   grlivarea |          1        2036           .       2036       2036
+    fullbath |          1           2           .          2          2
+    halfbath |          1           0           .          0          0
+bedroomabvgr |          1           3           .          3          3
+totrmsabvgrd |          1           8           .          8          8
+-------------+---------------------------------------------------------
+  fireplaces |          1           2           .          2          2
+  garagecars |          1           2           .          2          2
+  garagearea |          1         513           .        513        513
+   saleprice |          1      375000           .     375000     375000
+ mssubclass1 |          1           1           .          1          1
+-------------+---------------------------------------------------------
+ mssubclass2 |          1           0           .          0          0
+ mssubclass3 |          1           0           .          0          0
+ mssubclass4 |          1           0           .          0          0
+ mssubclass5 |          1           0           .          0          0
+ mssubclass6 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+ mssubclass7 |          1           0           .          0          0
+ mssubclass8 |          1           0           .          0          0
+ mssubclass9 |          1           0           .          0          0
+mssubclass10 |          1           0           .          0          0
+mssubclass11 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+mssubclass12 |          1           0           .          0          0
+mssubclass13 |          1           0           .          0          0
+mssubclass14 |          1           0           .          0          0
+mssubclass15 |          1           0           .          0          0
+   mszoning1 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+   mszoning2 |          1           0           .          0          0
+   mszoning3 |          1           0           .          0          0
+   mszoning4 |          1           1           .          1          1
+   mszoning5 |          1           0           .          0          0
+     street1 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+     street2 |          1           1           .          1          1
+      alley1 |          1           0           .          0          0
+      alley2 |          1           1           .          1          1
+      alley3 |          1           0           .          0          0
+neighborh~d1 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+neighborh~d2 |          1           0           .          0          0
+neighborh~d3 |          1           0           .          0          0
+neighborh~d4 |          1           0           .          0          0
+neighborh~d5 |          1           0           .          0          0
+neighborh~d6 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+neighborh~d7 |          1           0           .          0          0
+neighborh~d8 |          1           0           .          0          0
+neighborh~d9 |          1           0           .          0          0
+neighborh~10 |          1           0           .          0          0
+neighborh~11 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+neighborh~12 |          1           0           .          0          0
+neighborh~13 |          1           0           .          0          0
+neighborh~14 |          1           0           .          0          0
+neighborh~15 |          1           0           .          0          0
+neighborh~16 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+neighborh~17 |          1           0           .          0          0
+neighborh~18 |          1           0           .          0          0
+neighborh~19 |          1           0           .          0          0
+neighborh~20 |          1           0           .          0          0
+neighborh~21 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+neighborh~22 |          1           0           .          0          0
+neighborh~23 |          1           0           .          0          0
+neighborh~24 |          1           1           .          1          1
+neighborh~25 |          1           0           .          0          0
+ condition11 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+ condition12 |          1           0           .          0          0
+ condition13 |          1           1           .          1          1
+ condition14 |          1           0           .          0          0
+ condition15 |          1           0           .          0          0
+ condition16 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+ condition17 |          1           0           .          0          0
+ condition18 |          1           0           .          0          0
+ condition19 |          1           0           .          0          0
+   bldgtype1 |          1           1           .          1          1
+   bldgtype2 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+   bldgtype3 |          1           0           .          0          0
+   bldgtype4 |          1           0           .          0          0
+   bldgtype5 |          1           0           .          0          0
+ housestyle1 |          1           0           .          0          0
+ housestyle2 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+ housestyle3 |          1           1           .          1          1
+ housestyle4 |          1           0           .          0          0
+ housestyle5 |          1           0           .          0          0
+ housestyle6 |          1           0           .          0          0
+ housestyle7 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+ housestyle8 |          1           0           .          0          0
+overallcond1 |          1           0           .          0          0
+overallcond2 |          1           0           .          0          0
+overallcond3 |          1           0           .          0          0
+overallcond4 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+overallcond5 |          1           1           .          1          1
+overallcond6 |          1           0           .          0          0
+overallcond7 |          1           0           .          0          0
+overallcond8 |          1           0           .          0          0
+overallcond9 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+   remodbool |          1           0           .          0          0
+    roofStan |          1           1           .          1          1
+  extercond1 |          1           0           .          0          0
+  extercond2 |          1           0           .          0          0
+  extercond3 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+  extercond4 |          1           0           .          0          0
+  extercond5 |          1           1           .          1          1
+ foundation1 |          1           0           .          0          0
+ foundation2 |          1           1           .          1          1
+ foundation3 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+ foundation4 |          1           0           .          0          0
+ foundation5 |          1           0           .          0          0
+ foundation6 |          1           0           .          0          0
+   bsmtcond1 |          1           0           .          0          0
+   bsmtcond2 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+   bsmtcond3 |          1           0           .          0          0
+   bsmtcond4 |          1           0           .          0          0
+   bsmtcond5 |          1           1           .          1          1
+  centralAir |          1           1           .          1          1
+kitchenqual1 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+kitchenqual2 |          1           0           .          0          0
+kitchenqual3 |          1           0           .          0          0
+kitchenqual4 |          1           1           .          1          1
+  pavedDrive |          1           1           .          1          1
+     poolqc1 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+     poolqc2 |          1           0           .          0          0
+     poolqc3 |          1           0           .          0          0
+     poolqc4 |          1           1           .          1          1
+     mosold1 |          1           0           .          0          0
+     mosold2 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+     mosold3 |          1           0           .          0          0
+     mosold4 |          1           0           .          0          0
+     mosold5 |          1           0           .          0          0
+     mosold6 |          1           1           .          1          1
+     mosold7 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+     mosold8 |          1           0           .          0          0
+     mosold9 |          1           0           .          0          0
+    mosold10 |          1           0           .          0          0
+    mosold11 |          1           0           .          0          0
+    mosold12 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+   saletype1 |          1           0           .          0          0
+   saletype2 |          1           0           .          0          0
+   saletype3 |          1           0           .          0          0
+   saletype4 |          1           0           .          0          0
+   saletype5 |          1           0           .          0          0
+-------------+---------------------------------------------------------
+   saletype6 |          1           0           .          0          0
+   saletype7 |          1           0           .          0          0
+   saletype8 |          1           0           .          0          0
+   saletype9 |          1           1           .          1          1
+normalSale~l |          1           1           .          1          1
+-------------+---------------------------------------------------------
+    deflator |          1      100.17           .     100.17     100.17
+      yrsold |          1        2009           .       2009       2009
+real_salep~e |          1    374363.6           .   374363.6   374363.6
+    _clus_k8 |          1           6           .          6          6
+    _clus_k5 |          1           1           .          1          1
+-------------+---------------------------------------------------------
+    _clus_k4 |          1           1           .          1          1
+
+. drop if  _clus_k4==1
+(1 observation deleted)
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-
+> train.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-tra
+> in.dta saved
+
+. drop _clus_k8-_clus_k4
+
+. cluster kmeans lotfrontage lotarea ndflrsf-bedroomabvgr fireplaces-garagearea mssubclass1-mszonin
+> g5 alley1-overallcond9 extercond1-mosold12 normalSaleBool deflator remodbool roofStan yearbuilt s
+> tflrsf totrmsabvgrd street1 street2 saletype1-saletype9, k(4) measure(L2) start(krandom(2017)) it
+> erate(1000000)
+cluster name: _clus_3
+
+. drop _clus_3
+
+. cluster kmeans lotfrontage lotarea ndflrsf-bedroomabvgr fireplaces-garagearea mssubclass1-mszonin
+> g5 alley1-overallcond9 extercond1-mosold12 normalSaleBool  remodbool roofStan yearbuilt stflrsf t
+> otrmsabvgrd street1 street2 saletype1-saletype9, k(4) measure(L2) start(krandom(2017)) iterate(10
+> 00000)
+cluster name: _clus_4
+
+. rename _clus_4 _clus_k4
+
+. summ _clus_k4 if _clus_k4 == 1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k4 |        699           1           0          1          1
+
+. summ _clus_k4 if _clus_k4 == 2
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k4 |        305           2           0          2          2
+
+. summ _clus_k4 if _clus_k4 == 3
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k4 |         11           3           0          3          3
+
+. summ _clus_k4 if _clus_k4 == 4
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    _clus_k4 |        160           4           0          4          4
+
+. cluster kmeans lotfrontage lotarea ndflrsf-bedroomabvgr fireplaces-garagearea mssubclass1-mszonin
+> g5 alley1-overallcond9 extercond1-mosold12 normalSaleBool  remodbool roofStan yearbuilt stflrsf t
+> otrmsabvgrd street1 street2 saletype1-saletype9, k(5) measure(L2) start(krandom(2017)) iterate(10
+> 00000)
+cluster name: _clus_5
+
+. summ _clus_k5 if _clus_k5 == 1
+variable _clus_k5 not found
+r(111);
+
+. summ _clus_5 if _clus_5 == 1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     _clus_5 |        326           1           0          1          1
+
+. summ _clus_5 if _clus_5 == 2
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     _clus_5 |        209           2           0          2          2
+
+. summ _clus_5 if _clus_5 == 3
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     _clus_5 |         11           3           0          3          3
+
+. summ _clus_5 if _clus_5 == 4
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     _clus_5 |         61           4           0          4          4
+
+. summ _clus_5 if _clus_5 == 5
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     _clus_5 |        568           5           0          5          5
+
+. summ  if _clus_5 == 3
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+ lotfrontage |         11    98.90909    76.16752         47        313
+     lotarea |         11    46850.27     11976.5      34650      70761
+   yearbuilt |         11    1976.636    30.23003       1908       2008
+     stflrsf |         11    1973.636    1046.944       1056       4692
+     ndflrsf |         11    698.7273     730.295          0       1796
+-------------+---------------------------------------------------------
+   grlivarea |         11    2672.364    1476.053       1056       5642
+    fullbath |         11    1.909091    1.044466          0          3
+    halfbath |         11    .6363636     .504525          0          1
+bedroomabvgr |         11           3    1.341641          0          5
+totrmsabvgrd |         11           8    3.065942          5         12
+-------------+---------------------------------------------------------
+  fireplaces |         11    1.363636    .8090398          0          3
+  garagecars |         11    2.545455     .522233          2          3
+  garagearea |         11    772.4545    293.8072        360       1418
+   saleprice |         11    307995.5    160112.9     145000     625000
+ mssubclass1 |         11    .3636364     .504525          0          1
+-------------+---------------------------------------------------------
+ mssubclass2 |         11           0           0          0          0
+ mssubclass3 |         11           0           0          0          0
+ mssubclass4 |         11           0           0          0          0
+ mssubclass5 |         11    .0909091    .3015113          0          1
+ mssubclass6 |         11    .4545455     .522233          0          1
+-------------+---------------------------------------------------------
+ mssubclass7 |         11           0           0          0          0
+ mssubclass8 |         11           0           0          0          0
+ mssubclass9 |         11           0           0          0          0
+mssubclass10 |         11           0           0          0          0
+mssubclass11 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+mssubclass12 |         11           0           0          0          0
+mssubclass13 |         11           0           0          0          0
+mssubclass14 |         11           0           0          0          0
+mssubclass15 |         11    .0909091    .3015113          0          1
+   mszoning1 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+   mszoning2 |         11           0           0          0          0
+   mszoning3 |         11           0           0          0          0
+   mszoning4 |         11           1           0          1          1
+   mszoning5 |         11           0           0          0          0
+     street1 |         11    .0909091    .3015113          0          1
+-------------+---------------------------------------------------------
+     street2 |         11    .9090909    .3015113          0          1
+      alley1 |         11           0           0          0          0
+      alley2 |         11           1           0          1          1
+      alley3 |         11           0           0          0          0
+neighborh~d1 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+neighborh~d2 |         11           0           0          0          0
+neighborh~d3 |         11           0           0          0          0
+neighborh~d4 |         11           0           0          0          0
+neighborh~d5 |         11    .2727273    .4670994          0          1
+neighborh~d6 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+neighborh~d7 |         11           0           0          0          0
+neighborh~d8 |         11    .1818182    .4045199          0          1
+neighborh~d9 |         11    .0909091    .3015113          0          1
+neighborh~10 |         11           0           0          0          0
+neighborh~11 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+neighborh~12 |         11           0           0          0          0
+neighborh~13 |         11           0           0          0          0
+neighborh~14 |         11           0           0          0          0
+neighborh~15 |         11           0           0          0          0
+neighborh~16 |         11    .1818182    .4045199          0          1
+-------------+---------------------------------------------------------
+neighborh~17 |         11           0           0          0          0
+neighborh~18 |         11           0           0          0          0
+neighborh~19 |         11           0           0          0          0
+neighborh~20 |         11           0           0          0          0
+neighborh~21 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+neighborh~22 |         11           0           0          0          0
+neighborh~23 |         11    .0909091    .3015113          0          1
+neighborh~24 |         11    .0909091    .3015113          0          1
+neighborh~25 |         11    .0909091    .3015113          0          1
+ condition11 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+ condition12 |         11    .0909091    .3015113          0          1
+ condition13 |         11    .8181818    .4045199          0          1
+ condition14 |         11           0           0          0          0
+ condition15 |         11    .0909091    .3015113          0          1
+ condition16 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+ condition17 |         11           0           0          0          0
+ condition18 |         11           0           0          0          0
+ condition19 |         11           0           0          0          0
+   bldgtype1 |         11    .9090909    .3015113          0          1
+   bldgtype2 |         11    .0909091    .3015113          0          1
+-------------+---------------------------------------------------------
+   bldgtype3 |         11           0           0          0          0
+   bldgtype4 |         11           0           0          0          0
+   bldgtype5 |         11           0           0          0          0
+ housestyle1 |         11    .0909091    .3015113          0          1
+ housestyle2 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+ housestyle3 |         11    .4545455     .522233          0          1
+ housestyle4 |         11           0           0          0          0
+ housestyle5 |         11           0           0          0          0
+ housestyle6 |         11    .4545455     .522233          0          1
+ housestyle7 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+ housestyle8 |         11           0           0          0          0
+overallcond1 |         11           0           0          0          0
+overallcond2 |         11           0           0          0          0
+overallcond3 |         11           0           0          0          0
+overallcond4 |         11    .0909091    .3015113          0          1
+-------------+---------------------------------------------------------
+overallcond5 |         11    .6363636     .504525          0          1
+overallcond6 |         11           0           0          0          0
+overallcond7 |         11    .1818182    .4045199          0          1
+overallcond8 |         11    .0909091    .3015113          0          1
+overallcond9 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+   remodbool |         11    .5454545     .522233          0          1
+    roofStan |         11    .6363636     .504525          0          1
+  extercond1 |         11           0           0          0          0
+  extercond2 |         11           0           0          0          0
+  extercond3 |         11    .0909091    .3015113          0          1
+-------------+---------------------------------------------------------
+  extercond4 |         11           0           0          0          0
+  extercond5 |         11    .9090909    .3015113          0          1
+ foundation1 |         11    .0909091    .3015113          0          1
+ foundation2 |         11    .4545455     .522233          0          1
+ foundation3 |         11    .4545455     .522233          0          1
+-------------+---------------------------------------------------------
+ foundation4 |         11           0           0          0          0
+ foundation5 |         11           0           0          0          0
+ foundation6 |         11           0           0          0          0
+   bsmtcond1 |         11           0           0          0          0
+   bsmtcond2 |         11    .0909091    .3015113          0          1
+-------------+---------------------------------------------------------
+   bsmtcond3 |         11           0           0          0          0
+   bsmtcond4 |         11           0           0          0          0
+   bsmtcond5 |         11    .9090909    .3015113          0          1
+  centralAir |         11    .9090909    .3015113          0          1
+kitchenqual1 |         11    .2727273    .4670994          0          1
+-------------+---------------------------------------------------------
+kitchenqual2 |         11           0           0          0          0
+kitchenqual3 |         11    .3636364     .504525          0          1
+kitchenqual4 |         11    .3636364     .504525          0          1
+  pavedDrive |         11           1           0          1          1
+     poolqc1 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+     poolqc2 |         11           0           0          0          0
+     poolqc3 |         11    .0909091    .3015113          0          1
+     poolqc4 |         11    .9090909    .3015113          0          1
+     mosold1 |         11    .1818182    .4045199          0          1
+     mosold2 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+     mosold3 |         11           0           0          0          0
+     mosold4 |         11    .0909091    .3015113          0          1
+     mosold5 |         11    .0909091    .3015113          0          1
+     mosold6 |         11    .0909091    .3015113          0          1
+     mosold7 |         11    .1818182    .4045199          0          1
+-------------+---------------------------------------------------------
+     mosold8 |         11           0           0          0          0
+     mosold9 |         11    .0909091    .3015113          0          1
+    mosold10 |         11    .0909091    .3015113          0          1
+    mosold11 |         11    .0909091    .3015113          0          1
+    mosold12 |         11    .0909091    .3015113          0          1
+-------------+---------------------------------------------------------
+   saletype1 |         11           0           0          0          0
+   saletype2 |         11           0           0          0          0
+   saletype3 |         11           0           0          0          0
+   saletype4 |         11           0           0          0          0
+   saletype5 |         11           0           0          0          0
+-------------+---------------------------------------------------------
+   saletype6 |         11           0           0          0          0
+   saletype7 |         11    .1818182    .4045199          0          1
+   saletype8 |         11           0           0          0          0
+   saletype9 |         11    .8181818    .4045199          0          1
+normalSale~l |         11    .8181818    .4045199          0          1
+-------------+---------------------------------------------------------
+    deflator |         11    98.16273    2.308184      95.58     101.95
+      yrsold |         11    2007.364    1.361817       2006       2010
+real_salep~e |         11    313844.9    163913.3   151705.4   653902.5
+    _clus_k4 |         11           3           0          3          3
+     _clus_5 |         11           3           0          3          3
+
+. drop _clus_k4 _clus_5
+
+. cluster kmeans lotfrontage lotarea ndflrsf-bedroomabvgr fireplaces-garagearea mssubclass1-mszonin
+> g5 alley1-overallcond9 extercond1-mosold12 normalSaleBool  remodbool roofStan yearbuilt stflrsf t
+> otrmsabvgrd street1 street2 saletype1-saletype9, k(5) measure(L2) start(krandom(2017)) iterate(10
+> 00000)
+cluster name: _clus_6
+
+. rename _clus_6 _clus_k5
+
+. save "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-
+> train.dta", replace
+file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/data/ZillowData_realPrice-tra
+> in.dta saved
+
+. twoway scatter real_saleprice _clus_k5
+
+. graph save Graph "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/graphs/real sa
+> le price v cluster.gph"
+(file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/graphs/real sale price v clu
+> ster.gph saved)
+twoway scatter lotarea _clus_k5
+
+. graph save Graph "/Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/graphs/stata/L
+> ot Area vs. Cluster Number.gph"
+(file /Users/justinfriedman/Documents/GitHub/Zillow-SciKitLearn-MEC471/graphs/stata/Lot Area vs. Cl
+> uster Number.gph saved)
+twoway scatter yrsold _clus_k5
+
+. twoway scatter yearbuilt _clus_k5
+
+. twoway scatter poolqc4 _clus_k5
+
+. histogram real_saleprice
+(bin=30, start=34840.77, width=24529.399)
+
