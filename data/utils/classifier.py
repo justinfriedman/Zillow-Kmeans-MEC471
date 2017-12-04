@@ -131,7 +131,7 @@ for row in dfTest.index:
             val_residual_cluster5Percent = 0
 
 
-        residuals = [abs(val_residual_cluster1Percent),abs(val_residual_cluster2Percent),abs(val_residual_cluster3Percent),abs(val_residual_cluster4Percent),abs(val_residual_cluster5Percent)]
+        residuals = [val_residual_cluster1Percent,val_residual_cluster2Percent,val_residual_cluster3Percent,val_residual_cluster4Percent,val_residual_cluster5Percent]
 
 
 
@@ -169,7 +169,7 @@ for row in dfTest.index:
     dfTest.at[row,'cluster_5_score'] = clusterTally[4]
 
     #for entire observation, find which cluster is most descriptive
-    winner = clusterTally.index(max(clusterTally))
+    winner = clusterTally.index(max(clusterTally)) + 1
     dfTest.at[row, 'cluster_classification'] = winner
 
 
