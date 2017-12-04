@@ -70,7 +70,10 @@ for feature in dfOrigCols:
 
 print("starting classification")
 #read in hardcoded dta dataframe to pandas dataframe
-dfTestOrig = pandas.read_stata('../ames_test.dta')
+#test data
+# dfTestOrig = pandas.read_stata('../ames_test.dta')
+#train data
+dfTestOrig = pandas.read_stata('../ZillowData_realPrice-train.dta')
 dfTestOrigCols = dfTestOrig.columns
 dfTest = dfTestOrig
 
@@ -91,21 +94,57 @@ for row in dfTest.index:
         colName = feature
         val = dfTest.get_value(row, feature, takeable=False)
         #generate observation residuals when compared to feature average for each cluster, 0.00001 added to stop div by 0 error
-        val_residual_cluster1Percent = (df.at[row, feature+'_AVE_C1'] - val)/(df.get_value(row, feature+'_AVE_C1', takeable=False) + 0.0000000001)
-        val_residual_cluster2Percent = (df.at[row, feature+'_AVE_C2'] - val)/(df.get_value(row, feature+'_AVE_C2', takeable=False)+ 0.0000000001)
-        val_residual_cluster3Percent = (df.at[row, feature+'_AVE_C3'] - val)/(df.get_value(row, feature+'_AVE_C3', takeable=False)+ 0.0000000001)
-        val_residual_cluster4Percent = (df.at[row, feature+'_AVE_C4'] - val)/(df.get_value(row, feature+'_AVE_C4', takeable=False)+ 0.0000000001)
-        val_residual_cluster5Percent = (df.at[row, feature+'_AVE_C5'] - val)/(df.get_value(row, feature+'_AVE_C5', takeable=False)+ 0.0000000001)
+        # Mean Bruteforce
+        # val_residual_cluster1Percent = (df.at[row, feature+'_AVE_C1'] - val)/(df.get_value(row, feature+'_AVE_C1', takeable=False) + 0.0000000001)
+        # val_residual_cluster2Percent = (df.at[row, feature+'_AVE_C2'] - val)/(df.get_value(row, feature+'_AVE_C2', takeable=False)+ 0.0000000001)
+        # val_residual_cluster3Percent = (df.at[row, feature+'_AVE_C3'] - val)/(df.get_value(row, feature+'_AVE_C3', takeable=False)+ 0.0000000001)
+        # val_residual_cluster4Percent = (df.at[row, feature+'_AVE_C4'] - val)/(df.get_value(row, feature+'_AVE_C4', takeable=False)+ 0.0000000001)
+        # val_residual_cluster5Percent = (df.at[row, feature+'_AVE_C5'] - val)/(df.get_value(row, feature+'_AVE_C5', takeable=False)+ 0.0000000001)
+
+        #ln Bruteforce
+        if abs(df.at[row, feature+'_AVE_C1'] - val) != 0:
+            val_residual_cluster1Percent = np.log(abs(df.at[row, feature+'_AVE_C1'] - val))
+        if (df.at[row, feature+'_AVE_C1'] - val) == 0:
+            val_residual_cluster1Percent = 0
+
+        if abs(df.at[row, feature+'_AVE_C2'] - val) != 0:
+            val_residual_cluster2Percent = np.log(abs(df.at[row, feature+'_AVE_C2'] - val))
+        if (df.at[row, feature+'_AVE_C2'] - val) == 0:
+            val_residual_cluster2Percent = 0
+
+
+        if abs(df.at[row, feature+'_AVE_C3'] - val) != 0:
+            val_residual_cluster3Percent = np.log(abs(df.at[row, feature+'_AVE_C3'] - val))
+        if (df.at[row, feature+'_AVE_C3'] - val) == 0:
+            val_residual_cluster3Percent = 0
+
+
+        if abs(df.at[row, feature+'_AVE_C4'] - val) != 0:
+            val_residual_cluster4Percent = np.log(abs(df.at[row, feature+'_AVE_C4'] - val))
+        if (df.at[row, feature+'_AVE_C4'] - val) == 0:
+            val_residual_cluster4Percent = 0
+
+
+        if abs(df.at[row, feature+'_AVE_C5'] - val) != 0:
+            val_residual_cluster5Percent = np.log(abs(df.at[row, feature+'_AVE_C5'] - val))
+        if (df.at[row, feature+'_AVE_C5'] - val) == 0:
+            val_residual_cluster5Percent = 0
+
 
         residuals = [abs(val_residual_cluster1Percent),abs(val_residual_cluster2Percent),abs(val_residual_cluster3Percent),abs(val_residual_cluster4Percent),abs(val_residual_cluster5Percent)]
 
-        smallest = 0
-        i = 0
+
+
+
+
+
+
+
+
+
         #find the smallest residual % cluster
-        for each in residuals:
-            if residuals[i] < residuals[(i+1)%5] and residuals[i] < residuals[(i+2)%5] and residuals[i] < residuals[(i+3)%5] and residuals[i] < residuals[(i+4)%5]:
-                smallest = i
-            i = i + 1
+        smallest = residuals.index(min(residuals))
+
 
         #assign cluster
         if smallest == 0:
@@ -128,14 +167,9 @@ for row in dfTest.index:
     dfTest.at[row,'cluster_3_score'] = clusterTally[2]
     dfTest.at[row,'cluster_4_score'] = clusterTally[3]
     dfTest.at[row,'cluster_5_score'] = clusterTally[4]
-    winner = 0
-    i = 0
-    #for entire observation, find which cluster is most descriptive
 
-    for each in clusterTally:
-        if clusterTally[i] > clusterTally[winner]:
-            winner = i
-        i = i + 1
+    #for entire observation, find which cluster is most descriptive
+    winner = clusterTally.index(max(clusterTally))
     dfTest.at[row, 'cluster_classification'] = winner
 
 
