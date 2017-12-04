@@ -84,51 +84,25 @@ dfTest['cluster_3_score'] = pandas.Series(len(dfTest.index), index=dfTest.index)
 dfTest['cluster_4_score'] = pandas.Series(len(dfTest.index), index=dfTest.index)
 dfTest['cluster_5_score'] = pandas.Series(len(dfTest.index), index=dfTest.index)
 
-
+importantVars = [ ["lotfrontage",5],["lotarea",7],[" neighborhood7",4],["kitchenqual4",4],["neighborhood22",4],["overallcond9 ",5],[" saletype7",5],["garagecars",5],["fireplaces",3],["stflrsf",7],["ndflrsf",7],["poolqc3",3]]
 for row in dfTest.index:
     clusterTally = [0,0,0,0,0]
     colName = ''
+    i = 0
     for feature in dfTestOrigCols:
+        for var in importantVars:
+            if feature == importantVars[i][0]:
+                val_residual_cluster1Percent = (df.at[row, feature+'_AVE_C1'] - val)/
+
+
+            i = i + 1
         sys.stdout.write('on row ' + str(row) + ' and col ' + str(feature) + '\r')
         sys.stdout.flush()
         colName = feature
         val = dfTest.get_value(row, feature, takeable=False)
-        #generate observation residuals when compared to feature average for each cluster, 0.00001 added to stop div by 0 error
-        # Mean Bruteforce
-        # val_residual_cluster1Percent = (df.at[row, feature+'_AVE_C1'] - val)/(df.get_value(row, feature+'_AVE_C1', takeable=False) + 0.0000000001)
-        # val_residual_cluster2Percent = (df.at[row, feature+'_AVE_C2'] - val)/(df.get_value(row, feature+'_AVE_C2', takeable=False)+ 0.0000000001)
-        # val_residual_cluster3Percent = (df.at[row, feature+'_AVE_C3'] - val)/(df.get_value(row, feature+'_AVE_C3', takeable=False)+ 0.0000000001)
-        # val_residual_cluster4Percent = (df.at[row, feature+'_AVE_C4'] - val)/(df.get_value(row, feature+'_AVE_C4', takeable=False)+ 0.0000000001)
-        # val_residual_cluster5Percent = (df.at[row, feature+'_AVE_C5'] - val)/(df.get_value(row, feature+'_AVE_C5', takeable=False)+ 0.0000000001)
 
-        #ln Bruteforce
-        if abs(df.at[row, feature+'_AVE_C1'] - val) != 0:
             val_residual_cluster1Percent = np.log(abs(df.at[row, feature+'_AVE_C1'] - val))
-        if (df.at[row, feature+'_AVE_C1'] - val) == 0:
-            val_residual_cluster1Percent = 0
 
-        if abs(df.at[row, feature+'_AVE_C2'] - val) != 0:
-            val_residual_cluster2Percent = np.log(abs(df.at[row, feature+'_AVE_C2'] - val))
-        if (df.at[row, feature+'_AVE_C2'] - val) == 0:
-            val_residual_cluster2Percent = 0
-
-
-        if abs(df.at[row, feature+'_AVE_C3'] - val) != 0:
-            val_residual_cluster3Percent = np.log(abs(df.at[row, feature+'_AVE_C3'] - val))
-        if (df.at[row, feature+'_AVE_C3'] - val) == 0:
-            val_residual_cluster3Percent = 0
-
-
-        if abs(df.at[row, feature+'_AVE_C4'] - val) != 0:
-            val_residual_cluster4Percent = np.log(abs(df.at[row, feature+'_AVE_C4'] - val))
-        if (df.at[row, feature+'_AVE_C4'] - val) == 0:
-            val_residual_cluster4Percent = 0
-
-
-        if abs(df.at[row, feature+'_AVE_C5'] - val) != 0:
-            val_residual_cluster5Percent = np.log(abs(df.at[row, feature+'_AVE_C5'] - val))
-        if (df.at[row, feature+'_AVE_C5'] - val) == 0:
-            val_residual_cluster5Percent = 0
 
 
         residuals = [val_residual_cluster1Percent,val_residual_cluster2Percent,val_residual_cluster3Percent,val_residual_cluster4Percent,val_residual_cluster5Percent]
