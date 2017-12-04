@@ -18,44 +18,44 @@ for feature in dfOrigCols:
 
     df[name +'_AVE_C1'] = df[name][df['_clus_k5'] == 1].mean()
     count = count + 1
-    sys.stdout.write('on feature ' + str(count) + ' of ' + str(numCols) + '\r')
+    sys.stdout.write('📟 on feature ' + str(count) + ' of ' + str(numCols) + '\r')
     sys.stdout.flush()
 
-print("cluster 1 done, starting cluster 2")
+print("✅ cluster 1 done, starting cluster 2")
 count = 0
 for feature in dfOrigCols:
     name = feature
     df[name +'_AVE_C2'] = pandas.Series(1200, index=df.index)
     df[name +'_AVE_C2']= df[name][df['_clus_k5'] == 2].mean()
     count = count + 1
-    sys.stdout.write('on feature ' + str(count) + ' of ' + str(numCols) + '\r')
+    sys.stdout.write('📟 on feature ' + str(count) + ' of ' + str(numCols) + '\r')
     sys.stdout.flush()
-print("cluster 2 done, starting cluster 3")
+print("✅ cluster 2 done, starting cluster 3")
 count = 0
 for feature in dfOrigCols:
     name = feature
     df[name +'_AVE_C3'] = pandas.Series(1200, index=df.index)
     df[name +'_AVE_C3']= df[name][df['_clus_k5'] == 3].mean()
     count = count + 1
-    sys.stdout.write('on feature ' + str(count) + ' of ' + str(numCols) + '\r')
+    sys.stdout.write('📟 on feature ' + str(count) + ' of ' + str(numCols) + '\r')
     sys.stdout.flush()
-print("cluster 3 done, starting cluster 4")
+print("✅ cluster 3 done, starting cluster 4")
 count = 0
 for feature in dfOrigCols:
     name = feature
     df[name +'_AVE_C4'] = pandas.Series(1200, index=df.index)
     df[name +'_AVE_C4']= df[name][df['_clus_k5'] == 4].mean()
     count = count + 1
-    sys.stdout.write('on feature ' + str(count) + ' of ' + str(numCols) + '\r')
+    sys.stdout.write('📟 on feature ' + str(count) + ' of ' + str(numCols) + '\r')
     sys.stdout.flush()
-print("cluster 4 done, starting cluster 5")
+print("✅ cluster 4 done, starting cluster 5")
 count = 0
 for feature in dfOrigCols:
     name = feature
     df[name +'_AVE_C5'] = pandas.Series(1200, index=df.index)
     df[name +'_AVE_C5']= df[name][df['_clus_k5'] == 5].mean()
     count = count + 1
-    sys.stdout.write('on feature ' + str(count) + ' of ' + str(numCols) + '\r')
+    sys.stdout.write('📟 on feature ' + str(count) + ' of ' + str(numCols) + '\r')
     sys.stdout.flush()
 
 
@@ -68,12 +68,12 @@ for feature in dfOrigCols:
 
 
 
-print("starting classification")
+print("📟 starting classification")
 #read in hardcoded dta dataframe to pandas dataframe
 #test data
 # dfTestOrig = pandas.read_stata('../ames_test.dta')
 #train data
-dfTestOrig = pandas.read_stata('../ZillowData_realPrice-train.dta')
+dfTestOrig = pandas.read_stata('../test_dataFILTERED_FINAL.dta')
 dfTestOrigCols = dfTestOrig.columns
 dfTest = dfTestOrig
 
@@ -84,53 +84,70 @@ dfTest['cluster_3_score'] = pandas.Series(len(dfTest.index), index=dfTest.index)
 dfTest['cluster_4_score'] = pandas.Series(len(dfTest.index), index=dfTest.index)
 dfTest['cluster_5_score'] = pandas.Series(len(dfTest.index), index=dfTest.index)
 
-importantVars = [ ["lotfrontage",5],["lotarea",7],[" neighborhood7",4],["kitchenqual4",4],["neighborhood22",4],["overallcond9 ",5],[" saletype7",5],["garagecars",5],["fireplaces",3],["stflrsf",7],["ndflrsf",7],["poolqc3",3]]
+importantVars = [ ["lotfrontage",4],["lotarea",4],[" neighborhood7",4],["kitchenqual4",4],["neighborhood22",4],["overallcond9 ",5],[" saletype7",2],["garagecars",5],["fireplaces",4],["stflrsf",7],["ndflrsf",7],["poolqc3",3]]
 for row in dfTest.index:
     clusterTally = [0,0,0,0,0]
     colName = ''
-    i = 0
+    
     for feature in dfTestOrigCols:
-        for var in importantVars:
-            if feature == importantVars[i][0]:
-                val_residual_cluster1Percent = (df.at[row, feature+'_AVE_C1'] - val)/
-
-
-            i = i + 1
-        sys.stdout.write('on row ' + str(row) + ' and col ' + str(feature) + '\r')
-        sys.stdout.flush()
         colName = feature
         val = dfTest.get_value(row, feature, takeable=False)
+        shift = 0
+        sys.stdout.write('📟 on row ' + str(row) + ' and col ' + str(feature) + '\r')
+        sys.stdout.flush()
+        if df.at[3, feature+'_AVE_C1'] != 0:
+            val_residual_cluster1Percent = (df.at[3, feature+'_AVE_C1'] - val)/df.at[3, feature+'_AVE_C1']
+        if df.at[3, feature+'_AVE_C1'] == 0:
+            val_residual_cluster1Percent = 0
 
-            val_residual_cluster1Percent = np.log(abs(df.at[row, feature+'_AVE_C1'] - val))
+        if df.at[3, feature+'_AVE_C2'] != 0:
+            val_residual_cluster2Percent = (df.at[3, feature+'_AVE_C2'] - val)/df.at[3, feature+'_AVE_C2']
+        if df.at[3, feature+'_AVE_C2'] == 0:
+            val_residual_cluster2Percent = 0
 
+        if df.at[3, feature+'_AVE_C3'] != 0:
+            val_residual_cluster3Percent = (df.at[3, feature+'_AVE_C3'] - val)/df.at[3, feature+'_AVE_C3']
+        if df.at[3, feature+'_AVE_C3'] == 0:
+            val_residual_cluster3Percent = 0
 
+        if df.at[3, feature+'_AVE_C4'] != 0:
+            val_residual_cluster4Percent = (df.at[3, feature+'_AVE_C4'] - val)/df.at[3, feature+'_AVE_C4']
+        if df.at[3, feature+'_AVE_C4'] == 0:
+            val_residual_cluster4Percent = 0
+
+        if df.at[3, feature+'_AVE_C5'] != 0:
+            val_residual_cluster5Percent = (df.at[3, feature+'_AVE_C5'] - val)/df.at[3, feature+'_AVE_C5']
+        if df.at[3, feature+'_AVE_C5'] == 0:
+            val_residual_cluster5Percent = 0
 
         residuals = [val_residual_cluster1Percent,val_residual_cluster2Percent,val_residual_cluster3Percent,val_residual_cluster4Percent,val_residual_cluster5Percent]
 
-
-
-
-
-
-
-
-
-
         #find the smallest residual % cluster
         smallest = residuals.index(min(residuals))
+        i = 0
+        for var in importantVars:
+            if feature == importantVars[i][0]:
+                shift = importantVars[i][1]
+
+
+            i = i + 1
+
+
+
+
 
 
         #assign cluster
         if smallest == 0:
-            clusterTally[0] = clusterTally[0] + 1
+            clusterTally[0] = clusterTally[0] + 1 + shift
         if smallest == 1:
-            clusterTally[1] = clusterTally[1] + 1
+            clusterTally[1] = clusterTally[1] + 1 + shift
         if smallest == 2:
-            clusterTally[2] = clusterTally[2] + 1
+            clusterTally[2] = clusterTally[2] + 1 + shift
         if smallest == 3:
-            clusterTally[3] = clusterTally[3] + 1
+            clusterTally[3] = clusterTally[3] + 1 + shift
         if smallest == 4:
-            clusterTally[4] = clusterTally[4] + 1
+            clusterTally[4] = clusterTally[4] + 1 + shift
 
 
 
@@ -149,9 +166,9 @@ for row in dfTest.index:
 
 
     #export dta and excel because we couldnt export dta because sometimes python is a globalist cuck like jared kushner
-print("exporting train_output_with_feature_means.dta")
+print("✅ exporting train_output_with_feature_means.dta ⏬")
 df.to_stata("output/train_output_with_feature_means.dta", convert_dates=None, write_index=True, encoding='latin-1', byteorder=None, time_stamp=None, data_label=None, variable_labels=None)
 
 # dfTest.to_stata("output/classified_test_output.dta", convert_dates=None, write_index=True, encoding='latin-1', byteorder=None, time_stamp=None, data_label=None, variable_labels=dfTest.columns)
-print("exporting test_output_classified.xlsx")
+print("✅ exporting test_output_classified.xlsx ⏬")
 dfTest.to_excel("output/test_output_classified.xlsx", sheet_name='Sheet1', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, startrow=0, startcol=0, engine=None, merge_cells=True, encoding=None, inf_rep='inf', verbose=True, freeze_panes=None)
