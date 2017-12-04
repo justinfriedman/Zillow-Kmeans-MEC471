@@ -103,7 +103,7 @@ for row in dfTest.index:
         i = 0
         #find the smallest residual % cluster
         for each in residuals:
-            if residuals[i] <= residuals[smallest]:
+            if residuals[i] < residuals[(i+1)%5] and residuals[i] < residuals[(i+2)%5] and residuals[i] < residuals[(i+3)%5] and residuals[i] < residuals[(i+4)%5]:
                 smallest = i
             i = i + 1
 
