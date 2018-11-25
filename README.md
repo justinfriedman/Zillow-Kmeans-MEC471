@@ -1,4 +1,8 @@
 # Zillow-Kmeans-MEC471
+### Note
+Some code in this repo does not use pandas built in functions in an effcient manner, do not extend without revision 
+#
+
 MEC 471 final project work
 
 Stata is the standard statistics software package in the department so I think it is most productive for my peers to maintain a Stata only workflow. I was able to utlize the built in Kmeans clustering, bootstraping and stepwise OLS functionality in Stata to complete my analysis. 
