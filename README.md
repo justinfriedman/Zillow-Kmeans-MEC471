@@ -1,6 +1,8 @@
 # Zillow-Kmeans-MEC471
 ### Note
 Some code in this repo does not use pandas built in functions in an effcient manner, do not extend without revision 
+
+Main issue is the use of for loops instead of slicing. I'm no longer using the code in this project so I have not updated the scripts with proper slicing. I promise I sliced pandas dataframes like a ninja at MealPal :). 
 #
 
 MEC 471 final project work
